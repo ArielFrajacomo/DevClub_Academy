@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVCLUB Full Stack - HTML 02</title>
+</head>
+<body>
+    <h1>Dev Club Class</h1>
+    Full Stack Web Developer class
+    <h2>Lesson 008 - TABLE</h2>
+        <table  
+            border="4"
+            bordercolor="gray"
+            cellpadding="8"
+        >
+            <tr>
+                <th>Type</th>
+                <th>Value</th>
+                <th>Date</th> <!-- date format dd/mm/yy -->
+            </tr>
+            <tr>
+                <td>Food</td>
+                <td>R$ 30.00</td>
+                <td>21/01/26</td>
+            </tr>
+            <tr>
+                <td>Transport</td>
+                <td>R$ 150.00</td>
+                <td>22/01/26</td>
+            </tr>
+            <tr>
+                <td>PC</td>
+                <td>R$ 25000.00</td>
+                <td>23/01/26</td>
+            </tr>
+        </table>
+
+    <h2>Lesson 009 - Videos (Self-Hosted)</h2>
+        <!-- 
+        controls : Show controls
+        controlsList="nodownload" : make so it is not able to be downloaded by right clicking in it
+        autoplay + muted : some browsers disable auto play if the video is not muted.
+        -->
+        <video 
+            src="./video.mp4" 
+            poster="./img/Lenacien.png"
+            controls controlsList="nodownload"
+            autoplay muted
+            width="640" height="360" >
+        </video>
+        <!-- Tag (Self-Hosted) alternative -->
+        <video controls width="640" height="360">
+            <!-- get any of video that exists in the folder 
+                Ex: .mkv and .mov doesn't existis, it will play .mp4 -->
+            <source src="./video.mp4">
+            <source src="./video.mov">
+            <source src="./video.mkv">
+        </video>
+
+    <h2>Lesson 008 - Iframe</h2>
+    <!-- Used to insert the code from another site in your site  -->
+        <iframe 
+            src="https://rodolfomori.com.br" 
+            width="560" height="315"    
+        ></iframe>
+        <iframe 
+            width="560" height="315" 
+            src="https://www.youtube.com/embed/Q3oItpVa9fs?si=93pcErEEwnJTHsuZ" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31300.407117107217!2d-77.0622548258341!3d38.89211922166052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bcdecbb1df%3A0x715969d86d0b76bf!2sThe%20White%20House!5e0!3m2!1sen!2sus!4v1774866528806!5m2!1sen!2sus" 
+            width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    <h2>Lesson 010 - Input</h2>
+    <!-- 
+        input properties
+            disabled
+            value="text"
+            readonly
+            place holder
+            autofocus
+        Label (and label for)
+            Using label enhances accessibility and functionality, 
+            allowing users to click the label to focus the input. 
+    -->
+        <label for="input_name">Name</label>
+        <input id="input_name" autocomplete="name" placeholder="Name" autofocus>
+        <label for="input_tel">Phone Number</label>
+        <input id="input_tel" autocomplete="tel" placeholder="+xx (xx) xxxxxxxxx">
+    <br><!-- or --> 
+        <label> Name
+            <input autocomplete="name" placeholder="Name">
+        </label>
+        <label> Phone Number
+            <input autocomplete="tel" placeholder="+xx (xx) xxxxxxxxx">
+        </label>
+        
+
+
+    <div style="height: 500px;"></div>
+</body>
+</html>
