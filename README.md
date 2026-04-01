@@ -15,4 +15,6 @@ Devclub's 1st challenge, A simple page with some data about myself
 Table, Self-Hosted videos, Iframe, Input
 > The input had something new, the `<label for="id">` is easier to read, and now it have new acessibility features and a convenient autocomplete tool.
 Forms, inputs and buttons
-> It is very nice that the inputs already have validations
+> It is very nice that the inputs already have validations.
+HTML Semantics
+> `<article>` and `<aside>` didn't exist before.
