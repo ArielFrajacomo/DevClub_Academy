@@ -9,6 +9,7 @@
     <h1>Dev Club Class</h1>
     Full Stack Web Developer class
     <h2>Lesson 008 - TABLE</h2>
+    <!-- #region Table -->
         <table  
             border="4"
             bordercolor="gray"
@@ -35,8 +36,9 @@
                 <td>23/01/26</td>
             </tr>
         </table>
-
+    <!-- #endregion Table -->
     <h2>Lesson 009 - Videos (Self-Hosted)</h2>
+    <!-- #region Videos -->
         <!-- 
         controls : Show controls
         controlsList="nodownload" : make so it is not able to be downloaded by right clicking in it
@@ -57,8 +59,9 @@
             <source src="./video.mov">
             <source src="./video.mkv">
         </video>
-
-    <h2>Lesson 008 - Iframe</h2>
+    <!-- #endregion Videos -->
+    <h2>Lesson 010 - Iframe</h2>
+    <!-- #region Iframe -->
     <!-- Used to insert the code from another site in your site  -->
         <iframe 
             src="https://rodolfomori.com.br" 
@@ -77,8 +80,9 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31300.407117107217!2d-77.0622548258341!3d38.89211922166052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bcdecbb1df%3A0x715969d86d0b76bf!2sThe%20White%20House!5e0!3m2!1sen!2sus!4v1774866528806!5m2!1sen!2sus" 
             width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-
-    <h2>Lesson 010 - Input</h2>
+    <!-- #endregion Iframe -->
+    <h2>Lesson 011 - Input</h2>
+    <!-- #region input-->
     <!-- 
         input properties
             disabled
@@ -101,7 +105,201 @@
         <label> Phone Number
             <input autocomplete="tel" placeholder="+xx (xx) xxxxxxxxx">
         </label>
-       
+    <br>
+        <!-- Slider -->
+        <input type="range" min="0" max="100" value="50">
+    <br>
+        <label for="radio">Radio
+            <input name="imput_radio" type="radio" name="option" value="1"> Option 1
+            <input name="imput_radio" type="radio" name="option" value="2"> Option 2
+            <input name="imput_radio" type="radio" name="option" value="3"> Option 3
+            <!-- imput radio name must be the same for all options, so only one option can be selected at a time -->
+        </label>
+    <br>
+        <!-- email -->
+        <label for="input_email">Email</label>
+        <input id="input_email" type="email" placeholder="Enter your email">
+    <br>
+        <!-- password -->
+        <label for="input_password">Password</label>
+        <input id="input_password" type="password" placeholder="Enter your password">
+    <br>
+        <!-- date -->
+        <label for="input_date">Date</label>
+        <input id="input_date" type="date">
+    <br>
+        <!-- file -->
+        <label for="input_file">File</label>
+        <input id="input_file" type="file" accept=".pdf, .docx, .txt" multiple>
+        <!-- accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload) 
+        accept=".pdf, .docx, .txt" : only accept files with the extensions .pdf, .docx, and .txt
+        accept="application/*" : accept any file that is an application (e.g., .pdf, .docx, .exe)
+        accept="image/*" : accept any file that is an image (e.g., .jpg, .png, .gif)
+        accept="audio/*" : accept any file that is an audio (e.g., .mp3, .wav)
+        accept="video/*" : accept any file that is a video (e.g., .mp4, .avi)
+        multiple : allows the user to select more than one file 
+        -->
+    <!-- #endregion  input -->
+    <h2>Lesson 012 - Forms</h2>
+    <!-- #region forms -->
+    <!-- 
+        form properties
+            action : the URL where the form data will be sent when the form is submitted
+            method : the HTTP method to use when sending the form data (GET or POST)
+                    GET  : appends the form data to the URL in name/value pairs (not secure for sensitive data)
+                    POST : sends the form data in the body of the HTTP request (more secure for sensitive data)
+            enctype : the encoding type to use when sending the form data (application/x-www-form-urlencoded, multipart/form-data, text/plain)
+            target : specifies where to display the response after submitting the form (_self, _blank, _parent, _top)
+    -->
+        <form action="" method="get" enctype="text/plain" target="_blank">
+            <!-- data will be sent as plain text and can be viewed in the URL -->
+            <label for="input_name_form">Name</label>
+            <input id="input_name_form" name="name" autocomplete="name" placeholder="Name" autofocus>
+            <br>
+            <label for="input_email_form">Email</label>
+            <input id="input_email_form" name="email" autocomplete="email" type="email" placeholder="Enter your email">
+            <br>
+            <label for="input_password_form">Password</label>
+            <input id="input_password_form" name="password" autocomplete="current-password" type="password" placeholder="Enter your password">
+            <br>
+            <!-- file input is not supported in forms with enctype="text/plain", if you want to use file input, you need to use enctype="multipart/form-data" -->
+            <button type="submit">Submit</button>
+        </form>
+    <!-- #endregion forms-->
+    <h2>Lesson 013 - Buttons</h2>
+    <!-- #region buttons -->
+        <!-- 
+        button types
+            button : a clickable button
+            submit : submits the form
+            reset : resets the form fields to their initial values
+        button properties
+            disabled : disables the button, making it unclickable and grayed out
+            value : specifies the text to display on the button (for input type="button", "submit", "reset") 
+                    or the value to be sent to the server (for input type="submit")
+            type : specifies the type of button (button, submit, reset)
+        -->
+        <button type="button">Button</button>
+        <button type="submit">Submit Button</button>
+        <button type="reset">Reset Button</button>    
+    <!-- #endregion buttons -->
+    <h2>Lesson 013 - HTML Semantics</h2>
+    <!-- #region Semantics -->
+        <!-- 
+            Semantic tags provide meaning to the content they enclose, making it easier for browsers and assistive technologies to understand the structure and purpose of the content. 
+            Examples of semantic tags include:
+                <header> : defines a header for a document or section
+                <nav> : defines a container for navigation links
+                <main> : defines the main content of a document
+                <article> : defines an independent, self-contained piece of content
+                <section> : defines a section in a document
+                <aside> : defines content that is tangentially related to the content around it
+                <footer> : defines a footer for a document or section
+        -->
+            <p>Semantic tags provide meaning to the content they enclose, making it easier for browsers and assistive technologies to understand the structure and purpose of the content.</p>
+            <ul>
+                <li>&lt;header&gt; : defines a header for a document or section</li>
+                <li>&lt;nav&gt; : defines a container for navigation links</li>
+                <li>&lt;main&gt; : defines the main content of a document</li>
+                <li>&lt;article&gt; : defines an independent, self-contained piece of content</li>
+                <li>&lt;section&gt; : defines a section in a document</li>
+                <li>&lt;aside&gt; : defines content that is tangentially related to the content around it</li>
+                <li>&lt;footer&gt; : defines a footer for a document or section</li>
+            </ul>
+        <!-- #region Quick css to render the semantics-demo -->
+        <style>
+            .semantics-demo {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                border: 2px dashed #999;
+                padding: 12px;
+                background: #f9f9f9;
+            }
+            .semantics-demo header {
+                background: #4a90d9;
+                color: white;
+                padding: 12px;
+                border-radius: 4px;
+            }
+            .semantics-demo nav {
+                margin-top: 8px;
+                display: flex;
+                gap: 12px;
+            }
+            .semantics-demo nav a {
+                color: white;
+                text-decoration: none;
+                background: rgba(255,255,255,0.2);
+                padding: 4px 10px;
+                border-radius: 3px;
+            }
+            .semantics-demo main {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .semantics-demo article {
+                flex: 2;
+                background: #e8f4e8;
+                border: 2px solid #5a9e5a;
+                padding: 12px;
+                border-radius: 4px;
+                min-width: 140px;
+            }
+            .semantics-demo section {
+                flex: 2;
+                background: #fff8e1;
+                border: 2px solid #f0b429;
+                padding: 12px;
+                border-radius: 4px;
+                min-width: 140px;
+            }
+            .semantics-demo aside {
+                flex: 1;
+                background: #f3e8ff;
+                border: 2px solid #9c5fd6;
+                padding: 12px;
+                border-radius: 4px;
+                min-width: 100px;
+            }
+            .semantics-demo footer {
+                background: #555;
+                color: white;
+                padding: 10px;
+                border-radius: 4px;
+                text-align: center;
+            }
+        </style>
+        <!-- #endregion Quick css to render the semantics-demo -->
+        <div id="semantics" class="semantics-demo">
+            <header>
+                <h1>Header</h1>
+                <nav>
+                    <a href="#semantics">nav 1</a>
+                    <a href="#semantics">nav 2</a>
+                    <a href="#semantics">nav 3</a>
+                </nav>
+            </header>
+            <main>
+                <article>
+                    <h2>Article Title</h2>
+                    <p>This is an article.</p>
+                </article>
+                <section>
+                    <h2>Section Title</h2>
+                    <p>This is a section.</p>
+                </section>
+                <aside>
+                    <h2>Aside Title</h2>
+                    <p>This is an aside.</p>
+                </aside>
+            </main>
+            <footer>
+                <p>Footer</p>
+            </footer>
+        </div>
+    <!-- #endregion Semantics -->
 
     <div style="height: 500px;"></div>
 </body>
