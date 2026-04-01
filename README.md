@@ -4,6 +4,15 @@
  The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
  This page will be reviewed after I finish all the lessons of the DevClub Course.
 
+## How to Run
+
+Each folder represents a finished DevClub course module. To run any course, open the `index.html` file located inside the respective folder in your web browser.
+
+**Steps:**
+1. Navigate to the desired course folder (e.g., `HTML/`)
+2. Locate the `index.html` file
+3. Open `index.html` in your preferred web browser
+
 ## HTML
 ### 01-HTML_Basics
 Basics of HTML, reviewing if there's something new in the HTML markup
