@@ -11,10 +11,13 @@
 <body>
     <h1>Dev Club Class</h1>
     <h2>Lesson 001 - Intro</h2>
+    <!-- #region Lesson 001 - Intro -->
     <p>CSS stands for Cascading Style Sheets and is used to style and layout web pages.
     <br>It allows you to control the color, font, spacing, and overall appearance of your web pages.
     <br>In this lesson, we will cover the basics of CSS and how to use it to style web pages.</p>
+    <!-- #endregion Lesson 001 - Intro -->
     <h2>Lesson 002 - Color</h2>
+    <!-- #region Lesson 002 - Color -->
     <p>You can use color names, hexadecimal values, RGB values, and HSL values to specify colors in CSS.
     <br>For example, you can use <span>"red"</span>, <span>"#ff0000"</span>, <span>"rgb(255, 0, 0)"</span>, 
         or <span>"hsl(0, 100%, 50%)"</span> to specify the color red.</p>
@@ -29,10 +32,58 @@
             <a id="coolors_co" href="https://coolors.co/" target="_blank">Open in a new page</a>
         </li>
     </ul>
+    <!-- #endregion Lesson 002 - Color -->
+    <h2>Lesson 003 - Unity of measure</h2>
+    <!-- #region Lesson 003 - Unity of measure -->
+    <h3>Absolute units:</h3>
+    <ul class="no-bullets">
+        <li><span>cm</span> - centimeters</li>
+        <li><span>mm</span> - millimeters</li>
+        <li><span>in</span> - inches</li>
+        <li><span>px</span> - pixels</li>
+        <li><span>pt</span> - points</li>
+        <li><span>pc</span> - picas</li>
+    </ul>
+    <h3>Relative units:</h3>
+    <ul class="no-bullets">
+        <li><span>%</span> - percentage of parent element</li>
+        <li><span>em</span> - relative to font size</li>
+        <li><span>rem</span> - relative to root font size</li>
+        <li><span>vw</span> - viewport width (1% of the viewport's width)</li>
+        <li><span>vh</span> - viewport height (1% of the viewport's height)</li>
+        <li><span>vmin</span> - smaller viewport dimension (1% of the smaller dimension)</li>
+        <li><span>vmax</span> - larger viewport dimension (1% of the larger dimension)</li>
+    </ul> 
 
+    <div class="viewport-demo">
+        <p>Resize the window to compare how each unit reacts to the viewport.</p>
+        <div class="viewport-demo-grid">
+            <div class="viewport-card viewport-card-vmin">
+                <h4>vmin</h4>
+                <div class="viewport-box viewport-box-vmin">20vmin</div>
+                <p>Uses the smaller side of the screen.</p>
+            </div>
+            <div class="viewport-card viewport-card-vmax">
+                <h4>vmax</h4>
+                <div class="viewport-box viewport-box-vmax">20vmax</div>
+                <p>Uses the larger side of the screen.</p>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Lesson 003 - Unity of measure -->
+    <h2>Lesson 004 - Fonts</h2>
+    <!-- #region Lesson 004 - Fonts -->
+    <p>To use a custom font, you can use the @font-face rule in your CSS.</p>
+    <p>For example, you can use the following code to import a font from Google Fonts:</p>
+    <pre>  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');</pre>
+    <p>Then, you can use the font-family property to apply the font to your elements:</p>
+    <pre>  body {
+        font-family: 'Roboto', sans-serif;
+    }</pre>
     
-    
+    <a href="https://fonts.google.com/" target="_blank"> Visit Google Fonts</a>
 
+    <!-- #endregion Lesson 004 - Fonts -->
     <h2>Style sheet mirror:</h2>
     <iframe src="style.css" frameborder="0"></iframe>
     <br>
