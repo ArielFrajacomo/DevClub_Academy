@@ -197,6 +197,10 @@ iframe {
     overflow: hidden;
 }
 
+.project-open-link {
+    margin-top: 12px;
+}
+
 .project-live-preview iframe {
     width: 1440px;
     height: 900px;

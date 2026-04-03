@@ -55,10 +55,8 @@ Colors, Units of measure, Text, Margin and Padding, box-sizing,
 Using figma to replicate a front page in HTML with CSS (non-responsive)
 > Project path: `Standalone_projects\Project01-Pet\Index.html`
 ### 03-Standalone Project 02 - Challenge 2
-Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked better than i expected. The `index.html` and `style.css` was made by hand, of course.
+Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well.  The `index.html` and `style.css` was made by hand, of course.
 >  Project path: `Standalone_projects\Project02-Challenge02\index.html`
 
-Animated logo preview:
-<img src="Standalone_projects/Project02-Challenge02/img/logo.svg" alt="Animated logo preview from Project 02 Challenge 2" width="640">
-
-
+## CSS Intermediate Level (In Progression...)
+!important tag, 

@@ -75,7 +75,8 @@
         <p>TAG &lt;a href=""/&gt</p>
         <a href="http://www.google.com.br">Open link</a>
         <br>
-        <a href="http://www.google.com.br" target="_blank">Open link in new tab</a>
+        <a href="http://www.google.com.br" target="_blank" rel="noopener noreferrer">Open link in new tab</a>
+        <!-- the rel="noopener noreferrer" attribute is used for security reasons when opening links in a new tab -->
         <br>
         <a href="mailto:a@google.com">Email Link</a>
         <br>
@@ -84,6 +85,12 @@
         <a href="./01-HTML_Basics.html">Inner HTML link</a>
         <br>
         <a href="#Lesson001">go to ID Lesson001</a>
+
+        <p><strong>Obs:</strong> when using <code>target="_blank"</code>, always include <code>rel="noopener noreferrer"</code> for security reasons.</p>
+        <ul>
+            <li><strong>noopener:</strong> prevents the new page from being able to access the window.opener property and ensures it runs in a separate process.</li>
+            <li><strong>noreferrer:</strong> prevents the browser from sending the current page's address to the new page.</li>
+        </ul>
     <!-- #endregion Link -->
     <h2>Lesson 006 - List</h2>
     <!-- #region List -->
@@ -117,7 +124,9 @@
                 width : image width (can be in px or %)
                 height : image height (can be in px or %) 
         -->
+        <p><strong>IMG TAG:</strong></p>
         <img src="../img/logo-devclub.png" alt="DevClub logo" width="300px">
+        <p><strong>FIGURE TAG:</strong></p>
         <figure>
             <img src="../img/logo-devclub.png" alt="DevClub logo" width="300px">
             <figcaption>DevClub Logo</figcaption>
