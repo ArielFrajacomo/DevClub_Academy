@@ -59,6 +59,6 @@ Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Log
 >  Project path: `Standalone_projects\Project02-Challenge02\index.html`
 
 Animated logo preview:
-<img src="Standalone_projects/Project02-Challenge02/img/logo.svg" alt="Animated logo preview from Project 02 Challenge 2" width="640">
+<img src="Standalone_projects/Project02-Challenge02/img/logo.svg" alt="Animated logo preview from Project 02 Challenge 2" width="320">
 
 
