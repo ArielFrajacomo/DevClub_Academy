@@ -14,8 +14,8 @@
     <ul class="no-bullets">
         <li><a href="#Lesson01">Lesson 01 - What is Git?</a></li>
         <li><a href="#Lesson02">Lesson 02 - Git Commands</a></li>
-        <li><a href="#Lesson03">Lesson 03 - Git Branching</a></li>
-        <li><a href="#Lesson04">Lesson 04 - Git Merging</a></li>
+        <li><a href="#Lesson03">Lesson 03 - Git Ignore, Git Attributes</a></li>
+        <li><a href="#Lesson04">Lesson 04 - Git Branching and Merging</a></li>
         <li><a href="#Lesson05">Lesson 05 - Git Rebasing</a></li>
         <li><a href="#Lesson06">Lesson 06 - Git Stashing</a></li>
         <li><a href="#Lesson07">Lesson 07 - Git Remote Repositories</a></li>
@@ -53,17 +53,24 @@
         <p><strong>Note:</strong> Using GitHub for Desktop or Visual Studio can simplify the process of managing repositories and performing Git operations through a graphical interface.</p>
 
     <!-- #endregion Lesson 02 - Git Commands -->
-    <h2 id="Lesson03">Lesson 03 - Git Branching</h2>
-    <!-- #region Lesson 03 - Git Branching -->
-        <p>Git branching allows developers to create separate lines of development within a repository. This is useful for working on new features, fixing bugs, or experimenting with changes without affecting the main codebase.</p>
-        <p>To create a new branch, use the command:</p>
-        <pre>git branch [branch-name]</pre>
-        <p>To switch to a different branch, use:</p>
-        <pre>git checkout [branch-name]</pre>
-        <p>To create and switch to a new branch in one command, use:</p>
-        <pre>git checkout -b [branch-name]</pre>
-        <p>Branching allows for better organization and collaboration, as developers can work on different branches and merge their changes back into the main branch when they are ready.</p>
-    <!-- #endregion Lesson 03 - Git Branching -->
+    <h2 id="Lesson03">Lesson 03 - Git Ignore, Git Attributes</h2>
+    <!-- #region Lesson 03 - Git Ignore, Git Attributes -->
+        <p><strong>.gitignore:</strong> The .gitignore file is used to specify files and directories that should be ignored by Git. This is useful for excluding sensitive information, build artifacts, or any files that do not need to be tracked in the repository.</p>
+        <p>Example of a .gitignore file:</p>
+        <pre># Ignore node_modules directory
+node_modules/
+# Ignore log files
+*.log
+# Ignore build directory
+build/
+</pre>
+        <p><strong>.gitattributes:</strong> The .gitattributes file is used to define attributes for paths in the repository. It can be used to specify how Git should handle certain files, such as setting line endings, defining merge strategies, or marking files as binary.</p>
+        <p>Example of a .gitattributes file:</p>
+        <pre># Set line endings for text files
+* text=auto
+</pre>
+        
+    <!-- #endregion Lesson 03 - Git Ignore, Git Attributes -->
     <h2 id="Lesson04">Lesson 04 - Git Merging</h2>
     <!-- #region Lesson 04 - Git Merging -->
     <!-- #endregion Lesson 04 - Git Merging -->    
