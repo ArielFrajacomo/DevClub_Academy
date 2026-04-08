@@ -61,7 +61,13 @@ Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Log
 ## CSS Intermediate Level 
 !important tag, Pseudo-classes and Pseudo-elements, Site responsiveness
 > Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`
+
 Calc()
 > CSS function to use math
 
 ## GIT (In Progression...)
+> Hummm... it's strange to learn git when i'm already using it since the begging hahaha~~ **Let's go!**
+
+What's Git, ...
+
+
