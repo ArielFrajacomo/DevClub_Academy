@@ -4,11 +4,22 @@
  The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
  This page will be reviewed after I finish all the lessons of the DevClub Course.
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [How to Run](#how-to-run)
+- [HTML](#html)
+- [CSS](#css)
+- [CSS Intermediate Level](#css-intermediate-level)
+- [GIT](#git)
+- [JavaScript (In Progression...)](#javascript-in-progression)
+
+<a id="prerequisites"></a>
 ## Prerequisites
 - A modern web browser
 - Python 3 installed to run a simple local server with `python -m http.server`
 - Alternatively, another local server tool such as VS Code Live Server
 
+<a id="how-to-run"></a>
 ## How to Run
 Each folder represents a finished DevClub course module. To run any course, start a local server inside the respective course folder and open the served `index.html` page in your browser.
 
@@ -25,6 +36,7 @@ python -m http.server 8000
 
 Then open `http://localhost:8000` in your browser.
 
+<a id="html"></a>
 ## HTML
 ### 01-HTML_Basics
 Basics of HTML, reviewing if there's something new in the HTML markup
@@ -42,7 +54,8 @@ Forms, inputs and buttons
 HTML Semantics  
 > `<article>` and `<aside>` didn't exist before.  
 
-## CSS (In Progression...)
+<a id="css"></a>
+## CSS
 This lesson will cover the basics of CSS and how to use it to style web pages.  
 *Linked the style.css to HTML Lessons*  
 ### 01-CSS_Intro
@@ -58,6 +71,7 @@ Using figma to replicate a front page in HTML with CSS (non-responsive)
 Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well.  The `index.html` and `style.css` was made by hand, of course.
 >  Project path: `Standalone_projects\Project02-Challenge02\index.html`
 
+<a id="css-intermediate-level"></a>
 ## CSS Intermediate Level 
 !important tag, Pseudo-classes and Pseudo-elements, Site responsiveness
 > Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`
@@ -65,6 +79,7 @@ Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Log
 Calc()
 > CSS function to use math
 
+<a id="git"></a>
 ## GIT 
 > Hummm... it's strange to learn git when i'm already using it since the begging hahaha~~ **Let's go!**
 
@@ -77,5 +92,6 @@ Push and Pull, Branching and Merging
 Remote Repositories, README.md
 > You are here! xD
 
+<a id="javascript-in-progression"></a>
 ## JavaScript (In Progression...)
 
