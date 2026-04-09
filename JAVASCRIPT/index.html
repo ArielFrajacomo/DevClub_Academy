@@ -4,10 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
+    <script src="scripts.js" defer></script> <!-- defer makes it load after the HTML is parsed -->
     <title>DevClub - JavaScript Module</title>
 </head>
 <body>
     <h1>DevClub - JavaScript Module</h1>
-    On going....
+    <h2>Lesson 00 - Script Declaration</h2>
+    <!-- #region Lesson 00 - Script Declaration -->
+        <code>&lt;script src="scripts.js" <strong>defer</strong>&gt;&lt;/script&gt;</code>
+        <p>The <strong>defer</strong> attribute makes the script load after the HTML is parsed, 
+            preventing render-blocking and improving page load performance.</p>
+    <!-- #endregion Lesson 00 - Script Declaration -->
+
+    <h2>Lesson 01 - Variables</h2>
+    <!-- #region Lesson 01 - Variables -->
+        <p>Variables are containers for storing values, JS does <strong>NOT</strong> enforce  typing.</p>
+        <ul>
+            <li><code>var</code>: Function-scoped variable, can be re-declared and updated.<br>
+                <blockquote style="border-left: 3px solid red !important; background-color:#ff000033;">
+                    <code>var</code> was deprecated; use <code>let</code> and <code>const</code> instead.</blockquote></li>
+            <li><code>let</code>: Block-scoped variable, can be updated but not re-declared.</li>
+            <li><code>const</code>: Block-scoped variable, cannot be updated or re-declared. </li>
+        </ul>
+        
+    <!-- #endregion Lesson 01 - Variables -->
+    <h2>Lesson 02 - Strings</h2>
+    <!-- #region Lesson 02 - Strings -->
+        <p>Strings a sequence(Vector) of characters(char) values.
+            <br>They can be declared by:</p>
+        <ul>
+            <li><code>'Hello'</code> - Single quotes</li>
+            <li><code>"World"</code> - Double quotes</li>
+            <li><code>`Hello, ${name}!`</code> - Template literals (backticks), this allow calling JS inside a multi-line string.</li>
+        </ul>
+    <!-- #endregion Lesson 02 - Strings -->
+    
+    <h2>Lesson 03 - Numbers</h2>
+    <!-- #region Lesson 03 - Numbers -->
+        <p>Numbers in JavaScript are all 64-bit floating-point values, independently of their type.</p>
+        <ul> Some examples that can be a problem:
+            <li>1+1=2</li>
+            <li>'1'+'1'='11'</li>
+            <li>1+1-1=1</li>
+            <li>'1'+'1'-'1'=10</li>
+        </ul>
+    <!-- #endregion Lesson 03 - Numbers -->
+
+    <h2>Lesson 04 - Booleans</h2>
+    <!-- #region Lesson 04 - Booleans -->
+        <p>Booleans can be two values: <code>true</code> or <code>false</code>.</p>
+        <p>They can be representing not only by using true/false, but also by using 1/0, null, or undefined.</p>
+
+    <!-- #endregion Lesson 04 - Booleans -->
+
+    <h2>Lesson Extra - Bitshift</h2>
+    <!-- #region Lesson Extra - Bitshift -->
+        <p>Bitwise operators work on 32-bit integers, performing operations at the binary level.</p>
+        <p>Bitshift operators shift the bits of a number to the left or right.</p>
+        <ul>
+            <li><code>&lt;&lt;</code> (Left Shift): Shifts bits to the left, filling with zeros on the right. 
+                <blockquote>Example: <code>15 &lt;&lt; 1</code> results in <code>30</code>.
+                    <br> in binary: <code>00001111 &lt;&lt; 1 = 00011110</code></blockquote></li>
+            <li><code>&gt;&gt;</code> (Right Shift): Shifts bits to the right, filling with: (0 for positive, 1 for negative). 
+                <blockquote>Example1: <code>5 &gt;&gt; 1</code> results in <code>2</code>.
+                    <br> in binary: <code>00000101 &gt;&gt; 1 = 00000010</code></blockquote>
+                    <blockquote>Example2:<code>-5 &gt;&gt; 1</code> results in <code>-3</code>.
+                    <br> in binary: <code>11111011 &gt;&gt; 1 = 11111101</code></blockquote> </li>
+            <li><code>&gt;&gt;&gt;</code> (Unsigned Right Shift): Shifts bits to the right, filling with zeros regardless of the sign. 
+                <blockquote>Example: <code>-5 &gt;&gt;&gt; 1</code> results in a large positive number due to zero-filling.</blockquote></li>
+        </ul>
+        <p><strong>OBS:</strong> 
+            <br> the difference between <code>&gt;&gt;</code> and <code>&gt;&gt;&gt;</code> is how they handle the sign bit for negative numbers.
+            <br> <code>&gt;&gt;</code> preserves the sign bit, while <code>&gt;&gt;&gt;</code> does not, filling with zeros regardless of the sign.
+            <br><span>Example:</span> <code>-5 &gt;&gt; 1 = -3</code>, <code>-5 &gt;&gt;&gt; 1 = 2147483645</code>
+            <br><span>in binary:</span> <code>-5 &gt;&gt; 1 = 11111101</code>, <code>-5 &gt;&gt;&gt; 1 = 01111101</code></p>
+        </p>
+    <!-- #endregion Lesson Extra - Bitshift -->
+
+    <h2>Lesson 05 - Objects</h2>
+    <!-- #region Lesson 05 - Objects -->
+    <!-- #endregion Lesson 05 - Objects -->
+
+    <h2>Lesson 06 - Null and Undefined</h2>
+    <!-- #region Lesson 06 - Null and Undefined -->
+    <!-- #endregion Lesson 06 - Null and Undefined -->
+
+    <h2>Lesson 07 - Arrays</h2>
+    <!-- #region Lesson 07 - Arrays -->
+    <!-- #endregion Lesson 07 - Arrays -->
+
+    <h2>Lesson 08 - If and Else</h2>
+    <!-- #region Lesson 08 - If and Else -->
+    <!-- #endregion Lesson 08 - If and Else -->
+
+    <h2>Lesson 09 - Functions</h2>
+    <!-- #region Lesson 09 - Functions -->
+    <!-- #endregion Lesson 09 - Functions -->
+    <br>
+    <button onclick="history.back()">Go Back</button>
+
 </body>
 </html>
