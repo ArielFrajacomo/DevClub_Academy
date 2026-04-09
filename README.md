@@ -8,8 +8,7 @@
 - [Prerequisites](#prerequisites)
 - [How to Run](#how-to-run)
 - [HTML](#html)
-- [CSS](#css)
-- [CSS Intermediate Level](#css-intermediate-level)
+- [CSS Basics](#css) / [CSS Intermediate](#css-intermediate-level)
 - [GIT](#git)
 - [JavaScript (In Progression...)](#javascript-in-progression)
 
