@@ -16,35 +16,29 @@
         <li><a href="#Lesson02">Lesson 02 - Git Commands</a></li>
         <li><a href="#Lesson03">Lesson 03 - Git Ignore, Git Attributes</a></li>
         <li><a href="#Lesson04">Lesson 04 - Git Branching and Merging</a></li>
-        <li><a href="#Lesson05">Lesson 05 - Git Rebasing</a></li>
-        <li><a href="#Lesson06">Lesson 06 - Git Stashing</a></li>
-        <li><a href="#Lesson07">Lesson 07 - Git Remote Repositories</a></li>
-        <li><a href="#Lesson08">Lesson 08 - Git Collaboration</a></li>
+        <li><a href="#Lesson05">Lesson 05 - Git Push and Pull</a></li>
+        <li><a href="#Lesson06">Lesson 06 - Remote Repositories</a></li>
+        <li><a href="#Lesson07">Lesson 07 - README.md</a></li>
+        <li><a href="#Certification">Certification</a></li>
     </ul>
 
     <h2 id="Lesson01">Lesson 01 - What is Git?</h2>
     <!-- #region Lesson 01 - What is Git? -->
-        <p>Git is a distributed version control system that allows developers to track changes in their code, collaborate with others, and manage different versions of their projects. It was created by Linus Torvalds in 2005 to help manage the development of the Linux kernel.</p>
+        <p>Git is used to track changes in the code of the project, collaborate with others and keep versions of the project.</p>
         <p>Key features of Git include:</p>
-        <ul>
-            <li><strong>Distributed:</strong> Every developer has a full copy of the repository, including its history, on their local machine.</li>
-            <li><strong>Branching and Merging:</strong> Git allows for easy branching and merging, enabling developers to work on different features or bug fixes simultaneously without affecting the main codebase.</li>
-            <li><strong>Speed:</strong> Git is designed to be fast, even for large projects with many files and commits.</li>
-            <li><strong>Data Integrity:</strong> Git uses a hashing algorithm (SHA-1) to ensure the integrity of the data in the repository.</li>
-            <li><strong>Collaboration:</strong> Git makes it easy for multiple developers to collaborate on a project, allowing them to share changes and resolve conflicts efficiently.</li>
-        </ul>
+        
     <!-- #endregion Lesson 01 - What is Git? -->
     <h2 id="Lesson02">Lesson 02 - Git Commands</h2>
     <!-- #region Lesson 02 - Git Commands -->
-        <p>Here are some essential Git commands that every developer should know:</p>
+        <p>List of commands:</p>
         <ul>
             <li><code>git init</code> - Initializes a new Git repository.</li>
             <li><code>git clone [url]</code> - Clones an existing repository from a remote source.</li>
             <li><code>git add [file]</code> - Stages changes to be committed.</li>
-            <li><code>git commit -m "message"</code> - Commits staged changes with a descriptive message.</li>
+            <li><code>git commit -m "message"</code> - Commits staged changes.</li>
             <li><code>git status</code> - Shows the status of the working directory and staging area.</li>
-            <li><code>git log</code> - Displays the commit history.</li>
-            <li><code>git branch</code> - Lists all branches in the repository.</li>
+            <li><code>git log</code> - Displays the history.</li>
+            <li><code>git branch</code> - Lists all branches.</li>
             <li><code>git checkout [branch]</code> - Switches to a different branch.</li>
             <li><code>git merge [branch]</code> - Merges changes from one branch into another.</li>
             <li><code>git pull</code> - Fetches and merges changes from a remote repository.</li>
@@ -55,38 +49,62 @@
     <!-- #endregion Lesson 02 - Git Commands -->
     <h2 id="Lesson03">Lesson 03 - Git Ignore, Git Attributes</h2>
     <!-- #region Lesson 03 - Git Ignore, Git Attributes -->
-        <p><strong>.gitignore:</strong> The .gitignore file is used to specify files and directories that should be ignored by Git. This is useful for excluding sensitive information, build artifacts, or any files that do not need to be tracked in the repository.</p>
-        <p>Example of a .gitignore file:</p>
-        <pre># Ignore node_modules directory
-node_modules/
-# Ignore log files
-*.log
-# Ignore build directory
-build/
-</pre>
-        <p><strong>.gitattributes:</strong> The .gitattributes file is used to define attributes for paths in the repository. It can be used to specify how Git should handle certain files, such as setting line endings, defining merge strategies, or marking files as binary.</p>
-        <p>Example of a .gitattributes file:</p>
-        <pre># Set line endings for text files
-* text=auto
-</pre>
-        
+        <p><strong>.gitignore:</strong> The .gitignore file is used to specify files and directories that should be ignored by Git.</p>
+        <p><strong>.gitattributes:</strong> The .gitattributes file is used to define attributes for paths in the repository. Helps avoid noisy Windows/Linux diffs.</p>
+
     <!-- #endregion Lesson 03 - Git Ignore, Git Attributes -->
-    <h2 id="Lesson04">Lesson 04 - Git Merging</h2>
-    <!-- #region Lesson 04 - Git Merging -->
-    <!-- #endregion Lesson 04 - Git Merging -->    
-    <h2 id="Lesson05">Lesson 05 - Git Rebasing</h2>
-    <!-- #region Lesson 05 - Git Rebasing -->
-    <!-- #endregion Lesson 05 - Git Rebasing -->
-    <h2 id="Lesson06">Lesson 06 - Git Stashing</h2>
-    <!-- #region Lesson 06 - Git Stashing -->
-    <!-- #endregion Lesson 06 - Git Stashing -->
-    <h2 id="Lesson07">Lesson 07 - Git Remote Repositories</h2>
-    <!-- #region Lesson 07 - Git Remote Repositories -->
-    <!-- #endregion Lesson 07 - Git Remote Repositories -->
-    <h2 id="Lesson08">Lesson 08 - Git Collaboration</h2>
-    <!-- #region Lesson 08 - Git Collaboration -->
-    <!-- #endregion Lesson 08 - Git Collaboration -->
+    <h2 id="Lesson04">Lesson 04 - Git Branching and Merging</h2>
+    <!-- #region Lesson 04 - Git Branching and Merging -->
+        <p><strong>Branching:</strong> Git allows you to create branches, which are separate lines of development. Useful for working on new features or bug fixes without affecting the main branch.</p>
+        <p>Example of creating and switching to a new branch:</p>
+        <pre>git checkout -b <strong>branch-name</strong></pre>
+        <p><strong>Merging:</strong> When finishing a feature or bug fix, you can merge it back into the main branch.</p>
+        <p>Example of merging a branch:</p>
+        <pre>git checkout main 
+git merge <strong>branch-name</strong></pre>
+        <p><strong>OBS:</strong>On another note, using the VS addons like, GitLens or Git Graph, can provide a more visual and intuitive way to manage branches and merges.</p>
+
+    <!-- #endregion Lesson 04 - Git Branching and Merging -->    
+    <h2 id="Lesson05">Lesson 05 - Git Push and Pull</h2>
+    <!-- #region Lesson 05 - Git Push and Pull -->
+        <p><strong>Git Push:</strong> The <code>git push</code> command is used to upload a local repository to a remote repository.</p>
+        <p>Example of pushing changes to a remote repository:</p>
+        <pre>git push origin <strong>branch-name</strong></pre>
+        <p><strong>Git Pull:</strong> The <code>git pull</code> command is used to fetch and merge changes from a remote repository into your current branch.</p>
+        <p>Example of pulling changes from a remote repository:</p>
+        <pre>git pull origin <strong>branch-name</strong></pre>
+
+    <!-- #endregion Lesson 05 - Git Push and Pull -->
+    <h2 id="Lesson06">Lesson 06 - Remote Repositories</h2>
+    <!-- #region Lesson 06 - Remote Repositories -->
+        <p><strong>Remote Repositories:</strong> Is a version of your project hosted on the internet or another network. 
+                   It allows you to collaborate with others and share your code.</p>
+    <!-- #endregion Lesson 06 - Remote Repositories -->
 
 
+    <h2 id="Lesson07">Lesson 07 - README.md</h2>
+    <!-- #region Lesson 07 - README.md -->
+        <p><strong>README.md:</strong> The README.md file is a markdown file that provides information about the project. 
+                   It typically includes a project description, installation instructions, usage guidelines, and other relevant details.</p>
+        <ul>Recommended sections that should be included in a README.md file:
+            <li>Project Title</li>
+            <li>Description</li>
+            <li>Requirements</li>
+            <li>Installation Instructions</li>
+            <br>
+            <li>Usage Guidelines</li>
+            <li>Contributing Guidelines</li>
+            <li>License Information</li>
+            <li>Contact Information</li>
+        </ul>
+        <p><strong>OBS:</strong> This project doesn't include the last 4 sections because it is meant to be a Exercise/Lesson from the DevClub Git Module.</p>
+
+    <!-- #endregion Lesson 07 - README.md -->
+    <h2 id="Certification">Certification</h2>
+    <!-- #region Lesson 08 - Certification -->
+    
+    <!-- #endregion Lesson 08 - Certification -->
+
+        <br><br><br><br>
 </body>
 </html>

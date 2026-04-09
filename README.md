@@ -65,9 +65,17 @@ Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Log
 Calc()
 > CSS function to use math
 
-## GIT (In Progression...)
+## GIT 
 > Hummm... it's strange to learn git when i'm already using it since the begging hahaha~~ **Let's go!**
 
-What's Git, ...
+What's Git, Create repository, GIT Ignore, Git Attributes
+> Git Basics
 
+Push and Pull, Branching and Merging
+> Handling project files
+
+Remote Repositories, README.md
+> You are here! xD
+
+## JavaScript (In Progression...)
 
