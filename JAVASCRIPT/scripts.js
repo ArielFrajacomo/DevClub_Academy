@@ -8,7 +8,7 @@ function getKey(str) {
     
 
     if (KEY.value.length === 0) {
-        KEY.value = Math.random().toString(36).substring(2, 18);
+        KEY.value = Math.random().toString(36).substring(4, 20);
     }
     return KEY.value;
 }
@@ -54,8 +54,3 @@ function decode(str) {
 }
 
 
-
-
-console.log('1'-'a');
-console.log('a'.charCodeAt());
-console.log('0'.charCodeAt());
