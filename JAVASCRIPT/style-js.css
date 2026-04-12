@@ -1,3 +1,12 @@
+/* Page Styles */
+.featured-ToC {
+    background-color: var(--color-primary);
+}
+.featured-ToC:hover {
+    background-color: var(--color-text);
+}
+
+
 /* Encoder Program - CSS Styles */
 #encoder {
     max-width: 600px;
@@ -49,7 +58,7 @@
 }
 
 
-
+/* DOM Exercise */
 .dom-exercise {
     display: flex;
     margin: 20px 0;
@@ -75,7 +84,6 @@
     border: 1px solid var(--color-primary);
     border-radius: 4px;
     background-color: var(--color-surface);
-    cursor: pointer;
     
     min-width: 100px;
     max-width: 60%;

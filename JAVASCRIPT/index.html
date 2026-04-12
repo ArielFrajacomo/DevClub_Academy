@@ -11,212 +11,25 @@
 <body>
     <h1>DevClub - JavaScript Module</h1>
     <h2>Table of contents</h2>
-
-
-
-    <h2>Lesson 00 - Script Declaration</h2>
-    <!-- #region Lesson 00 - Script Declaration -->
-        <code>&lt;script src="scripts.js" <strong>defer</strong>&gt;&lt;/script&gt;</code>
-        <p>The <strong>defer</strong> attribute makes the script load after the HTML is parsed, 
-            preventing render-blocking and improving page load performance.</p>
-    <!-- #endregion Lesson 00 - Script Declaration -->
-
-    <h2>Lesson 01 - Variables</h2>
-    <!-- #region Lesson 01 - Variables -->
-        <p>Variables are containers for storing values, JS does <strong>NOT</strong> enforce  typing.</p>
-        <ul>
-            <li><code>var</code>: Function-scoped variable, can be re-declared and updated.<br>
-                <blockquote style="border-left: 3px solid red !important; background-color:#ff000033;">
-                    <code>var</code> was deprecated; use <code>let</code> and <code>const</code> instead.</blockquote></li>
-            <li><code>let</code>: Block-scoped variable, can be updated but not re-declared.</li>
-            <li><code>const</code>: Block-scoped variable, cannot be updated or re-declared. </li>
-        </ul>
-        
-    <!-- #endregion Lesson 01 - Variables -->
-    <h2>Lesson 02 - Strings</h2>
-    <!-- #region Lesson 02 - Strings -->
-        <p>Strings a sequence(Vector) of characters(char) values.
-            <br>They can be declared by:</p>
-        <ul>
-            <li><code>'Hello'</code> - Single quotes</li>
-            <li><code>"World"</code> - Double quotes</li>
-            <li><code>`Hello, ${name}!`</code> - Template literals (backticks), this allow calling JS inside a multi-line string.</li>
-        </ul>
-    <!-- #endregion Lesson 02 - Strings -->
+    <ul class="no-bullets">
+        <li><a href="./01-JS_Variables.html">Variables</a></li>
+        <li><a href="./02-JS_DOM_Manipulation.html">DOM Elements</a></li>
+    </ul>
     
-    <h2>Lesson 03 - Numbers</h2>
-    <!-- #region Lesson 03 - Numbers -->
-        <p>Numbers in JavaScript are all 64-bit floating-point values, independently of their type.</p>
-        <ul> Some examples that can be a problem:
-            <li>1+1=2</li>
-            <li>'1'+'1'='11'</li>
-            <li>1+1-1=1</li>
-            <li>'1'+'1'-'1'=10</li>
-        </ul>
-    <!-- #endregion Lesson 03 - Numbers -->
-
-    <h2>Lesson 04 - Booleans</h2>
-    <!-- #region Lesson 04 - Booleans -->
-        <p>Booleans can be two values: <code>true</code> or <code>false</code>.</p>
-        <p>They can be representing not only by using true/false, but also by using 1/0, null, or undefined.</p>
-
-    <!-- #endregion Lesson 04 - Booleans -->
-
-    <h2>Lesson Extra - Binary Operations & Bitshift</h2>
-    <!-- #region Lesson Extra - Bitshift -->
-        <p>Bitwise operators work on 32-bit integers, performing operations at the binary level.</p>
-        
-        <h3>Binary Operations</h3>
-        <ul>
-            <li><code>&amp;</code> (AND): Returns 1 if both bits are 1, otherwise returns 0.</li>
-            <li><code>^</code> (XOR): Returns 1 if the bits are different, otherwise returns 0.</li>
-            <li><code>|</code> (OR): Returns 1 if at least one of the bits is 1, otherwise returns 0.</li>
-            <li><code>~</code> (NOT): Inverts the bits, turning 1s into 0s and vice versa.</li>
-        </ul>
-
-        <h3>Bitshift</h3>
-        <ul>
-            <li><code>&lt;&lt;</code> (Left Shift): Shifts bits to the left, filling with zeros on the right. 
-                <blockquote>Example: <code>15 &lt;&lt; 1</code> results in <code>30</code>.
-                    <br> in binary: <code>00001111 &lt;&lt; 1 = 00011110</code></blockquote></li>
-            <li><code>&gt;&gt;</code> (Right Shift): Shifts bits to the right, filling with: (0 for positive, 1 for negative). 
-                <blockquote>Example1: <code>5 &gt;&gt; 1</code> results in <code>2</code>.
-                    <br> in binary: <code>00000101 &gt;&gt; 1 = 00000010</code></blockquote>
-                    <blockquote>Example2:<code>-5 &gt;&gt; 1</code> results in <code>-3</code>.
-                    <br> in binary: <code>11111011 &gt;&gt; 1 = 11111101</code></blockquote> </li>
-            <li><code>&gt;&gt;&gt;</code> (Unsigned Right Shift): Shifts bits to the right, filling with zeros regardless of the sign. 
-                <blockquote>Example: <code>-5 &gt;&gt;&gt; 1</code> results in a large positive number due to zero-filling.</blockquote></li>
-        </ul>
-        <p><strong>OBS:</strong> 
-            <br> the difference between <code>&gt;&gt;</code> and <code>&gt;&gt;&gt;</code> is how they handle the sign bit for negative numbers.
-            <br> <code>&gt;&gt;</code> preserves the sign bit, while <code>&gt;&gt;&gt;</code> does not, filling with zeros regardless of the sign.
-            <br><span>Example:</span> <code>-5 &gt;&gt; 1 = -3</code>, <code>-5 &gt;&gt;&gt; 1 = 2147483645</code>
-            <br><span>in binary:</span> <code>-5 &gt;&gt; 1 = 11111101</code>, <code>-5 &gt;&gt;&gt; 1 = 01111101</code></p>
-        </p>
-
-        <h3>Encoder example:</h3>
-        <div id="encoder">
-            <p>Encode your text using a password and decode it back.</p>
-            <textarea id="encoder-decoded-string" class="encoder-input" placeholder="Enter a string to encode"></textarea>
-            <div id="encoder-commands">
-                <button id="encoder-btn-encode" onclick="encode()">Encode ↓</button> 
-                <button id="encoder-btn-decode" onclick="decode()">Decode ↑</button>
-                <label id="encoder-password">Password:
-                    <input type="text" id="encoder-keyword" placeholder="Cipher Password (optional)">
-                </label>
-            </div>
-            <textarea id="encoder-encoded-string" class="encoder-input" placeholder="Encoded string"></textarea>
-        </div>
-    <!-- #endregion Lesson Extra - Bitshift -->
-
-        <h2>Lesson 05 - Objects</h2>
-    <!-- #region Lesson 05 - Objects -->
-        <p>Objects are collections of key-value pairs, where the keys are strings and the values can be of any type.</p>
-        <p>Example of an object:</p>
-        <pre>const person = {
-    name: "Harry Potter",
-    age: 12,
-    canDrive: false,
-    hobbies: ["owls", "defense against the dark arts", "quidditch"],
-    address: {
-        street: "4 Privet Drive",
-        city: "Little Whinging",
-        country: "England",
-        obs: "The door under the stairs"
-    }
-};</pre>
-    <!-- #endregion Lesson 05 - Objects -->
-
-    <h2>Lesson 06 - Null and Undefined</h2>
-    <!-- #region Lesson 06 - Null and Undefined -->
-        <p><code>null</code> represents the intentional absence of any object value.</p>
-        <p><code>undefined</code> represents the absence of a value or an uninitialized variable.</p>
-        <p><strong>OBS:</strong> Both <code>null</code> and <code>undefined</code> return false in a boolean context.</p>
-    <!-- #endregion Lesson 06 - Null and Undefined -->
-
-    <h2>Lesson 07 - Arrays</h2>
-    <!-- #region Lesson 07 - Arrays -->
-        <p>Arrays are ordered collections of values, which can be of any type. And the first element starts at 0.</p>
-        <p>Example:</p>
-        <pre>const fruits = ["apple", "banana", "cherry"];<br><br>fruits[0] → "apple"</pre>
-
-    <!-- #endregion Lesson 07 - Arrays -->
-
-    <h2>Lesson 08 - If and Else</h2>
-    <!-- #region Lesson 08 - If and Else -->
-        <p>Conditional statements allowing you to execute different blocks of code based on certain conditions.</p>
-    <!-- #endregion Lesson 08 - If and Else -->
-
-    <h2>Lesson 09 - Functions</h2>
-    <!-- #region Lesson 09 - Functions -->
-        <p>Functions are reusable blocks of code that perform a specific task. They can be defined using function declarations or function expressions.</p>
-        <p>Example of a function declaration:</p>
-        <pre>function greet(name) {
-    return `Hello, ${name}!`;
-}</pre>
-        <p>Example of a function expression:</p>
-        <pre>const greet = function(name) {
-    return `Hello, ${name}!`;
-};</pre>
-        <p>Example of an arrow function:</p>
-        <pre>const greet = (name) => {
-    return `Hello, ${name}!`;
-};</pre>
-        <p>Or even more concise:</p>
-        <pre>const greet = name => `Hello, ${name}!`;</pre> 
-    <strong>OBS:</strong> Arrow functions have a shorter syntax and do not have their own <code>this</code> context, 
-            making them useful for certain situations, such as when working with callbacks or methods that require a 
-            specific <code>this</code> value.</p>
-        <p><span>Wrong!</span></p>
-        <pre>const person = {
-    name: "Harry",
-    greet: () => `Hello, ${this.name}`
-};</pre>
-        <p><strong>Right!</strong></p>
-        <pre>const person = {
-    name: "Harry",
-    greet() {
-        return `Hello, ${this.name}`;
-    }
-};</pre>
-    <!-- #endregion Lesson 09 - Functions -->
-    <h2>Lesson 10 - DOM Elements</h2>
-    <!-- #region Lesson 10 - DOM Elements -->
-        <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents.</p>
-        <ul>How to get elements in js:
-            <li><code>document.getElementById(<span>"myId"</span>)</code>: by ID.</li>
-            <li><code>elements = document.getElementsByClassName(<span>"myClass"</span>)</code>: by class name.</li>
-            <li><code>elements = document.getElementsByTagName(<span>"HTML_TAG"</span>)</code>: by tag name.</li>
-            <li><code>elements = document.getElementsByName(<span>"name"</span>)</code>: by attribute name.</li>
-            <li><code>element = document.querySelector("<span>myId | myClass | HTML_TAG"</span>)</code>: by CSS selector.</li>
-            <li><code>elements = document.querySelectorAll("<span>myId | myClass | HTML_TAG"</span>)</code>: by CSS selector.</li>
-        </ul>
-        <h3>Exercises</h3>
-        <div class="dom-exercise">
-            <div class="dom-exercise-controls">
-                <button id="change-color-btn" onclick="changeColor()">Change Background Color</button>
-                <button id="add-paragraph-btn" onclick="addParagraph()">Add Paragraph</button>
-                <button id="remove-paragraph-btn" onclick="removeParagraph()">Remove Last Paragraph</button>
-                <button id="toggle-paragraphs-btn" onclick="toggleParagraphs()">Toggle Paragraphs</button>
-                <button id="change-text-btn" onclick="changeText()">Change Text of First Paragraph</button>
-            </div>
-            <div id="dom-exercices-target" class="dom-exercise-target"></div>
-        </div>
-    <!-- #endregion Lesson 10 - DOM Elements -->
-    
-
-
-    <h2>Lesson xx - Certification</h2>
+    <div class="certificate">
     <!-- #region Certification -->
-     <!-- #endregion Certification -->
-     <div class="certificate">
-        <h2>Certificate</h2>
-        <img src="../_assets/Certificado - JavaScript.png" alt="JavaScript Course Certificate">
-    </div> 
+        <h2 id="certificate">Certificate</h2>
+            <img src="../_assets/Certificado - JavaScript.png" alt="JavaScript Course Certificate">
+        </div> 
+    <!-- #endregion Certification -->
+
+    <h2>Final Project</h2>
+        On going...
+    
+ 
     
     
-    
-    <br>
+    <br><br><br><br>
     <button onclick="history.back()">Go Back</button>
 
 </body>

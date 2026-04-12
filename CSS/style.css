@@ -121,6 +121,15 @@ blockquote {
     
 }
 
+/* Featured Table of Contents */
+.featured-ToC {
+    background-color: var(--color-primary);
+}
+.featured-ToC:hover {
+    background-color: var(--color-text);
+}
+
+
 /* viewport units demo */
 .no-bullets {
     list-style-type: none;

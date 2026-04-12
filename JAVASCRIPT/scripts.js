@@ -55,20 +55,23 @@ function decode(str) {
 
 /*  2nd exercise - DOM Elements
 
-        (Math.random() * 2 ** 24) | 0
-            the operator "| 0", bitwise OR operation that effectively truncates the decimal part of a number, leaving only the integer part.
-            used as a faster alternative to Math.floor() when working with integers.
-            
+        (Math.random() * 2 ** 24) | 0 
+            the operator "| 0", bitwise OR truncates the decimal part of a number.
+            it is used as a faster alternative to Math.floor() when working with integers.
+        Math.random() returns a number in the range: [0, 1) 
+            — meaning: it never returns 1, but can return 0. So multiplying it by 2^24 (which is 16777216) gives us 
+                       a range of [0, 16777216), which includes all possible RGB color combinations (from 0 to 16777215).
+            2^24 in hexadecimal is 0x1000000 => 0x ff ff ff (+1 for pure white)
+
         0b = binary, base 2
         0o = octal, base 8
         0x = hexadecimal, base 16
         no prefix = decimal, base 10
 
-        0xFF = 255, is the maximum value for a RGB color model.
 */
 function changeColor() {
     // using bit operations to improve performance and reduce code size, instead of using Math.floor(random * 256) for each color component
-    const randomColor =  (Math.random() * 2 ** 24) | 0; // (255,255,255) where 255 = 2^8 - 1, so 2^24 (24 bits) for the whole RGB spectrum
+    const randomColor = (Math.random() * 0x1000000) | 0; // Generate a color in the range of 0x000000 to 0xFFFFFF
     const redColor = randomColor & 0xFF; // Get the last 8 bits for red
     const greenColor = (randomColor >> 8) & 0xFF; // Get the next 8 bits for green
     const blueColor = (randomColor >> 16) & 0xFF; // Get the next 8 bits for blue
@@ -85,19 +88,14 @@ function addParagraph(){
 }
 
 function removeParagraph() {
-    let div = document.getElementById('dom-exercices-target');
-    let p = div.getElementsByTagName('p');
-    if(p.length > 0){
-        div.removeChild(p[p.length - 1]);
-    }
+    let p = document.querySelector('#dom-exercices-target p:last-child'); // select the last <p> inside the target div
+    p.remove(); // remove the selected <p> element from the DOM
 }
 
 function toggleParagraphs() {
-    let div = document.getElementById('dom-exercices-target');
-    div.childNodes.forEach(node => {
-        if (node.nodeName === 'P') {
-            node.style.display = node.style.display === 'none' ? 'block' : 'none';
-        }
+    let div = document.querySelectorAll('#dom-exercices-target p'); // select all <p> inside the target div
+    div.forEach(p => {
+        p.style.display = p.style.display === 'none' ? 'block' : 'none';
     });
 
 }
@@ -108,7 +106,7 @@ function changeText() {
     if (div.childNodes.length === 0) {
         addParagraph();
     }
-    
+
     const newtext = prompt("What the text should be?");
 
     div.childNodes[0].textContent = newtext;

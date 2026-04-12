@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="style-js.css">
+    <script src="scripts.js" defer></script> <!-- defer makes it load after the HTML is parsed -->
+    <script src="./Tests/random-color-benchmark.js"></script>
+    <title>DevClub - JavaScript DOM Manipulation</title>
+</head>
+<body>
+    <h1>DevClub - JavaScript DOM Manipulation</h1>
+    <h2>Table of contents</h2>
+    <ul>
+        <li><a href="#featured-program" class="featured-ToC">Featured Program</a></li>
+        <li><a href="#lesson-10">Lesson 10 - DOM Elements</a></li>
+        <li><a href="#lesson-11">Lesson 11 - textcontent, innerText, innerHTML</a></li>
+        <li><a href="#lesson-12">Lesson 12 - Changing CSS Properties</a></li>
+        <li><a href="#lesson-13">Lesson 13 - Events</a></li>
+    </ul>
+
+
+    <h2 id="featured-program">Featured Program</h2>
+    <h3>DOM Exercises</h3>
+        <p>Simple program to manipulate DOM elements.</p>
+        <div class="dom-exercise">
+            <div class="dom-exercise-controls">
+                <button id="change-color-btn" onclick="changeColor()">Change Background Color</button>
+                <button id="add-paragraph-btn" onclick="addParagraph()">Add Paragraph</button>
+                <button id="remove-paragraph-btn" onclick="removeParagraph()">Remove Last Paragraph</button>
+                <button id="toggle-paragraphs-btn" onclick="toggleParagraphs()">Toggle Paragraphs</button>
+                <button id="change-text-btn" onclick="changeText()">Change Text of First Paragraph</button>
+            </div>
+            <div id="dom-exercices-target" class="dom-exercise-target"></div>
+        </div>
+        <p>I always think in performance for everything, so for the Background change, I only used one call for the math library and took advantage of bitwise operations to make the function more efficient.</p>
+        <p>You can run the benchmark in your browser's console. By calling <code>runBenchmark(NUM_INTERACTIONS)</code></p>
+        <label> Or You can run by clicking in this 
+            <a href="javascript:runBenchmark_popup()">Run Benchmark(10000000)</a>
+        Button
+        </label>
+    <!-- #endregion Lesson 09 - Functions -->
+    <h2 id="lesson-10">Lesson 10 - DOM Elements</h2>
+    <!-- #region Lesson 10 - DOM Elements -->
+        <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents.</p>
+        <ul>How to get elements in js:
+            <li><code>document.getElementById(<span>"myId"</span>)</code>: by ID.</li>
+            <li><code>elements = document.getElementsByClassName(<span>"myClass"</span>)</code>: by class name.</li>
+            <li><code>elements = document.getElementsByTagName(<span>"HTML_TAG"</span>)</code>: by tag name.</li>
+            <li><code>elements = document.getElementsByName(<span>"name"</span>)</code>: by attribute name.</li>
+            <br>
+            <li><code>element = document.querySelector("<span>#myId | .myClass | HTML_TAG | [attribute='value'] | HTML_TAG.myClass ..."</span>)</code>: by CSS selector.</li>
+            <li><code>elements = document.querySelectorAll("<span>#myId | .myClass | HTML_TAG | [attribute='value'] | HTML_TAG.myClass ..."</span>)</code>: by CSS selector.</li>
+            <blockquote>QuerySelector can be used not only as a document method but also on any element to find descendants matching the selector. Ex: <code>p.querySelector("span")</code></blockquote>
+        </ul>
+
+    <!-- #endregion Lesson 10 - DOM Elements -->
+    <h2 id="lesson-11">Lesson 11 - textcontent, innerText, innerHTML</h2>
+    <!-- #region Lesson 11 - textcontent, innerText, innerHTML -->
+        <p><code>textContent</code> returns only the text of the element.</p>
+        <p><code>innerText</code> returns the visible text content of an element, taking into account CSS styles and hidden elements.</p>
+        <p><code>innerHTML</code> returns the full html content, you can assign HTML content to it as well. ex: <code>&lt;b&gt;Bold Text&lt;/b&gt;</code></p>
+    <!-- #endregion Lesson 11 - textcontent, innerText, innerHTML -->
+    <h2 id="lesson-12">Lesson 12 - ChangingCSS Properties</h2>
+    <!-- #region Lesson 12 - ChangingCSS Properties -->
+        <p>You can change CSS properties of an element using the <code>style</code> property.
+            <br><strong>Example:</strong><code>element.style.backgroundColor = "red";</code>
+            <br>
+            <br><strong>Note:</strong> CSS property names are camelCased in JavaScript. 
+            <br><code>background-color</code> becomes <code>backgroundColor</code>.</p>
+    <!-- #endregion Lesson 12 - ChangingCSS Properties -->
+    <h2 id="lesson-13">Lesson 13 - Events</h2>
+    <!-- #region Lesson 13 - Events -->
+        <p>Events are actions or occurrences that happen in the system you are programming, which the system tells you about so your code can react to them.</p>
+        <p>Example of an event listener:</p>
+        <pre>element.addEventListener("click", function() {
+    alert("Element clicked!");
+});</pre>
+        <p><strong>Note:</strong> you can see what examples exists by going in the HTML TAG and writing "on.." (onmouseover, onclick, onkeydown, etc.)</p>
+        <p>when you want to pass the element to a event(element) function it needs to be done like this: 
+            <br><code>element.addEventListener("click", () => myFunction(element));</code> 
+            <br>or on the HTML element directly: <code>&lt;button onclick="myFunction(this)"&gt;Click me&lt;/button&gt;</code></p>
+    <!-- #endregion Lesson 13 - Events -->
+
+    <br>
+    <button onclick="history.back()">Go Back</button>
+    <br><br><br><br>
+
+</body>
+</html>
