@@ -23,6 +23,10 @@ body {
     background: linear-gradient(114deg, rgba(0, 0, 0, 1) 0%, rgba(64, 133, 112, 1) 50%, rgb(107, 167, 145) 100%);
 }
 
+select, input {
+    cursor: pointer;
+}
+
 #main-title {
     margin: 1.5vh;
 }
@@ -131,7 +135,6 @@ body {
     border-radius: 8px;
     object-fit: cover;
 }
-
 .swap-icon {
     width: 3.4rem;
     height: 3.4rem;
@@ -175,10 +178,10 @@ body {
         padding-right: 0.5rem;
     }
 
+    /* Swap the order of the currency dropdown and its image */
     #img-to{
         order: 2;
     }
-
     #select-to {
         order: 1;
     }

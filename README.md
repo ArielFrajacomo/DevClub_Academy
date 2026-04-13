@@ -71,17 +71,20 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 > The dev in me wanted to see how Variables in CSS works, I love how `:root` lets you set global variables, it makes much easier and cleaner than working with RGB/hex codes.
 ### 02-Standalone Project 01 - We Care Pet Frontpage
 - Using figma to replicate a front page in HTML with CSS (non-responsive)
-> Project path: `Standalone_projects\Project01-Pet\Index.html`
+> Project path: `Standalone_projects\Project01-Pet\Index.html`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project01-Pet) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project01-Pet/Index.html)
 ### 03-Standalone Project 02 - Challenge 2
 - Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well.  The `index.html` and `style.css` was made by hand, of course.
->  Project path: `Standalone_projects\Project02-Challenge02\index.html`
+>  Project path: `Standalone_projects\Project02-Challenge02\index.html`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project02-Challenge02) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project02-Challenge02/index.html)
 
 <!-- CSS2 Table of contents -->
 <a id="css-intermediate-level"></a>
 
 ## CSS Intermediate Level 
 - !important tag, Pseudo-classes and Pseudo-elements, Site responsiveness
-> Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`
+> Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project03-1st_Responsible_site) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project03-1st_Responsible_site/index.html)
 - Calc()
 > CSS function to use math
 
@@ -111,17 +114,14 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - textcontent, innerText, innerHTML, CSS Properties
 
 ## Challenge - Project 04 : Currency Exanger
+> Project path: `Standalone_Projects/Project04-CoinConverter`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
 ### Features:
 - Animated Intro with CSS Transformations
 - Animated logo (made with AI, Triggers by me), Animations directly in the SVF File, Triggered by JS
 - Dataset using a `currency.json` archive to make easy add/remove items or to use a API
 - Working Market Exchange interface
-- Fully Responsive
-### Where to find?
-- *Files:* `Standalone_Projects/Project04-CoinConverter` : [Or by Clicking Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter)
-- *Through the Deploy:*`Main Page → Javascript Course → Project 04`: [Or access this Link](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
-
-
+- Fully Responsive  
 
 
 
