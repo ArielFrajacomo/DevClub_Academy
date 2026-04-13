@@ -1,5 +1,5 @@
 # DevClub_Learning
- DevClub Platform Exercises.
+ DevClub Platform Exercises. [Deploy Link](https://arielfrajacomo.github.io/DevClub_Academy/)
  
  The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
  This page will be reviewed after I finish all the lessons of the DevClub Course.
@@ -119,7 +119,7 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Fully Responsive
 ### Where to find?
 - *Files:* `Standalone_Projects/Project04-CoinConverter` : [Or by Clicking Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter)
-- *Through the Deploy:*`<Path>`: [Or access this Link](<Link>)
+- *Through the Deploy:*`Main Page → Javascript Course → Project 04`: [Or access this Link](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
 
 
 
