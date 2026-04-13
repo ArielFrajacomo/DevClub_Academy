@@ -12,7 +12,7 @@
         <div id="hero-container">
             <object id="site-icon" type="image/svg+xml" data="./assets/Exchange_Site_Icon.svg" class="site-icon" aria-label="Coin Converter Icon"></object>
             <h1 id="main-title" class="hidden">MARKET EXCHANGE</h1>
-            <div id="exchange-ui" class="hidden">
+            <main id="exchange-ui" class="hidden">
                 <div id="ui-left">
                     <div class="currency-selector-row">
                         <select class="currency-box" id="select-from" value="" onchange="calculateExchange(this)"></select>
@@ -32,7 +32,7 @@
                     placeholder="Exchange to..."
                         oninput="this.value=this.value.replace(/[^0-9.,]/g,'');calculateExchange(this)">
                 </div>
-            </div>
+            </main>
         </div>
 
 </body>
