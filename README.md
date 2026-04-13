@@ -110,6 +110,13 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - byID, byClassName, ByTagName, by name, tagSelector/all
 - textcontent, innerText, innerHTML, CSS Properties
 
+## Challenge - Project 04 : Currency Exanger
+### Features:
+- Animated logo (made with AI, Triggers by me), with CSS Transformations
+- Dataset using a `currency.json` archive to make easy add/remove items or to use a API
+
+
+
 
 (On Going...)
 

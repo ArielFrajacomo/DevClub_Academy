@@ -19,7 +19,7 @@
 
 html {
     background-color: var(--color-bg);
-    background-image: url("../_assets/logo-devclub.png");
+    background-image: url("../assets/logo-devclub.png");
     background-repeat: no-repeat;
     background-position: left 24px top 24px;
     background-size: 200px;
@@ -35,7 +35,7 @@ html {
                 color-mix(in srgb, var(--color-bg) 94%, transparent),
                 color-mix(in srgb, var(--color-bg) 94%, transparent)
             ),
-            url("../_assets/logo-devclub.png");
+            url("../assets/logo-devclub.png");
     }
 }
 

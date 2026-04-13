@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #08241e;
+    --txt-color: #e0e0e0;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+body {
+    font-size: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    background: linear-gradient(114deg, rgba(0, 0, 0, 1) 0%, rgba(64, 133, 112, 1) 50%, rgb(107, 167, 145) 100%);
+}
+
+#hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.site-icon {
+    display: block;
+    width: 50vh;
+    height: 50vh;
+    margin: auto auto;
+    transition: all 1.2s ease-in-out;
+    z-index: 2;
+
+    position: absolute;
+    top: 20vh;
+}
+
+.site-icon.to-top {
+    width: 30vh;
+    height: 30vh;
+
+    position: absolute;
+    top: 20vh;
+}
+
+#main-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 32vh;
+    margin-bottom: 2.5vh;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    letter-spacing: 0.02em;
+    text-align: center;
+    z-index: 1;
+}
+#main-title.visible {
+    opacity: 1;
+}
+
+#exchange-ui {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    margin-top: 2vh;
+    width: 80vw;
+    max-width: 1100px;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+#exchange-ui.visible {
+    opacity: 1;
+}
+
+
+#ui-left, #ui-right {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8vh;
+}
+
+.currency-selector-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(20,32,28,0.45);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    backdrop-filter: blur(2.5px);
+}
+
+.currency-box {
+    background: rgba(20,32,28,0.45);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    backdrop-filter: blur(2.5px);
+}
+.currency-icon {
+    width: 4.2em;
+    height: 4.2em;
+    border: none;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.swap-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+    filter: brightness(1.2);
+}
+
+
+/* Responsive bonus (because we’re not animals) */
+@media (max-width: 1200px) {
+    body {
+        font-size: 10px;
+    };
+    .currency-box {
+        font-size: 1.2rem;
+        width: auto;
+        padding: 1rem 1rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .site-icon.to-top {
+        top: 6vh;
+    }
+
+    #exchange-ui {
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .swap-icon {
+        transform: rotate(90deg);
+    }
+}

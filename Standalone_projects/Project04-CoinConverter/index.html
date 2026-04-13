@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Converter</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./JS/script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
 </head>
 <body>
-    
+
+        <div id="hero-container">
+            <object id="site-icon" type="image/svg+xml" data="./assets/Exchange_Site_Icon.svg" class="site-icon" aria-label="Coin Converter Icon"></object>
+            <h1 id="main-title" class="hidden">MARKET EXCHANGE</h1>
+            <div id="exchange-ui" class="hidden">
+                <div id="ui-left">
+                    <div class="currency-selector-row">
+                        <select class="currency-box" id="select-from" value="" onchange="calculateExchange(this)"></select>
+                        <img id="img-from" class="currency-icon" src="" alt="From currency icon"/>
+                    </div>
+                    <input type="text" name="currency-from" id="currency-from" class="currency-box currency-text" 
+                    placeholder="Exchange from..."
+                    oninput="this.value=this.value.replace(/[^0-9.,]/g,'');calculateExchange(this)">
+                </div>
+                    <img src="./assets/swap.svg" alt="Swap" class="swap-icon" />
+                <div id="ui-right">
+                    <div class="currency-selector-row">
+                        <img id="img-to" class="currency-icon" src="" alt="To currency icon"/>
+                        <select class="currency-box" id="select-to" onchange="calculateExchange(this)"></select>
+                    </div>
+                    <input type="text" name="currency-to" id="currency-to" class="currency-box currency-text" 
+                    placeholder="Exchange to..."
+                        oninput="this.value=this.value.replace(/[^0-9.,]/g,'');calculateExchange(this)">
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>

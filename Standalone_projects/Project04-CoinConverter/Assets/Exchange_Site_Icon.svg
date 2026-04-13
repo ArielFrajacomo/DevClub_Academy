@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Abstract exchange site icon">
+  <style>
+    .arrow-cw {
+      transform-origin: center;
+      transform-box: view-box;
+    }
+
+    .spin-once .arrow-cw {
+      animation: rotate-cw 2500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @keyframes rotate-cw {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.5);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+
+  </style>
+  <defs>
+    <linearGradient id="exchange-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff1" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#1d8f76dd" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="exchange-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3d46b"/>
+      <stop offset="100%" stop-color="#f7a531"/>
+    </linearGradient>
+    <filter id="arrow-3d" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="1.5" dy="2" stdDeviation="1.5" flood-color="#0a2a2a" flood-opacity="0.45"/>
+    </filter>
+    <radialGradient id="coin3d" cx="64" cy="64" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="60%" stop-color="#f4fbf8"/>
+      <stop offset="85%" stop-color="#e0e6e3"/>
+      <stop offset="100%" stop-color="#bfc7c3"/>
+    </radialGradient>
+    <filter id="coin-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0a2a2a" flood-opacity="0.18"/>
+    </filter>
+    <filter id="m-inner-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#0a2a2a" flood-opacity="0.35"/>
+    </filter>
+    <mask id="hollow-m">
+      <rect x="40" y="40" width="48" height="48" fill="white"/>
+      <g filter="url(#m-inner-shadow)">
+        <text x="64" y="64" dy="0.06em" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk, Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="black" letter-spacing="0.5">M</text>
+      </g>
+    </mask>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#exchange-bg)"/>
+  <rect x="8.5" y="8.5" width="111" height="111" rx="27.5" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.85"/>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#glass-fade)"/>
+  <circle cx="64" cy="64" r="24" fill="url(#coin3d)" filter="url(#coin-shadow)" mask="url(#hollow-m)"/>
+  <g class="arrow-cw" filter="url(#arrow-3d)">
+    <path d="M 79 35 L 94 41 L 92 25"
+          fill="none" stroke="url(#exchange-accent)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="5"/>
+    <path d="M 90 36 C 85 30 76 26 64 26 C 51 26 40 34 34 46"
+          fill="none" stroke="url(#exchange-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  </g>
+  <g class="arrow-cw" filter="url(#arrow-3d)">
+    <path d="M 49 93 L 34 87 L 37 103"
+          fill="none" stroke="#9ef0d2" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="5"/>
+    <path d="M 38 92 C 43 98 52 102 64 102 C 77 102 88 94 94 82"
+          fill="none" stroke="#9ef0d2" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  </g>
+  <!-- Hollowed M is now cut out from the coin using a mask -->
+
+  <script><![CDATA[
+    (function () {
+      const root = document.documentElement;
+
+      function triggerExchangeAnimation(triggerName) {
+        if (triggerName !== 'spin-arrows') return;
+
+        root.classList.remove('spin-once');
+        void root.getBoundingClientRect();
+        root.classList.add('spin-once');
+      }
+
+      root.addEventListener('click', function () {
+        triggerExchangeAnimation('spin-arrows');
+      });
+
+      window.triggerExchangeAnimation = triggerExchangeAnimation;
+    })();
+  ]]></script>
+</svg>
