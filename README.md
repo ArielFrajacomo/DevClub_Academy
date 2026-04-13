@@ -112,8 +112,15 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 
 ## Challenge - Project 04 : Currency Exanger
 ### Features:
-- Animated logo (made with AI, Triggers by me), with CSS Transformations
+- Animated Intro with CSS Transformations
+- Animated logo (made with AI, Triggers by me), Animations directly in the SVF File, Triggered by JS
 - Dataset using a `currency.json` archive to make easy add/remove items or to use a API
+- Working Market Exchange interface
+- Fully Responsive
+### Where to find?
+- *Files:* `Standalone_Projects/Project04-CoinConverter` : [Or by Clicking Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter)
+- *Through the Deploy:*`<Path>`: [Or access this Link](<Link>)
+
 
 
 
