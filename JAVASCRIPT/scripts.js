@@ -1,9 +1,13 @@
 // Generic functions for the exercises, not related to any specific exercise
-function ClearInput(element) {
+function clearInput(element, allowDecimal = false) {
     // Remove all non-numeric characters except dot and comma
-    let cleaned = element.value.replace(/[^0-9.,]/g, '');
-    // Replace comma with dot for decimal consistency
-    cleaned = cleaned.replace(/,/g, '.');
+
+    const regex = allowDecimal ? /[^0-9.,]/g : /[^0-9]/g;
+    let cleaned = element.value.replace(regex, '');
+    
+    // Replace comma with dot for decimal consistency if allowDecimal is enabled
+    allowDecimal && (cleaned = cleaned.replace(/,/g, '.'));
+
     // remove all dots except the last one
     const lastDotIndex = cleaned.lastIndexOf('.');
     if (lastDotIndex !== -1) {
@@ -11,9 +15,6 @@ function ClearInput(element) {
     }
     element.value = cleaned;
 }
-
-
-
 
 // 1st exercise - Encoder/Decoder
 function getKey(str) {
@@ -130,7 +131,21 @@ function changeText() {
 
 // RNG min max
 function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min) || 0; // Ensure min is an integer
+    max = Math.floor(max) || 0; // Ensure max is an integer
+
+    if (min > max) {
+        [min, max] = [max, min]; // Swap if min is greater than max
+    }
+
+    return ((Math.random() * (max - min + 1)) | 0) + min;
+}
+
+function generateRandomNumber() {
+    let min = parseInt(document.getElementById('rng-min').value);
+    let max = parseInt(document.getElementById('rng-max').value);
+    let result = document.getElementById('rng-result');
+
+    // min and max already validated inside getRandomInt
+    result.value = getRandomInt(min, max);
 }

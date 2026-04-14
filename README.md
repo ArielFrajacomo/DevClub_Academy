@@ -113,15 +113,24 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - byID, byClassName, ByTagName, by name, tagSelector/all
 - textcontent, innerText, innerHTML, CSS Properties
 
-## Challenge - Project 04 : Currency Exanger
+### Challenge - Project 04 : Currency Exanger
 > Project path: `Standalone_Projects/Project04-CoinConverter`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
-### Features:
+ Features:
 - Animated Intro with CSS Transformations
 - Animated logo (made with AI, Triggers by me), Animations directly in the SVF File, Triggered by JS
 - Dataset using a `currency.json` archive to make easy add/remove items or to use a API
 - Working Market Exchange interface
 - Fully Responsive  
+### Operators
+- math(), Random(),
+- Arithmetric, Atribuition, Comparizon and Logical Operations
+- typeof, delete, else-if, ternary operator, switch
+- Timeout and Interval, clearTimeout, clearInterval
+> I actually never runned a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
+### Loops
+
+
 
 
 

@@ -11,8 +11,40 @@
 <body>
     <h1>JavaScript Operations</h1>
     
+    <ul class="no-bullets">
+        <li><a href="#math">Math()</a></li>
+        <li><a href="#random">random()</a></li>
+        <li><a href="#arithmetic">Arithmetic Operations</a></li>
+        <li><a href="#atribuition">Atribuition Operations</a></li>
+        <li><a href="#comparison">Comparison Operations</a></li>
+        <li><a href="#logical">Logical Operations</a></li>
+        <li><a href="#typeof-delete">typeof and delete</a></li>
+        <li><a href="#elseif">Else IF</a></li>
+        <li><a href="#ternary">Ternary Operator</a></li>
+        <li><a href="#switch">Switch Statement</a></li>
+        <li><a href="#timeout-interval">Timeout and Interval</a></li>
+    </ul>
+
+    <h2 id="featured-program">Featured Program</h2>
+        <div id="rng-box" class="viewport-demo">
+            <h3 style="width: 100%;margin: 5px;">Random Number Generator</h3>
+            <input id="rng-min" type="text" onkeyup="clearInput(this)" name="Min" placeholder="Min">
+            <input id="rng-max" type="text" onkeyup="clearInput(this)" name="Max" placeholder="Max">
+            <button id="rng-btn" onclick="generateRandomNumber()">GO!</button>
+            <input id="rng-result" type="text" name="Result" placeholder="Result" readonly>
+        </div>
+        <blockquote>
+            <ul>
+                <h4>Features</h4>
+                <li>Validates input to ensure only numbers are entered.</li>
+                <li>Handles cases where min is greater than max by swapping values.</li>
+                <li>Generates a random integer between the specified min and max values.</li>
+            </ul>
+        </blockquote>
+        
+
     <!-- #region JS Operations -->
-        <h2>Math()</h2>
+    <h2 id="math">Math()</h2>
         <p>Basic Arithmetic and Logical Operations</p>
         <!-- pow, sqrt, abs, ceil, floor, round, max, min -->
          <ul>
@@ -27,24 +59,142 @@
          </ul>
     <!-- #endregion JS Operations -->
 
-    <h2>random()</h2>
+    <h2 id="random">random()</h2>
     <!-- #region Random -->
-    <p>Random number generation</p>
-    <ul>
-        <li><strong>random</strong>: Generates a random number between 0 (inclusive) and 1 (exclusive)</li>
-    </ul>
-    <h3>Example</h3>
-    <div id="rng-box" class="viewport-demo">
-        <input id="rng-min" type="text" name="Min" placeholder="Min">
-        <input id="rng-max" type="text" name="Max" placeholder="Max">
-        <button id="rng-btn">GO!</button>
-        <input id="rng-result" type="text" name="Result" placeholder="Result" readonly>
-    </div>
+        <p>Random number generation</p>
+        <ul>
+            <li><strong>random</strong>: Generates a random number between 0 (inclusive) and 1 (exclusive)</li>
+        </ul>
     <!-- #endregion Random -->
+    <h2 id="arithmetic">Arithmetic Operations</h2>
+    <!-- #region Arithmetic Operations -->
+        <!-- + - * / % ++ -- ** -->
+         <ul>
+            <li><strong>+</strong>: Addition</li>
+            <li><strong>-</strong>: Subtraction</li>
+            <li><strong>*</strong>: Multiplication</li>
+            <li><strong>/</strong>: Division</li>
+            <li><strong>%</strong>: Modulus (remainder)</li>
+            <li><strong>++</strong>: Increment</li>
+            <li><strong>--</strong>: Decrement</li>
+            <li><strong>**</strong>: Exponentiation</li>
+         </ul>
+         <blockquote> 
+            <strong>Note:</strong> 
+                        <br>The increment (++) and decrement (--) operators can be used as prefix and postfix. 
+                        <br>
+                        <br><strong>Prefix:</strong> (++x or --x), the variable is modified before its value is used in an expression. 
+                        <br><strong>Postfix:</strong> (x++ or x--), the variable value is used in the expression before it is modified.
+         </blockquote>
+    <!-- #endregion Arithmetic Operations -->
+    <h2 id="atribuition">Atribuition Operations</h2>
+    <!-- #region Atribuition Operations -->
+        <!-- = += -= *= /= %= **= -->
+         <ul>
+            <li><strong>=</strong>: Assignment</li>
+            <li><strong>+=</strong>: Addition assignment</li>
+            <li><strong>-=</strong>: Subtraction assignment</li>
+            <li><strong>*=</strong>: Multiplication assignment</li>
+            <li><strong>/=</strong>: Division assignment</li>
+            <li><strong>%=</strong>: Modulus assignment</li>
+            <li><strong>**=</strong>: Exponentiation assignment</li>
+         </ul>
+    <!-- #endregion Atribuition Operations -->
+    <h2 id="comparison">Comparison Operations</h2>
+    <!-- #region Comparison Operations -->
+        <!-- == === != !== > < >= <=  -->
+         <ul>
+            <li><strong>==</strong>: Equality (loose)</li>
+            <li><strong>===</strong>: Strict equality</li>
+            <li><strong>!=</strong>: Inequality (loose)</li>
+            <li><strong>!==</strong>: Strict inequality</li>
+            <li><strong>></strong>: Greater than</li>
+            <li><strong><</strong>: Less than</li>
+            <li><strong>>=</strong>: Greater than or equal to</li>
+            <li><strong><=</strong>: Less than or equal to</li>
+         </ul>
+         <blockquote> 
+            <strong>Note:</strong> 
+                        <p>The difference between loose (==) and strict (===) equality is that strict equality checks the type as well as the value. </p>
+                        <p>For example, <code>5 == '5'</code> is true because the string '5' is parsed to the number 5, but <code>5 === '5'</code> is false because they are of different types.</p>
+         </blockquote>
+    <!-- #endregion Comparison Operations -->
+    <h2 id="logical">Logical Operations</h2>
+    <!-- #region Logical Operations -->
+        <!-- && || ! -->
+         <ul>
+            <li><strong>&&</strong>: Logical AND</li>
+            <li><strong>||</strong>: Logical OR</li>
+            <li><strong>!</strong>: Logical NOT</li>
+         </ul>
+    <!-- #endregion Logical Operations -->
+    <h2 id="typeof-delete">typeof and delete</h2>
+    <!-- #region typeof and delete -->
+        <ul>
+            <li><strong>typeof</strong>: Returns the type of the unevaluated operand</li>
+            <li><strong>delete</strong>: Deletes an object property or an array element</li>
+        </ul>
+    <!-- #endregion typeof and delete -->
+    <h2 id="elseif">Else IF</h2>
+    <!-- #region Elseif -->
+        <p>Conditional statements</p>
+        <ul>
+            <li><strong>if</strong>: Executes a block of code if a specified condition is true</li>
+            <li><strong>else if</strong>: Specifies a new condition to test if the first condition is false</li>
+            <li><strong>else</strong>: Executes a block of code if all previous conditions are false</li>
+        </ul>
+    <br>
+    <!-- #endregion Elseif -->
+    <h2 id="ternary">Ternary Operator</h2>
+    <!-- #region Ternary Operator -->
+        <p>The ternary operator is a shorthand for an if-else statement. It takes three operands: a condition, an expression to execute if the condition is true, and an expression to execute if the condition is false.</p>
+        <pre>condition ? expressionIfTrue : expressionIfFalse;</pre>
+        <p>If you want only the if statement without an else, you can use the ternary operator with an empty expression for the false case.</p>
+        <pre>condition ? expressionIfTrue : null;
+or
+condition && expressionIfTrue;</pre>
+        <p>In the second example, if the condition is true, the expression will be executed. If the condition is false, the expression will not be executed, and the result will be false.</p>
+    <!-- #endregion Ternary Operator -->
+    <h2 id="switch">Switch Statement</h2>
+    <!-- #region Switch Statement -->
+        <p>The switch statement is used to perform different actions based on different conditions.</p>
+        <pre>switch (expression) {
+    case value1:
+        // code to be executed if expression === value1
+        break;
+    case value2:
+        // code to be executed if expression === value2
+        break;
+    default:
+        // code to be executed if expression doesn't match any case
+}</pre>
+    <!-- #endregion Switch Statement -->
+    <h2 id="timeout-interval">Timeout and Interval</h2>
+    <!-- #region Timeout and Interval -->
+        <p>The <code>setTimeout</code> function is used to execute a function after a specified delay, while <code>setInterval</code> is used to execute a function repeatedly at specified intervals.</p>
+        <pre>setTimeout(function, delay);
+setInterval(function, interval);</pre>
+        <p>Both functions return a unique identifier that can be used to cancel the timeout or interval using <code>clearTimeout</code> or <code>clearInterval</code>.</p>
+        <pre>// Example of setTimeout
+const timeoutId = setTimeout(() => {
+    console.log('This will be logged after 2 seconds');
+}, 2000);
 
-    <h2>Arithmetic Operations</h2>
-    <h2>Comparison Operations</h2>
-    <h2>Logical Operations</h2>
-    <h2>typeof and delete</h2>
+// Example of setInterval
+const intervalId = setInterval(() => {
+    console.log('This will be logged every 2 seconds');
+}, 2000);
+
+// To cancel the timeout
+clearTimeout(timeoutId);
+// To cancel the interval
+clearInterval(intervalId);</pre>
+
+it works with by callin
+    <!-- #endregion Timeout and Interval -->
+
+    <br>
+    <button onclick="history.back()">Go Back</button>
+    <br><br><br><br>
 </body>
 </html>
