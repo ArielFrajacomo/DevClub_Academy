@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root {
-    --bg-color: #08241e;
-    --txt-color: #e0e0e0;
 
+:root {
+    --bg-green: #08241e;
+    --bg-black: rgba(0,0,0,0.08);
+    --txt-color: #e0e0e0;
+    --shadow: rgba(0,0,0,0.08);
+    --box-bg-dark: rgba(20,32,28,0.45);
+    --border-radius: 16px;
+    --border-bg: rgba(255,255,255,0.18);
+    --border: 1.5px solid var(--border-bg);
+    --box-shadow: 0 2px 12px 0 var(--shadow);
 }
 
 * {
@@ -12,15 +19,16 @@
     padding: 0;
     font-family: 'Space Grotesk', sans-serif;
 }
+
 body {
     font-size: 16px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--bg-color);
+    background-color: var(--bg-green);
     background: linear-gradient(114deg, rgba(0, 0, 0, 1) 0%, rgba(64, 133, 112, 1) 50%, rgb(107, 167, 145) 100%);
+    color: var(--txt-color);
 }
 
 select, input {
@@ -30,6 +38,7 @@ select, input {
 #main-title {
     margin: 1.5vh;
 }
+
 #hero-container {
     display: flex;
     flex-direction: column;
@@ -41,6 +50,7 @@ select, input {
     z-index: 1;
 }
 
+
 .site-icon {
     display: block;
     width: 50vh;
@@ -48,18 +58,18 @@ select, input {
     margin: auto auto;
     transition: all 1.2s ease-in-out;
     z-index: 2;
-
     position: absolute;
     top: 20vh;
 }
+
 
 .site-icon.to-top {
     width: 30vh;
     height: 30vh;
-
     position: absolute;
     top: 20vh;
 }
+
 
 #main-title {
     font-size: 3.2rem;
@@ -76,6 +86,7 @@ select, input {
 #main-title.visible {
     opacity: 1;
 }
+
 
 #exchange-ui {
     display: flex;
@@ -95,6 +106,7 @@ select, input {
 }
 
 
+
 #ui-left, #ui-right {
     width: 100%;
     max-width: 500px;
@@ -103,31 +115,34 @@ select, input {
     gap: 1.8vh;
 }
 
+
 .currency-selector-row {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(20,32,28,0.45);
-    border: 1.5px solid rgba(255,255,255,0.18);
-    border-radius: 16px;
+    background: var(--box-bg-dark);
+    border: var(--border);
+    border-radius: var(--border-radius);
     padding: 1rem 1.5rem;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    box-shadow: var(--box-shadow);
     backdrop-filter: blur(2.5px);
 }
 
+
 .currency-box {
-    background: rgba(20,32,28,0.45);
-    border: 1.5px solid rgba(255,255,255,0.18);
-    border-radius: 16px;
+    background: var(--box-bg-dark);
+    border: var(--border);
+    border-radius: var(--border-radius);
     color: #fff;
     font-size: 1.5rem;
     font-weight: 600;
     padding: 1rem 2rem;
     min-width: 100px;
     text-align: center;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    box-shadow: var(--box-shadow);
     backdrop-filter: blur(2.5px);
 }
+
 .currency-icon {
     width: 4.2em;
     height: 4.2em;
@@ -135,6 +150,7 @@ select, input {
     border-radius: 8px;
     object-fit: cover;
 }
+
 .swap-icon {
     width: 3.4rem;
     height: 3.4rem;
@@ -142,29 +158,28 @@ select, input {
 }
 
 
+
 /* Responsive bonus (because we’re not animals) */
 @media (max-width: 1200px) {
     body {
         font-size: 10px;
-    };
+    }
     .currency-box {
         font-size: 1.2rem;
         min-width: 230px;
         width: 100%;
         padding: 1rem 1rem;
     }
-
 }
+
 
 @media (max-width: 768px) {
     body {
         font-size: 12px;
     }
-    
     .site-icon.to-top {
         top: 6vh;
     }
-
     #exchange-ui {
         flex-direction: column;
         gap: 2vh;
@@ -177,9 +192,8 @@ select, input {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
-
     /* Swap the order of the currency dropdown and its image */
-    #img-to{
+    #img-to {
         order: 2;
     }
     #select-to {

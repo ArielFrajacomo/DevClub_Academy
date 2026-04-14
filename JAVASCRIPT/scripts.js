@@ -1,3 +1,19 @@
+// Generic functions for the exercises, not related to any specific exercise
+function ClearInput(element) {
+    // Remove all non-numeric characters except dot and comma
+    let cleaned = element.value.replace(/[^0-9.,]/g, '');
+    // Replace comma with dot for decimal consistency
+    cleaned = cleaned.replace(/,/g, '.');
+    // remove all dots except the last one
+    const lastDotIndex = cleaned.lastIndexOf('.');
+    if (lastDotIndex !== -1) {
+        cleaned = cleaned.substring(0, lastDotIndex).replace(/\./g, '') + cleaned.substring(lastDotIndex);
+    }
+    element.value = cleaned;
+}
+
+
+
 
 // 1st exercise - Encoder/Decoder
 function getKey(str) {
@@ -110,4 +126,11 @@ function changeText() {
     const newtext = prompt("What the text should be?");
 
     div.childNodes[0].textContent = newtext;
+}
+
+// RNG min max
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
