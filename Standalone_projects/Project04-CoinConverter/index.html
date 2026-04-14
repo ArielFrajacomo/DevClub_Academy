@@ -20,7 +20,7 @@
                     </div>
                     <input type="text" name="currency-from" id="currency-from" class="currency-box currency-text" 
                     placeholder="Exchange from..."
-                    oninput="this.value=this.value.replace(/[^0-9.,]/g,'');calculateExchange(this)">
+                    oninput="ClearInput(this);calculateExchange(this)">
                 </div>
                     <img src="./assets/swap.svg" alt="Swap" class="swap-icon" />
                 <div id="ui-right">
@@ -30,7 +30,7 @@
                     </div>
                     <input type="text" name="currency-to" id="currency-to" class="currency-box currency-text" 
                     placeholder="Exchange to..."
-                        oninput="this.value=this.value.replace(/[^0-9.,]/g,'');calculateExchange(this)">
+                        oninput="ClearInput(this);calculateExchange(this)">
                 </div>
             </main>
         </div>

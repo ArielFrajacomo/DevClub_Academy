@@ -86,6 +86,20 @@ async function populateCurrencyDropdowns() {
 
 window.addEventListener('DOMContentLoaded', populateCurrencyDropdowns);
 
+
+function ClearInput(element) {
+    // Remove all non-numeric characters except dot and comma
+    let cleaned = element.value.replace(/[^0-9.,]/g, '');
+    // Replace comma with dot for decimal consistency
+    cleaned = cleaned.replace(/,/g, '.');
+    // remove all dots except the last one
+    const lastDotIndex = cleaned.lastIndexOf('.');
+    if (lastDotIndex !== -1) {
+        cleaned = cleaned.substring(0, lastDotIndex).replace(/\./g, '') + cleaned.substring(lastDotIndex);
+    }
+    element.value = cleaned;
+}
+
 function calculateExchange(element) {
     const selectFrom = document.getElementById('select-from');
     const selectTo = document.getElementById('select-to');
@@ -105,8 +119,6 @@ function calculateExchange(element) {
     } else {
         currencyto.value = (currencyfrom.value * multiplier).toFixed(2);
     }
-
-
 
 }
 
