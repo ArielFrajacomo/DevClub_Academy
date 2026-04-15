@@ -113,21 +113,45 @@
     <!-- #endregion Return -->
     <h2 id="break-continue">Break and Continue*</h2>
     <!-- #region Break and Continue -->
+        <pre><span>break</span>;</pre>
+        <pre><span>continue</span>;</pre>
+        <p>The break statement is used to exit a loop or switch statement prematurely, 
+           while the continue statement is used to skip the current iteration of a loop and move on to the next one.</p>
     <!-- #endregion Break and Continue -->
     <h2 id="nested-loops">Nested Loops*</h2>
     <!-- #region Nested Loops -->
+        <pre><span>for</span> (let i = 0; i < 5; i++) {
+    <span>for</span> (let j = 0; j < 5; j++) {
+        console.log(`i: ${i}, j: ${j}`);
+    }
+}</pre>
+        <p>Nested loops are loops that are contained within another loop.</p>
     <!-- #endregion Nested Loops -->
     <h2 id="arrow-functions">Arrow Functions</h2>
     <!-- #region Arrow Functions -->
+        <pre><span>const</span> example = (<span>parameters</span>) => { function }</pre>
+        <p>Arrow functions are a more concise syntax for writing function expressions in JavaScript. 
+           They are often used for short, simple functions and can help improve readability.</p>
+        <p>Arrow functions do not have their own `this` context, which makes them useful for preserving the context of `this` in callbacks and event handlers.</p>
     <!-- #endregion Arrow Functions -->
     <h2 id="anonymous-functions">Anonymous Functions</h2>
     <!-- #region Anonymous Functions -->
+        <pre><span>function</span> (<span>parameters</span>) { function }</pre>
+        <p>Anonymous functions are functions that do not have a name.</p>
     <!-- #endregion Anonymous Functions -->
     <h2 id="callback-functions">Callback Functions*</h2>
     <!-- #region Callback Functions -->
+        <pre><span>function</span> example(<span>callback</span>) { callback(); }</pre>
+        <p>Callback functions are functions that are passed as arguments to other functions and 
+            are executed after a certain event or condition is met. </p>
+        <p>They are commonly used for asynchronous operations, such as handling user input, making API calls, 
+           or performing tasks after a delay.</p>
     <!-- #endregion Callback Functions -->
     <h2 id="enum">ENUM</h2>
     <!-- #region ENUM -->
+        <pre><span>const</span> Colors = { RED: 'red', GREEN: 'green', BLUE: 'blue' };</pre>
+        <p>An enum (short for "enumeration") is a data structure that allows you to define a set of named constants. 
+           In JavaScript, you can create an enum using an object, where the keys represent the names of the constants and the values represent their corresponding values.</p>
     <!-- #endregion ENUM -->
     <br>
     <button onclick="history.back()">Go Back</button>
