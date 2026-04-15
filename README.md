@@ -129,7 +129,24 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Timeout and Interval, clearTimeout, clearInterval
 > I actually never runned a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
 ### Loops
+- For, For-Of, For-In, for-each
+- While, do-while
+- Return, Break, continue
+- Arrow Function, Anonymous Functions
+- Callback Function
+- enum
 
+### Challenge - Project 05 : Calculator
+> Project path: `Standalone_Projects/Project05-Calculator`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project05-Calculator) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project05-Calculator/index.html)
+ Features:
+ - Working Calculator
+ - Some imput corrections
+ - Responsive
+ - CSS Animations
+ - Keyboard Enabled
+ - Ctrl C / Ctrl V
+ - Custom functions (no use of eval())
 
 
 

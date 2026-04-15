@@ -15,7 +15,6 @@
         <li><a href="#for-of">For-Of Loop</a></li>
         <li><a href="#for-in">For-In Loop</a></li>
         <li><a href="#while">While Loop</a></li>
-        <li><a href="#do-while">Do-While Loop</a></li>
         <li><a href="#for-each">For-Each Loop</a></li>
         <li><a href="#augm-param">Augments and Parameters</a></li>
         <li><a href="#return">Return</a></li>
@@ -27,29 +26,90 @@
         <li><a href="#enum">ENUM</a></li>
     </ul>
 
+    <h2 id="featured">Featured Programs</h2>
+    <!-- Sort Using a timeout function //funny -->
+    <div id="sort-box" class="viewport-demo">
+        <h3 style="width: 100%;margin: 5px;">Not-so-Efficient Sorting Algorithm</h3>
+        <p>fun-fact, this function uses a timeout to make the sorting</p>
+        <button id="FS-btn-populate">Populate Array</button>
+        <p id="FS-array-visualizer" class="viewport-demo"></p>
+        <button id="FS-btn-sort">Start Sorting</button>
+        <p id="FS-array-output" class="viewport-demo"></p>
+        
+        <blockquote>
+            <p>It was surprisingly annoying to debug this one, when you use .innerText with the for-loop it eats the space ' ' from the output</p>
+            <p>So I had to use .innerHTML instead, which preserves the spaces and makes the output look correct.</p>
+        </blockquote>
+    </div>
+
     <h2 id="for">For Loop</h2>
     <!-- #region For Loop -->
+        <pre>for(let i = 0; i < 10; i++) { function }</pre>
+        <p>The for loop is used to iterate over a block of code a number of times.</p>
     <!-- #endregion For Loop -->
     <h2 id="for-of">For-Of Loop</h2>
     <!-- #region For-Of Loop -->
+        <pre>for <b>(</b><span>const</span> item <span>of</span> object<b>)</b> { 
+    console.log(` ${item} : ${object[item]} `);        
+}</pre>
+        <p>The for-of loop is used to iterate over iterable objects like arrays, strings, maps, sets, etc. 
+           It provides a simpler syntax compared to the traditional for loop when working with iterables.</p>
+        <p>The Example prints all attributes of the object with their values.</p>
     <!-- #endregion For-Of Loop -->
     <h2 id="for-in">For-In Loop</h2>
     <!-- #region For-In Loop -->
+        <pre>for <b>(</b><span>const</span> key <span>in</span> object<b>)</b> { function }</pre>
+        <p>The for-in loop is used to iterate over the enumerable properties of an object. 
+           It allows you to access the keys of an object, but not the values directly.</p>
     <!-- #endregion For-In Loop -->
-    <h2 id="while">While Loop</h2>
+    <h2 id="while">While, Do-While Loop</h2>
     <!-- #region While Loop -->
+        <pre>while (condition) { function }</pre>
+        <pre>do { function } while (condition);</pre>
+        <p>The while loop executes a block of code as long as a specified condition is true. 
+        <br>The do-while loop is similar, but it guarantees that the block of code will be executed at least once.</p>
     <!-- #endregion While Loop -->
-    <h2 id="do-while">Do-While Loop</h2>
-    <!-- #region Do-While Loop -->
-    <!-- #endregion Do-While Loop -->
     <h2 id="for-each">For-Each Loop</h2>
     <!-- #region For-Each Loop -->
+        <pre>array.forEach((item) => { function });</pre>
+        <pre>array.forEach((item, index) => { function });</pre>
+        <pre>array.forEach((item, index, array) => { function });</pre>
+        <p>The forEach method is an array method that executes a provided function once for each array element. 
+           It is often used to perform side effects on each element of the array, such as logging or modifying the elements.</p>
+        <ul>
+            <li><strong>item</strong>: The current element being processed in the array.</li>
+            <li><strong>index</strong>: The index of the current element being processed in the array.</li>
+            <li><strong>array</strong>: The array that forEach is being applied to.</li>
+        </ul>
+        <p><strong>Note:</strong> The forEach cannot be stopped by return or break like a traditional for loop.</p>
     <!-- #endregion For-Each Loop -->
     <h2 id="augm-param">Augments and Parameters</h2>
     <!-- #region Augments and Parameters -->
+        <pre><span>for</span> (const item <span>of</span> array) { function }</pre>
+        <pre><span>for</span> (const key <span>in</span> object) { function }</pre>
+        <pre><span>do</span> { function } <span>while</span> (condition);</pre>
+        <p>Augments and parameters are the components that make up the structure of a function.</p>
+        <ul>
+            <li><strong>Augments</strong>: These are the keywords that define the type of loop or function, such as for, while, do-while, etc.</li>
+            <li><strong>Parameters</strong>: These are the variables that are passed into the function or loop to be used within its body. They can be used to control the flow of the loop or to perform operations on data.</li>
+        </ul>
+        <p>Overloaded functions are functions that can take a variable number of arguments, allowing for more flexible and dynamic code.</p>
+        <ul><h3>Example of overloaded function:</h3>
+            <li><code>array.forEach((item) => { function });</code></li>
+            <li><code>array.forEach((item, index) => { function });</code></li>
+            <li><code>array.forEach((item, index, array) => { function });</code></li>
+        </ul>
+        <ul><h3>Declaring overloaded functions</h3>
+            <li><code><span>function</span> example(<span>a</span>) { ... }</code></li>
+            <li><code><span>function</span> example(<span>a</span>, <span>b</span>) { ... }</code></li>
+            <li><code><span>function</span> example(<span>a</span>, <span>b</span>, <span>c</span>) { ... }</code></li>
+        </ul>
     <!-- #endregion Augments and Parameters -->
     <h2 id="return">Return</h2>
     <!-- #region Return -->
+        <pre><span>function</span> example() { <span>return</span> value; }</pre>
+        <p>The return statement is used to exit a function and return a value to the caller. 
+           It can be used to stop the execution of a function and provide a result back to the code that called the function.</p>
     <!-- #endregion Return -->
     <h2 id="break-continue">Break and Continue*</h2>
     <!-- #region Break and Continue -->
