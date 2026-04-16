@@ -93,14 +93,22 @@ calculateResult = () => {
 
 manualCalculation = (inputString) => {
 
+    //treating double operators, e.g. 4//2 => 4/2, 42/ or 4**2 => 4^2
+    inputString = inputString.replace(/\/{2,}/g, '/'); // Replace multiple / with single /
+    inputString = inputString.replace(/\*{2,}/g, '^'); // Replace multiple * with ^
+    inputString = inputString.replace(/\.{2,}/g, '.'); // Replace multiple . with single /
+    inputString = inputString.replace(/\+{2,}/g, '+'); // Replace multiple + with single +
+    inputString = inputString.replace(/\-{2,}/g, '-'); // Replace multiple - with single -
+    inputString = inputString.replace(/\%{2,}/g, '%'); // Replace multiple % with single %
+    inputString = inputString.replace(/\^{2,}/g, '^'); // Replace multiple ^ with single ^
+    // when theres a '.' with a a non-digit before or after, added a 0 to the correct side, e.g. 4.+2 => 4.0+2
+    inputString = inputString.replace(/(\D|^)\.(\d)/g, '$10.$2'); // Add 0 before . if non-digit or start of string
+    inputString = inputString.replace(/(\d)\.(\D|$)/g, '$1.0$2'); // Add 0 after . if non-digit or end of string
     // treating the input, 2(2+3) => 2*(2+3)
     inputString = inputString.replace(/(\d)\s*\(/g, '$1*('); // Add * between number and (
     inputString = inputString.replace(/\)\s*(\d)/g, ')*$1'); // Add * between ) and number
     //treating consecutive parentheses, e.g. (2+3)(4+5) => (2+3)*(4+5)
     inputString = inputString.replace(/\)\s*\(/g, ')*('); // Add * between ) and (
-    //treating //, e.g. 4//2 => 4/2, 42/ or 4**2 => 4^2
-    inputString = inputString.replace(/\/{2,}/g, '/'); // Replace multiple / with single /
-    inputString = inputString.replace(/\*{2,}/g, '^'); // Replace multiple * with ^
     // replace ending with / for /1, e.g. 42/ => 42/1, 4* => 4*1, 2^ => 2^1
     inputString = inputString.replace(/\/\s*$/g, '/1');
     inputString = inputString.replace(/\*\s*$/g, '*1');
@@ -112,7 +120,7 @@ manualCalculation = (inputString) => {
     inputString = inputString.replace(/(\*\/|\/\*|\+\-|-\+)/g, '');
     // remove any sequence of more than 3 operators (+-*/^%), keeping the 1st one
     inputString = inputString.replace(/([+\-*/^%]){2,}/g, '$1');
-    //remove any other combinations of operators, keeping the 1st one, e.g. 4+*2 => 4*2, 4*/2 => 4/2, 4+^2 => 4^2, 4+%2 => 4%2
+    // remove any other combinations of operators, keeping the 1st one, e.g. 4+*2 => 4*2, 4*/2 => 4/2, 4+^2 => 4^2, 4+%2 => 4%2
     inputString = inputString.replace(/(\d+)([+\-*/^%])([+\-*/^%])(\d+)/g, '$1$3$4');
 
     // closing any forgotten parentheses, e.g. (2+3 => (2+3))

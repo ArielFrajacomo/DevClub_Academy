@@ -11,22 +11,24 @@
 <body>
     <h1>DevClub - JavaScript Loops</h1>
     <ul class="no-bullets">
-        <li><a href="#for">For Loop</a></li>
-        <li><a href="#for-of">For-Of Loop</a></li>
-        <li><a href="#for-in">For-In Loop</a></li>
-        <li><a href="#while">While Loop</a></li>
-        <li><a href="#for-each">For-Each Loop</a></li>
-        <li><a href="#augm-param">Augments and Parameters</a></li>
-        <li><a href="#return">Return</a></li>
-        <li><a href="#break-continue">Break and Continue*</a></li>
-        <li><a href="#nested-loops">Nested Loops*</a></li>
-        <li><a href="#arrow-functions">Arrow Functions</a></li>
-        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
-        <li><a href="#callback-functions">Callback Functions*</a></li>
-        <li><a href="#enum">ENUM</a></li>
+        <li><a href="#featured" class="featured-ToC">Featured Program</a></li>
+        <li><a href="#for">Lesson 25 - For Loop</a></li>
+        <li><a href="#for-of">Lesson 26 - For-Of Loop</a></li>
+        <li><a href="#for-in">Lesson 27 - For-In Loop</a></li>
+        <li><a href="#while">Lesson 28 - While Loop</a></li>
+        <li><a href="#for-each">Lesson 29 - For-Each Loop</a></li>
+        <li><a href="#augm-param">Lesson 30 - Augments and Parameters</a></li>
+        <li><a href="#return">Lesson 31 - Return</a></li>
+        <li><a href="#break-continue">Lesson 32 - Break and Continue</a></li>
+        <li><a href="#nested-loops">Lesson 33 - Nested Loops</a></li>
+        <li><a href="#arrow-functions">Lesson 34 - Arrow Functions</a></li>
+        <li><a href="#anonymous-functions">Lesson 35 - Anonymous Functions</a></li>
+        <li><a href="#callback-functions">Lesson 36 - Callback Functions</a></li>
+        <li><a href="#enum">Lesson 37 - ENUM</a></li>
+        <li><a href="#calculator-project" class="featured-ToC">Project 05 - Calculator Project</a></li>
     </ul>
 
-    <h2 id="featured">Featured Programs</h2>
+    <h2 id="featured">Featured Program</h2>
     <!-- Sort Using a timeout function //funny -->
     <div id="sort-box" class="viewport-demo">
         <h3 style="width: 100%;margin: 5px;">Not-so-Efficient Sorting Algorithm</h3>
@@ -42,12 +44,12 @@
         </blockquote>
     </div>
 
-    <h2 id="for">For Loop</h2>
+    <h2 id="for">Lesson 25 - For Loop</h2>
     <!-- #region For Loop -->
         <pre>for(let i = 0; i < 10; i++) { function }</pre>
         <p>The for loop is used to iterate over a block of code a number of times.</p>
     <!-- #endregion For Loop -->
-    <h2 id="for-of">For-Of Loop</h2>
+    <h2 id="for-of">Lesson 26 - For-Of Loop</h2>
     <!-- #region For-Of Loop -->
         <pre>for <b>(</b><span>const</span> item <span>of</span> object<b>)</b> { 
     console.log(` ${item} : ${object[item]} `);        
@@ -56,20 +58,20 @@
            It provides a simpler syntax compared to the traditional for loop when working with iterables.</p>
         <p>The Example prints all attributes of the object with their values.</p>
     <!-- #endregion For-Of Loop -->
-    <h2 id="for-in">For-In Loop</h2>
+    <h2 id="for-in">Lesson 27 - For-In Loop</h2>
     <!-- #region For-In Loop -->
         <pre>for <b>(</b><span>const</span> key <span>in</span> object<b>)</b> { function }</pre>
         <p>The for-in loop is used to iterate over the enumerable properties of an object. 
            It allows you to access the keys of an object, but not the values directly.</p>
     <!-- #endregion For-In Loop -->
-    <h2 id="while">While, Do-While Loop</h2>
+    <h2 id="while">Lesson 28 - While, Do-While Loop</h2>
     <!-- #region While Loop -->
         <pre>while (condition) { function }</pre>
         <pre>do { function } while (condition);</pre>
         <p>The while loop executes a block of code as long as a specified condition is true. 
         <br>The do-while loop is similar, but it guarantees that the block of code will be executed at least once.</p>
     <!-- #endregion While Loop -->
-    <h2 id="for-each">For-Each Loop</h2>
+    <h2 id="for-each">Lesson 29 - For-Each Loop</h2>
     <!-- #region For-Each Loop -->
         <pre>array.forEach((item) => { function });</pre>
         <pre>array.forEach((item, index) => { function });</pre>
@@ -83,7 +85,7 @@
         </ul>
         <p><strong>Note:</strong> The forEach cannot be stopped by return or break like a traditional for loop.</p>
     <!-- #endregion For-Each Loop -->
-    <h2 id="augm-param">Augments and Parameters</h2>
+    <h2 id="augm-param">Lesson 30 - Augments and Parameters</h2>
     <!-- #region Augments and Parameters -->
         <pre><span>for</span> (const item <span>of</span> array) { function }</pre>
         <pre><span>for</span> (const key <span>in</span> object) { function }</pre>
@@ -105,20 +107,20 @@
             <li><code><span>function</span> example(<span>a</span>, <span>b</span>, <span>c</span>) { ... }</code></li>
         </ul>
     <!-- #endregion Augments and Parameters -->
-    <h2 id="return">Return</h2>
+    <h2 id="return">Lesson 31 - Return</h2>
     <!-- #region Return -->
         <pre><span>function</span> example() { <span>return</span> value; }</pre>
         <p>The return statement is used to exit a function and return a value to the caller. 
            It can be used to stop the execution of a function and provide a result back to the code that called the function.</p>
     <!-- #endregion Return -->
-    <h2 id="break-continue">Break and Continue*</h2>
+    <h2 id="break-continue">Lesson 32 - Break and Continue</h2>
     <!-- #region Break and Continue -->
         <pre><span>break</span>;</pre>
         <pre><span>continue</span>;</pre>
         <p>The break statement is used to exit a loop or switch statement prematurely, 
            while the continue statement is used to skip the current iteration of a loop and move on to the next one.</p>
     <!-- #endregion Break and Continue -->
-    <h2 id="nested-loops">Nested Loops*</h2>
+    <h2 id="nested-loops">Lesson 33 - Nested Loops</h2>
     <!-- #region Nested Loops -->
         <pre><span>for</span> (let i = 0; i < 5; i++) {
     <span>for</span> (let j = 0; j < 5; j++) {
@@ -127,19 +129,19 @@
 }</pre>
         <p>Nested loops are loops that are contained within another loop.</p>
     <!-- #endregion Nested Loops -->
-    <h2 id="arrow-functions">Arrow Functions</h2>
+    <h2 id="arrow-functions">Lesson 34 - Arrow Functions</h2>
     <!-- #region Arrow Functions -->
         <pre><span>const</span> example = (<span>parameters</span>) => { function }</pre>
         <p>Arrow functions are a more concise syntax for writing function expressions in JavaScript. 
            They are often used for short, simple functions and can help improve readability.</p>
         <p>Arrow functions do not have their own `this` context, which makes them useful for preserving the context of `this` in callbacks and event handlers.</p>
     <!-- #endregion Arrow Functions -->
-    <h2 id="anonymous-functions">Anonymous Functions</h2>
+    <h2 id="anonymous-functions">Lesson 35 - Anonymous Functions</h2>
     <!-- #region Anonymous Functions -->
         <pre><span>function</span> (<span>parameters</span>) { function }</pre>
         <p>Anonymous functions are functions that do not have a name.</p>
     <!-- #endregion Anonymous Functions -->
-    <h2 id="callback-functions">Callback Functions*</h2>
+    <h2 id="callback-functions">Lesson 36 - Callback Functions</h2>
     <!-- #region Callback Functions -->
         <pre><span>function</span> example(<span>callback</span>) { callback(); }</pre>
         <p>Callback functions are functions that are passed as arguments to other functions and 
@@ -147,12 +149,37 @@
         <p>They are commonly used for asynchronous operations, such as handling user input, making API calls, 
            or performing tasks after a delay.</p>
     <!-- #endregion Callback Functions -->
-    <h2 id="enum">ENUM</h2>
+    <h2 id="enum">Lesson 37 - ENUM</h2>
     <!-- #region ENUM -->
         <pre><span>const</span> Colors = { RED: 'red', GREEN: 'green', BLUE: 'blue' };</pre>
         <p>An enum (short for "enumeration") is a data structure that allows you to define a set of named constants. 
            In JavaScript, you can create an enum using an object, where the keys represent the names of the constants and the values represent their corresponding values.</p>
     <!-- #endregion ENUM -->
+    <h2 id="calculator-project">Lesson 38 - Calculator Project</h2>
+    <!-- #region Calculator Project -->
+        <div class="project-content">
+            <div class="project-live">
+                <h4>Live Site</h4>
+                <div class="project-live-preview">
+                    <iframe src="../Standalone_projects/Project05-Calculator/index.html" title="Project 05 - Calculator"></iframe>
+                </div>
+            </div>
+            <div>
+                <ul style="font-size: 0.9rem;">
+                    <h4>Features</h4>
+                        <li>Working Calculator</li>
+                        <li>Some input corrections</li>
+                        <li>Responsive</li>
+                        <li>CSS Animations</li>
+                        <li>Keyboard Enabled</li>
+                        <li>Ctrl C / Ctrl V</li>
+                        <li>Custom functions (no use of eval())</li>
+                </ul>
+            </div>
+        </div>
+    <!-- #endregion Calculator Project -->
+
+
     <br>
     <button onclick="history.back()">Go Back</button>
     <br><br><br><br>
