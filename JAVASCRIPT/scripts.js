@@ -1,4 +1,11 @@
 // Generic functions for the exercises, not related to any specific exercise
+//#region Prototype extensions
+// Adding a sum method to the Array prototype for convenience in the reduce exercise
+Array.prototype.sum = function() {
+    return this.reduce((acc, item) => acc + item, 0);
+};
+
+
 //#region Generic functions
 function clearInput(element, allowDecimal = false) {
     // Remove all non-numeric characters except dot and comma
@@ -163,8 +170,12 @@ function generateRandomNumber() {
 
 // Funky Sorter
 //#region Funky Sorter
-document.getElementById('FS-btn-populate').addEventListener('click', populateArray);
-document.getElementById('FS-btn-sort').addEventListener('click', funkySort);
+if (document.getElementById('FS-btn-populate')) {
+    document.getElementById('FS-btn-populate').addEventListener('click', populateArray);
+}
+if (document.getElementById('FS-btn-sort')) {
+    document.getElementById('FS-btn-sort').addEventListener('click', funkySort);
+}
 
 function populateArray() {
     const array = document.getElementById('FS-array-visualizer');
@@ -183,8 +194,6 @@ function funkySort() {
     const numbers = array.innerText.split(', ').map(Number); // Convert string to array of numbers
     
     const TIMEOUTMULTIPLIER = 200; // Multiplier for the sleep time
-
-    console.log(array);
 
     if (array.innerHTML.length === 0) {
         output.innerText = 'Please populate the array first!';
@@ -218,44 +227,37 @@ function funkySort() {
 // MAP(), FILTER(), REDUCE() exercises
 //#region MAP(), FILTER(), REDUCE() exercises
 
-const Person = {
-    name: 'Ariel',
-    age: 34,
-    TicketTier: 3 // 1 = Regular, 2 = VIP, 3 = VVIP
-};
-
-// Populate an array of people for exercises
 const guestList = [
-    { name: 'Alice', age: 12, ticketTier: 2 },
-    { name: 'Bob', age: 8, ticketTier: 1 },
-    { name: 'Charlie', age: 15, ticketTier: 3 },
-    { name: 'Diana', age: 19, ticketTier: 1 },
-    { name: 'Eve', age: 10, ticketTier: 2 },
-    { name: 'Frank', age: 7, ticketTier: 1 },
-    { name: 'Grace', age: 16, ticketTier: 2 },
-    { name: 'Henry', age: 20, ticketTier: 3 },
-    { name: 'Ivy', age: 6, ticketTier: 1 },
-    { name: 'Jack', age: 14, ticketTier: 2 },
-    { name: 'Kate', age: 9, ticketTier: 1 },
-    { name: 'Liam', age: 11, ticketTier: 1 },
-    { name: 'Mia', age: 18, ticketTier: 2 },
-    { name: 'Noah', age: 13, ticketTier: 2 },
-    { name: 'Olivia', age: 21, ticketTier: 1 },
-    { name: 'Peter', age: 50, ticketTier: 3 },
-    { name: 'Quinn', age: 34, ticketTier: 2 },
-    { name: 'Ryan', age: 27, ticketTier: 1 },
-    { name: 'Sophia', age: 39, ticketTier: 2 },
-    { name: 'Tyler', age: 44, ticketTier: 3 },
-    { name: 'Uma', age: 30, ticketTier: 1 },
-    { name: 'Victor', age: 48, ticketTier: 2 },
-    { name: 'Wendy', age: 35, ticketTier: 2 },
-    { name: 'Xander', age: 23, ticketTier: 1 },
-    { name: 'Yara', age: 42, ticketTier: 3 },
-    { name: 'Zoe', age: 37, ticketTier: 2 },
-    { name: 'Aaron', age: 46, ticketTier: 3 },
-    { name: 'Bella', age: 24, ticketTier: 1 },
-    { name: 'Caleb', age: 49, ticketTier: 2 },
-    { name: 'Daisy', age: 32, ticketTier: 1 }
+    { name: 'Alice', lastName: 'Smith', age: 12, ticketTier: 2 },
+    { name: 'Bob', lastName: 'Johnson', age: 8, ticketTier: 1 },
+    { name: 'Charlie', lastName: 'Williams', age: 15, ticketTier: 3 },
+    { name: 'Diana', lastName: 'Brown', age: 19, ticketTier: 1 },
+    { name: 'Eve', lastName: 'Davis', age: 10, ticketTier: 2 },
+    { name: 'Frank', lastName: 'Moore', age: 7, ticketTier: 1 },
+    { name: 'Grace', lastName: 'Johnson', age: 16, ticketTier: 2 },
+    { name: 'Henry', lastName: 'Moore', age: 20, ticketTier: 3 },
+    { name: 'Ivy', lastName: 'Smith', age: 6, ticketTier: 1 },
+    { name: 'Jack', lastName: 'Anderson', age: 14, ticketTier: 2 },
+    { name: 'Kate', lastName: 'Thomas', age: 9, ticketTier: 1 },
+    { name: 'Liam', lastName: 'Jackson', age: 11, ticketTier: 1 },
+    { name: 'Mia', lastName: 'White', age: 18, ticketTier: 2 },
+    { name: 'Noah', lastName: 'Harris', age: 13, ticketTier: 2 },
+    { name: 'Olivia', lastName: 'Martin', age: 21, ticketTier: 1 },
+    { name: 'Peter', lastName: 'White', age: 50, ticketTier: 3 },
+    { name: 'Quinn', lastName: 'Anderson', age: 34, ticketTier: 2 },
+    { name: 'Ryan', lastName: 'Martinez', age: 27, ticketTier: 1 },
+    { name: 'Sophia', lastName: 'Robinson', age: 39, ticketTier: 2 },
+    { name: 'Tyler', lastName: 'White', age: 44, ticketTier: 3 },
+    { name: 'Uma', lastName: 'Rodriguez', age: 30, ticketTier: 1 },
+    { name: 'Victor', lastName: 'Lewis', age: 48, ticketTier: 2 },
+    { name: 'Wendy', lastName: 'Anderson', age: 35, ticketTier: 2 },
+    { name: 'Xander', lastName: 'Turner', age: 23, ticketTier: 1 },
+    { name: 'Yara', lastName: 'Perez', age: 42, ticketTier: 3 },
+    { name: 'Zoe', lastName: 'Sanchez', age: 37, ticketTier: 2 },
+    { name: 'Aaron', lastName: 'Robinson', age: 46, ticketTier: 3 },
+    { name: 'Bella', lastName: 'Robinson', age: 24, ticketTier: 1 },
+    { name: 'Caleb', lastName: 'Martinez', age: 49, ticketTier: 2 },
+    { name: 'Daisy', lastName: 'Robinson', age: 32, ticketTier: 1 }
 ];
 
 const AccessAreas = [
@@ -281,26 +283,65 @@ const AccessAreas = [
     { ticketTier: 3, area: 'Helipad Access', minimumAge: 30 }
 ];
 
+const TicketData = [
+    { ticketTier: 1, ticketName: 'Regular Guest', price: 100 , style: 'background: #00f00077;'},
+    { ticketTier: 2, ticketName: 'VIP Guest', price: 250 , style: 'background: #0000f077;'},
+    { ticketTier: 3, ticketName: 'Golden Guest', price: 500 , style: 'background: #ffd70077; !important;'}
+];
+
 
 function populateGuests() {
-    const guestsList = document.getElementById('MRF-guests-list');
-    guestsList.innerHTML = ''; // Clear previous content
+    const tempList = '';
+    const HTML_List = document.getElementById('MRF-guest-list');
+    if (!HTML_List) return; // Exit if element not found
 
-    guestList.forEach(guest => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${guest.name} (Age: ${guest.age}, Ticket Tier: ${guest.ticketTier})`;
-        guestsList.appendChild(listItem);
-    });
+    HTML_List.innerHTML = ''; // Clear previous content
+
+    guestList
+        .map(guest => {
+            let temp = {
+                label: `${guest.name} ${guest.lastName} (${guest.age})`,
+                name: guest.name,
+                lastName: guest.lastName,
+                Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;'
+            }
+
+            return temp;
+        })
+        .sort((a, b) => a.lastName.localeCompare(b.lastName) || a.label.localeCompare(b.label)) // Sort by ticket lastName, name
+        .forEach(guest => {
+            const listItem = document.createElement('a');
+            listItem.textContent = guest.label;
+            listItem.style = guest.Style;
+            listItem.onclick = () => searchGuests(guest.name);
+            listItem.classList.add('MRF');
+
+            HTML_List.appendChild(listItem);
+        }); // Populate the list with sorted guests
 }
+
 function populateAreas() {
-    const areasList = document.getElementById('MRF-areas-list');
+    const areasList = document.getElementById('MRF-atractions');
+    if (!areasList) return; // Exit if element not found
+
     areasList.innerHTML = ''; // Clear previous content
 
-    AccessAreas.forEach(area => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${area.area} (Ticket Tier: ${area.ticketTier}, Minimum Age: ${area.minimumAge})`;
-        areasList.appendChild(listItem);
-    });
+    AccessAreas
+        .sort((a, b) => b.ticketTier - a.ticketTier || a.area.localeCompare(b.area)) 
+        .map(area => {
+            return {
+                area: area.area,
+                style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;',
+                minimumAge: area.minimumAge
+            }
+        }).forEach(area => {
+            const listItem = document.createElement('a');
+            listItem.textContent = `${area.area} (Minimum Age: ${area.minimumAge})`;
+            listItem.style = area.style;
+            listItem.classList.add('MRF');
+            listItem.onclick = () => searchGuestsByArea(area.area);
+            areasList.appendChild(listItem);
+        }); // Populate the list with sorted access areas
 }
 
 function onLoadPopulate() {
@@ -308,10 +349,36 @@ function onLoadPopulate() {
     populateAreas();
 }
 
-document.addEventListener('DOMContentLoaded', onLoadPopulate);
-ñ
+onLoadPopulate(); //defer make it so that this runs after the DOM is fully loaded
 
+function searchGuests(name) {
+    const guestData = document.getElementById('MRF-guest');
+    if (!guestData) return; // Exit if element not found
 
+    let guest = guestList.find(guest => guest.name === name);
+    guestData.innerHTML = `${guest.name} ${guest.lastName} (${guest.age}) \n\nAccessible Areas:\n`;
+    guestData.innerHTML += AccessAreas
+                        .filter(area => area.ticketTier <= guest.ticketTier && guest.age >= area.minimumAge)
+                        .sort((a, b) => b.ticketTier - a.ticketTier || a.area.localeCompare(b.area))
+                        .map(area => `- ${area.area}`)
+                        .join('\n');
 
+    guestData.hidden = !(guestData.innerHTML.length); // Hide the element if no guest is found, show it otherwise
+}   
+
+function searchGuestsByArea(areaName) {
+    const guestData = document.getElementById('MRF-guest');
+    if (!guestData) return; // Exit if element not found
+
+    let area = AccessAreas.find(area => area.area === areaName);
+    guestData.innerHTML = `Guests with access to ${area.area}:\n\n`;
+    guestData.innerHTML += guestList
+                        .filter(guest => guest.ticketTier >= area.ticketTier && guest.age >= area.minimumAge)
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map(guest => `- ${guest.name} ${guest.lastName} (${guest.age})`)
+                        .join('\n');
+    
+    guestData.hidden = !(guestData.innerHTML.length); // Hide the element if no guest is found, show it otherwise
+}
 
 //#endregion MAP(), FILTER(), REDUCE() exercises

@@ -21,16 +21,19 @@
     </ul>
 
     <h2>Featured Program - MAP, REDUCE, FILTER</h2> <!-- (MRF) for short -->
+    <p>Click on a guest or attraction to view details.</p>
     <div class="featured-program">
-        <div id="MRF-display">
-            <ul id="MRF-gest-list" class="no-bullets"></ul>
-            <ul id="MRF-Atractions" class="no-bullets"></ul>
+        <div id="MRF-display"> 
+            <div>
+                <h3>Guest List</h3>
+            <ul id="MRF-guest-list" class="no-bullets"></ul>
+            </div>
+            <div>
+                <h3>Attractions</h3>
+                <ul id="MRF-atractions" class="no-bullets"></ul>
+            </div>
         </div>
-        <label for="MRF-guest">Search Guests
-            <input type="text" id="MRF-guest" placeholder="Enter guest name...">
-        </label>
-        <label for="MRF-guest"></label>
-        <textarea name="MRF-guest" id="MRF-guest" readonly></textarea>
+        <pre name="MRF-guest" id="MRF-guest" readonly hidden></pre>
     </div>
 
 
@@ -55,6 +58,23 @@
     <!-- #endregion MAP -->
     <h2 id="reduce">Lesson 39 - REDUCE()</h2>
     <!-- #region REDUCE -->
+    <p>Reduce executes a reducer function on each element of the array, resulting in a single output value.</p>
+    <ul>
+        <li><code>const result = array.reduce(callback(accumulator, currentValue, index, array), initialValue);</code>
+            <blockquote><strong>How it works:</strong>
+            <p><strong>Callback function:</strong> Called once for each element, receiving:</p>
+            <p><strong>accumulator:</strong> The accumulated value from the previous callback call (or initialValue on the first call)</p>
+            <p><strong>currentValue:</strong> The current array element</p>
+            <p><strong>index (optional):</strong> The index of the current element</p>
+            <p><strong>array (optional):</strong> The array being traversed</p>
+            <p><strong>initialValue (optional):</strong> A value to use as the first argument to the first call of the callback. If not provided, the first element of the array will be used as the initial accumulator value and iteration will start from the second element.</p>
+            <p><strong>Return value:</strong> The single output value resulting from the reduction</p>
+            </blockquote>
+        </li>
+        <li>it can be used as a arrow function: <code>const sum = array.reduce((acc, item) => acc + item, 0);</code></li>
+        <li>it can be used with an anonymous function: <code>const sum = array.reduce(function(acc, item) { return acc + item; }, 0);</code></li>
+    </ul>
+
     <!-- #endregion REDUCE -->
     <h2 id="filter">Lesson 40 - FILTER()</h2>
     <!-- #region FILTER -->
@@ -62,6 +82,17 @@
     <h2 id="array-methods">Lesson 41 - Array Methods</h2>
     <!-- #region Array Methods -->
     <!-- #endregion Array Methods -->
+    <h2>BONUS : Prototyping</h2>
+    <!-- #region Prototyping -->
+    <p>When i saw the .reduce() method, i discovered that functions like .sum() from LINQ doesn't exist in JavaScript, but we can create our own using prototypes.</p>
+    <pre>Array.prototype.sum = function() {
+    return this.reduce((acc, item) => acc + item, 0);
+};</pre>
+    <p>Now we can use the .sum() method on any array of numbers:</p>
+    <pre>const numbers = [1, 2, 3, 4, 5];
+const total = numbers.sum(); // total will be 15</pre>
+    <p><strong>Note:</strong> This approach modifies the Array prototype, which can have unintended consequences if not used carefully. (can cause conflicts with other code/libraries)</p>
+    <!-- #endregion Prototyping -->
     <h2 id="final-project">Project 06 - Final Project</h2>
     <!-- #region Final Project -->
     <!-- #endregion Final Project -->

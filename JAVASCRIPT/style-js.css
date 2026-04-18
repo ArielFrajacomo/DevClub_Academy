@@ -104,6 +104,43 @@
 #MRF-display {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
     margin-top: 20px;
+}
+
+#MRF-display ul {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+}
+
+#MRF-guest-list, #MRF-atractions {
+    /* max height, scroll bar */
+    max-height: 67vh;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    columns: 1;
+}
+
+a:is(.MRF) {
+    padding: 5px;
+    margin: 2px ;
+    color: black;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px ;
+}
+
+#MRF-guest {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+#MRF-guest:hidden {
+    display: none;
 }
