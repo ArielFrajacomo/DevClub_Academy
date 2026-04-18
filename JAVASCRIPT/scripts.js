@@ -214,3 +214,104 @@ function funkySort() {
     }, Math.max(...numbers) * TIMEOUTMULTIPLIER + TIMEOUTMULTIPLIER); // Wait for the longest sleep time plus a little extra to ensure all elements are processed
 }
 //#endregion Funky Sorter
+
+// MAP(), FILTER(), REDUCE() exercises
+//#region MAP(), FILTER(), REDUCE() exercises
+
+const Person = {
+    name: 'Ariel',
+    age: 34,
+    TicketTier: 3 // 1 = Regular, 2 = VIP, 3 = VVIP
+};
+
+// Populate an array of people for exercises
+const guestList = [
+    { name: 'Alice', age: 12, ticketTier: 2 },
+    { name: 'Bob', age: 8, ticketTier: 1 },
+    { name: 'Charlie', age: 15, ticketTier: 3 },
+    { name: 'Diana', age: 19, ticketTier: 1 },
+    { name: 'Eve', age: 10, ticketTier: 2 },
+    { name: 'Frank', age: 7, ticketTier: 1 },
+    { name: 'Grace', age: 16, ticketTier: 2 },
+    { name: 'Henry', age: 20, ticketTier: 3 },
+    { name: 'Ivy', age: 6, ticketTier: 1 },
+    { name: 'Jack', age: 14, ticketTier: 2 },
+    { name: 'Kate', age: 9, ticketTier: 1 },
+    { name: 'Liam', age: 11, ticketTier: 1 },
+    { name: 'Mia', age: 18, ticketTier: 2 },
+    { name: 'Noah', age: 13, ticketTier: 2 },
+    { name: 'Olivia', age: 21, ticketTier: 1 },
+    { name: 'Peter', age: 50, ticketTier: 3 },
+    { name: 'Quinn', age: 34, ticketTier: 2 },
+    { name: 'Ryan', age: 27, ticketTier: 1 },
+    { name: 'Sophia', age: 39, ticketTier: 2 },
+    { name: 'Tyler', age: 44, ticketTier: 3 },
+    { name: 'Uma', age: 30, ticketTier: 1 },
+    { name: 'Victor', age: 48, ticketTier: 2 },
+    { name: 'Wendy', age: 35, ticketTier: 2 },
+    { name: 'Xander', age: 23, ticketTier: 1 },
+    { name: 'Yara', age: 42, ticketTier: 3 },
+    { name: 'Zoe', age: 37, ticketTier: 2 },
+    { name: 'Aaron', age: 46, ticketTier: 3 },
+    { name: 'Bella', age: 24, ticketTier: 1 },
+    { name: 'Caleb', age: 49, ticketTier: 2 },
+    { name: 'Daisy', age: 32, ticketTier: 1 }
+];
+
+const AccessAreas = [
+    { ticketTier: 1, area: 'Main Pool', minimumAge: 10 },
+    { ticketTier: 1, area: 'Beach Access', minimumAge: 12 },
+    { ticketTier: 1, area: 'Buffet Restaurant', minimumAge: 10 },
+    { ticketTier: 1, area: 'Arcade', minimumAge: 6 },
+    { ticketTier: 1, area: 'Mini Golf', minimumAge: 15 },
+    { ticketTier: 1, area: 'Tennis Court', minimumAge: 13 },
+    { ticketTier: 1, area: 'Spa Entrance', minimumAge: 18 },
+    { ticketTier: 1, area: 'Gym', minimumAge: 16 },
+    { ticketTier: 1, area: 'Karaoke Lounge', minimumAge: 15 },
+    { ticketTier: 1, area: 'Nightclub', minimumAge: 21 },
+    
+    { ticketTier: 2, area: 'Private Cabanas', minimumAge: 18 },
+    { ticketTier: 2, area: 'VIP Spa', minimumAge: 20 },
+    { ticketTier: 2, area: 'Exclusive Restaurant', minimumAge: 21 },
+    { ticketTier: 2, area: 'Yacht Club', minimumAge: 22 },
+    { ticketTier: 2, area: 'Rooftop Bar', minimumAge: 25 },
+    
+    { ticketTier: 3, area: 'Presidential Suite', minimumAge: 21 },
+    { ticketTier: 3, area: 'Private Yacht', minimumAge: 25 },
+    { ticketTier: 3, area: 'Helipad Access', minimumAge: 30 }
+];
+
+
+function populateGuests() {
+    const guestsList = document.getElementById('MRF-guests-list');
+    guestsList.innerHTML = ''; // Clear previous content
+
+    guestList.forEach(guest => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${guest.name} (Age: ${guest.age}, Ticket Tier: ${guest.ticketTier})`;
+        guestsList.appendChild(listItem);
+    });
+}
+function populateAreas() {
+    const areasList = document.getElementById('MRF-areas-list');
+    areasList.innerHTML = ''; // Clear previous content
+
+    AccessAreas.forEach(area => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${area.area} (Ticket Tier: ${area.ticketTier}, Minimum Age: ${area.minimumAge})`;
+        areasList.appendChild(listItem);
+    });
+}
+
+function onLoadPopulate() {
+    populateGuests();
+    populateAreas();
+}
+
+document.addEventListener('DOMContentLoaded', onLoadPopulate);
+ñ
+
+
+
+
+//#endregion MAP(), FILTER(), REDUCE() exercises

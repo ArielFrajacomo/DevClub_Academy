@@ -20,8 +20,38 @@
         <li><a href="#final-project" class="featured-ToC">Project 06 - Final Project</a></li>
     </ul>
 
+    <h2>Featured Program - MAP, REDUCE, FILTER</h2> <!-- (MRF) for short -->
+    <div class="featured-program">
+        <div id="MRF-display">
+            <ul id="MRF-gest-list" class="no-bullets"></ul>
+            <ul id="MRF-Atractions" class="no-bullets"></ul>
+        </div>
+        <label for="MRF-guest">Search Guests
+            <input type="text" id="MRF-guest" placeholder="Enter guest name...">
+        </label>
+        <label for="MRF-guest"></label>
+        <textarea name="MRF-guest" id="MRF-guest" readonly></textarea>
+    </div>
+
+
     <h2 id="map">Lesson 38 - MAP()</h2>
     <!-- #region MAP -->
+    <p>Map creates a new array with the results of calling a function for every array element.</p>
+    <ul>
+        <li><code>const newArray = array.map(callback(element, index, array), thisArg);</code>
+            <blockquote><strong>How it works:</strong>
+            <p><strong>Callback function:</strong> Called once for each element, receiving:</p>
+            <p><strong>element:</strong> The current array element</p>
+            <p><strong>index (optional):</strong> The index of the current element</p>
+            <p><strong>array (optional):</strong> The array being traversed</p>
+            <p><strong>thisArg (optional):</strong> Value to use as this inside the callback</p>
+            <p><strong>Return value:</strong> A new array with the results of each callback call</p>
+            </blockquote>
+        </li>
+        <li>it can be used as a arrow function: <code>const newArray = array.map((item) => item * 2);</code></li>
+        <li>it can be used with an anonymous function: <code>const newArray = array.map(function(item) { return item * 2; });</code></li>
+    </ul>
+    <p><strong>Note:</strong> The original array is not modified.</p>
     <!-- #endregion MAP -->
     <h2 id="reduce">Lesson 39 - REDUCE()</h2>
     <!-- #region REDUCE -->
