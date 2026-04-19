@@ -302,14 +302,20 @@ function populateGuests() {
 
     guestList
         .map(guest => {
-            let temp = {
-                label: `${guest.name} ${guest.lastName} (${guest.age})`,
-                name: guest.name,
-                lastName: guest.lastName,
-                Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;'
-            }
+            return {
+                ...guest,
+                Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;',
+                label: `${guest.name} ${guest.lastName} (${TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.ticketName || 'Unknown Ticket'})`
+            };
 
-            return temp;
+            // 1st iteration, without using spread operator:
+            // let temp = {
+            //     label: `${guest.name} ${guest.lastName} (${guest.age})`,
+            //     name: guest.name,
+            //     lastName: guest.lastName,
+            //     Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;'
+            // }
+            // return temp;
         })
         .sort((a, b) => a.lastName.localeCompare(b.lastName) || a.label.localeCompare(b.label)) // Sort by ticket lastName, name
         .forEach(guest => {
@@ -333,10 +339,15 @@ function populateAreas() {
         .sort((a, b) => b.ticketTier - a.ticketTier || a.area.localeCompare(b.area)) 
         .map(area => {
             return {
-                area: area.area,
-                style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;',
-                minimumAge: area.minimumAge
-            }
+                ...area,
+                style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;'
+            };
+            // 1st iteration, without using spread operator:
+            // return {
+            //     area: area.area,
+            //     minimumAge: area.minimumAge,
+            //     style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;'
+            // }
         }).forEach(area => {
             const listItem = document.createElement('a');
             listItem.textContent = `${area.area} (Minimum Age: ${area.minimumAge})`;
