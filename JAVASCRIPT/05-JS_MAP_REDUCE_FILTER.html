@@ -58,7 +58,7 @@
     <!-- #endregion MAP -->
     <h2 id="reduce">Lesson 39 - REDUCE()</h2>
     <!-- #region REDUCE -->
-    <p>Reduce executes a reducer function on each element of the array, resulting in a single output value.</p>
+    <p>Reduce executes a function on each element of the array, resulting in a single output value.</p>
     <ul>
         <li><code>const result = array.reduce(callback(accumulator, currentValue, index, array), initialValue);</code>
             <blockquote><strong>How it works:</strong>
@@ -78,9 +78,37 @@
     <!-- #endregion REDUCE -->
     <h2 id="filter">Lesson 40 - FILTER()</h2>
     <!-- #region FILTER -->
+    <p>Filter creates a new array with elements based on the test implemented in the function.</p>
+    <ul>
+        <li><code>const newArray = array.filter(callback(element, index, array), thisArg);</code>
+            <blockquote><strong>How it works:</strong>
+            <p><strong>Callback function:</strong> Called once for each element, receiving:</p>
+            <p><strong>element:</strong> The current array element</p>
+            <p><strong>index (optional):</strong> The index of the current element</p>
+            <p><strong>array (optional):</strong> The array being traversed</p>
+            <p><strong>thisArg (optional):</strong> Value to use as this inside the callback</p>
+            <p><strong>Return value:</strong> A new array with the elements that pass the test (callback returns true)</p>
+            </blockquote>
+        </li>
+        <li>it can be used as a arrow function: <code>const evenNumbers = array.filter((item) => item % 2 === 0);</code></li>
+        <li>it can be used with an anonymous function: <code>const evenNumbers = array.filter(function(item) { return item % 2 === 0; });</code></li>
+    </ul>
     <!-- #endregion FILTER -->
     <h2 id="array-methods">Lesson 41 - Array Methods</h2>
     <!-- #region Array Methods -->
+    <ul>
+        <!-- <li><strong>push():</strong> Adds one or more elements to the end of an array and returns the new length.</li>
+        <li><strong>pop():</strong> Removes the last element from an array and returns that element.</li>
+        <li><strong>shift():</strong> Removes the first element from an array and returns that element.</li>
+        <li><strong>unshift():</strong> Adds one or more elements to the beginning of an array and returns the new length.</li>
+        <br>
+        <li><strong>slice():</strong> Returns a shallow copy of a portion of an array into a new array object.</li>
+        <li><strong>splice():</strong> Changes the contents of an array by removing or replacing existing elements and/or adding new elements.</li>
+        <br>
+        <li><strong>indexOf():</strong> Returns the first index at which a given element can be found in the array, or -1 if it is not present.</li>
+        <li><strong>lastIndexOf():</strong> Returns the last index at which a given element can be found in the array, or -1 if it is not present.</li>
+         -->
+    </ul>
     <!-- #endregion Array Methods -->
     <h2>BONUS : Prototyping</h2>
     <!-- #region Prototyping -->
@@ -96,7 +124,6 @@ const total = numbers.sum(); // total will be 15</pre>
     <h2 id="final-project">Project 06 - Final Project</h2>
     <!-- #region Final Project -->
     <!-- #endregion Final Project -->
-
     <br>
     <button onclick="history.back()">Go Back</button>
     <br><br><br><br>

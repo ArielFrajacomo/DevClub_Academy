@@ -1,10 +1,4 @@
 // Generic functions for the exercises, not related to any specific exercise
-//#region Prototype extensions
-// Adding a sum method to the Array prototype for convenience in the reduce exercise
-Array.prototype.sum = function() {
-    return this.reduce((acc, item) => acc + item, 0);
-};
-
 
 //#region Generic functions
 function clearInput(element, allowDecimal = false) {
@@ -289,6 +283,15 @@ const TicketData = [
     { ticketTier: 3, ticketName: 'Golden Guest', price: 500 , style: 'background: #ffd70077; !important;'}
 ];
 
+//#region Prototype extensions
+// Adding a sum method to the Array prototype for convenience in the reduce exercise
+Array.prototype.protoSUM = function() {
+    return this.reduce((acc, item) => acc + item, 0);
+};
+Array.prototype.protoAVG = function() {
+    return this.protoSUM() / this.length;
+}
+
 
 function populateGuests() {
     const tempList = '';
@@ -371,7 +374,11 @@ function searchGuestsByArea(areaName) {
     if (!guestData) return; // Exit if element not found
 
     let area = AccessAreas.find(area => area.area === areaName);
-    guestData.innerHTML = `Guests with access to ${area.area}:\n\n`;
+    let averageAge = guestList
+                        .filter(guest => guest.ticketTier >= area.ticketTier && guest.age >= area.minimumAge)
+                        .map(guest => guest.age).protoAVG().toFixed(1); // Calculate the average age
+    
+    guestData.innerHTML = `Guests with access to ${area.area} (Average age:${averageAge}+):\n\n`;
     guestData.innerHTML += guestList
                         .filter(guest => guest.ticketTier >= area.ticketTier && guest.age >= area.minimumAge)
                         .sort((a, b) => a.name.localeCompare(b.name))
