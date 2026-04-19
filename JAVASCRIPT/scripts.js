@@ -304,7 +304,7 @@ function populateGuests() {
         .map(guest => {
             return {
                 ...guest,
-                Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;',
+                Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'background: #00000077;',
                 label: `${guest.name} ${guest.lastName} (${TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.ticketName || 'Unknown Ticket'})`
             };
 
@@ -313,7 +313,7 @@ function populateGuests() {
             //     label: `${guest.name} ${guest.lastName} (${guest.age})`,
             //     name: guest.name,
             //     lastName: guest.lastName,
-            //     Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'color: #00000077;'
+            //     Style: TicketData.find(ticket => ticket.ticketTier === guest.ticketTier)?.style || 'background: #00000077;'
             // }
             // return temp;
         })
@@ -340,13 +340,13 @@ function populateAreas() {
         .map(area => {
             return {
                 ...area,
-                style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;'
+                style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'background: #00000077;'
             };
             // 1st iteration, without using spread operator:
             // return {
             //     area: area.area,
             //     minimumAge: area.minimumAge,
-            //     style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'color: #00000077;'
+            //     style: TicketData.find(ticket => ticket.ticketTier === area.ticketTier)?.style || 'background: #00000077;'
             // }
         }).forEach(area => {
             const listItem = document.createElement('a');
