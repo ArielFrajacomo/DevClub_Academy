@@ -148,6 +148,12 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
  - Ctrl C / Ctrl V
  - Custom functions (no use of eval())
 
+### Map, Reduce, Filter, Array Methods
+- map(), reduce(), filter()
+- Array Methods
+- Bonus: Prototyping, Spread Operator
+> I was surprised to see that there's no .sum() in js, created protoSUM() and protoAVG() with non-generic name to avoid conflicts with future code/libraries
+
 
 
 

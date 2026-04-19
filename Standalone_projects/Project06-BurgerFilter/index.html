@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="price-range-slider.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Project 06 - Burger Filter (pt-BR)</h1>
+    <main>
+        <div class="filter-container">
+            <div id="vegan" class="price-filter flex-column">
+                <div class="price-header">Filtrar por Vegano</div>
+                <label class="header-subtext"><input type="radio" name="vegan-options" value="all" checked> All</label>
+                <label class="header-subtext"><input type="radio" name="vegan-options" value="vegan"> Vegano</label>
+                <label class="header-subtext"><input type="radio" name="vegan-options" value="non-vegan"> Não Vegano</label>
+            </div>
+            <div id="myPriceSlider"></div> <!-- imported feature  -->
+            <div id="discount-cupon" class="price-filter flex-column">
+                <div class="price-header">Cupom de Desconto</div>
+                <label class="header-subtext"><input type="radio" name="discount" value="00%" checked> Sem Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" value="10%"> 10% Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" value="30%"> 30% Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" value="50%"> 50% Desconto</label>
+            </div>
+        </div>
+        <div id="burger-list" class="burger-list">
+        </div>
+    </main>
+    
+</body>
+</html>

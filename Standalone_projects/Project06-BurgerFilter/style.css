@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+:root {
+    --text-color: #f0f0f0;
+    --accent-color: #ff9900;
+    --background-color: #222222;
+
+    --slider-track-color: #ddd;
+    --shadow-color: rgba(0,0,0,0.1);
+    --imput-shadow-color: rgba(0,0,0,0.25);
+
+    --price-text: Preço;
+    --currency-symbol: R$;
+    --currency-locale: pt-BR;
+}
+
+body {
+    background: #000000; /* fixed color */
+    color: var(--text-color);
+    padding: 24px 0;
+}
+
+h1 {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 24px;
+
+    display: block;
+    position: relative;
+    height: 2em;
+    margin: 0.5em 0.5em;
+}
+
+main {
+    background: var(--background-color);
+    border: 1px solid #666;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px;
+
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+    width: 20%;
+    min-width: 200px;
+}
+
+.price-filter {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 16px 18px;
+    max-width: 280px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.price-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.header-subtext {
+      font-size: 13px;
+      color: var(--text-color);
+      margin-bottom: 16px;
+}
+
+input[type="radio"] {
+    accent-color: var(--accent-color);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card {
+    background: var(--background-color);
+    border: 1px solid var(--slider-track-color);
+    border-radius: 5px;
+    padding: 16px 18px;
+    max-width: 280px;
+    height: 245px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+.menu-card-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.burger-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    transition: all 0.4s ease-in-out;
+}

@@ -15,7 +15,6 @@
     /* Apply box-sizing to all elements */
     box-sizing: border-box;
     /* border-box ensures padding and border are included in the element's total width and height */
-
     outline: none;
 }
 

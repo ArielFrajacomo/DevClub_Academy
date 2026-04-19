@@ -163,6 +163,7 @@ const total = numbers.sum(); // total will be 15</pre>
         <p><strong>Note:</strong> This approach modifies the Array prototype, which can have unintended consequences if not used carefully. (can cause conflicts with other code/libraries)</p>
     <!-- #endregion Prototyping -->
     <h2 id="BONUS02">BONUS : Spread Operator</h2>
+    <!-- #region Spread Operator -->
         <p>The spread operator (`...`) allows an iterable to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected.</p>
         <pre>const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
@@ -181,8 +182,8 @@ const merged = { ...obj1, ...obj2 };
 	
 const merged2 = { ...obj2, ...obj1 };
 // { b: 2, c: 4, a: 1 }</pre>
-
-
+        <p><strong>Note:</strong> When merging objects, if there are properties with the same name, the value from the last object will overwrite the previous one.</p>
+    <!-- #endregion Spread Operator -->
     <h2 id="final-project">Project 06 - Final Project</h2>
     <!-- #region Final Project -->
     <!-- #endregion Final Project -->
