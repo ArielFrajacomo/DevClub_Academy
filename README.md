@@ -168,7 +168,10 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - View the receipt with the selected items and applied discounts.
 - Menu access through a burgerlist.json file, making it easy to update and manage the menu.
 - Price filter has a dynamic range based on the menu prices. No configuration needed when the menu changes.
+- If the burgerlist.json doesn't have an image, a placeholder image will be used.
+- The burgerlist.json is called with the fetch API. To simulate a real API call.
 - Fully responsive
+
 
 
 (On Going...)
