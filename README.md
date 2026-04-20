@@ -116,7 +116,8 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 ### Challenge - Project 04 : Currency Exanger
 > Project path: `Standalone_Projects/Project04-CoinConverter`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
- Features:
+
+**Features:**
 - Animated Intro with CSS Transformations
 - Animated logo (made with AI, Triggers by me), Animations directly in the SVF File, Triggered by JS
 - Dataset using a `currency.json` archive to make easy add/remove items or to use a API
@@ -139,7 +140,8 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 ### Challenge - Project 05 : Calculator
 > Project path: `Standalone_Projects/Project05-Calculator`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project05-Calculator) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project05-Calculator/index.html)
- Features:
+ 
+ **Features:**
  - Working Calculator
  - Some imput corrections
  - Responsive
@@ -154,7 +156,19 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Bonus: Prototyping, Spread Operator
 > I was surprised to see that there's no .sum() in js, created protoSUM() and protoAVG() with non-generic name to avoid conflicts with future code/libraries
 
+### Challenge - Project 06 : Burguer Filter
+Small project to create a interactive menu using the Map, Reduce, Filter and Array Methods
+> Project path: `Standalone_Projects/Project06-BurgerFilter`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project06-BurgerFilter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project06-BurgerFilter/index.html)  
 
+**Features:**
+- Filter by vegan options, price range, and apply discount coupons.
+- Price slider with two thumbs for selecting the minimum and maximum price range.
+- You can set how much items you want to buy and see the total price with discounts applied.
+- View the receipt with the selected items and applied discounts.
+- Menu access through a burgerlist.json file, making it easy to update and manage the menu.
+- Price filter has a dynamic range based on the menu prices. No configuration needed when the menu changes.
+- Fully responsive
 
 
 (On Going...)
