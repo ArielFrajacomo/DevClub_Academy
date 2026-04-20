@@ -173,6 +173,9 @@ span {
         font-size: 16px;
 
     }
+    h1 {
+        font-size: 12px;
+    }
     main, .receipt-container {
         width: 100vw !important;
         grid-template-columns: 1fr;
