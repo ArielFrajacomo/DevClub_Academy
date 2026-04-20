@@ -29,7 +29,7 @@ function pushMenuItems(menuData) {
 }
 
 function createMenuCard(itemName, itemPrice, srcImg, isVegan = false) {
-    // validação de input
+    // input validation
     srcImg = srcImg || "./assets/placeholder.png";
 
 
@@ -65,8 +65,9 @@ function buttonQTDListener(button, increment = 0) {
     generateReceipt();
 }
 
+// sum of the multiplication of the specified properties for all items in the array
 Array.prototype.TotalMultiply = function(args = []) {
-    return burgerJSON.reduce((total, item) => {
+    return this.reduce((total, item) => {
         let temp = 1;
         args.forEach(a => {
             temp *= (item[a] || 0);
@@ -77,21 +78,18 @@ Array.prototype.TotalMultiply = function(args = []) {
 }
 
 function calculateTotal() {
-
-    const total = burgerJSON.TotalMultiply(["price", "qtd"]);
-
-    return total;
+    return burgerJSON.TotalMultiply(["price", "qtd"]);
 }
 
 function generateReceipt() {
-    stringDescount = document.querySelector("input[name='discount']:checked").parentElement.textContent;
+    const stringDiscount = document.querySelector("input[name='discount']:checked").parentElement.textContent;
 
     const receipt = document.getElementById("receipt");
     const total = calculateTotal();
 
     receipt.innerText = 
           "Recibo:\n"
-        + stringDescount + "\n\n"
+        + stringDiscount + "\n\n"
         + burgerJSON.filter(burger => burger.qtd > 0)
                     .map(burger => `${burger.name} x${burger.qtd} - R$${(burger.price * burger.qtd).toFixed(2)}`)
                     .join("\n")
