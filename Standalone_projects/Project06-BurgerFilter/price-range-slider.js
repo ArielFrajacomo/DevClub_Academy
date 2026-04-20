@@ -182,8 +182,6 @@ function createPriceSlider(config) {
   const currencySymbol = getComputedStyle(document.documentElement).getPropertyValue('--currency-symbol') || "$";
   const currencyLocale = getComputedStyle(document.documentElement).getPropertyValue('--currency-locale') || "en-US";
 
-  console.log({priceText, currencySymbol, currencyLocale});
-
   container.innerHTML = `
     <div class="price-filter">
       <div class="price-header">${priceText}</div>

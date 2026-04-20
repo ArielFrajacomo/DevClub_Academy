@@ -35,7 +35,7 @@
                 <ul id="MRF-atractions" class="no-bullets"></ul>
             </div>
         </div>
-        <pre name="MRF-guest" id="MRF-guest" readonly hidden></pre>
+        <pre id="MRF-guest" hidden></pre>
     </div>
 
 
@@ -73,8 +73,21 @@
             <p><strong>Return value:</strong> The single output value resulting from the reduction</p>
             </blockquote>
         </li>
-        <li>it can be used as a arrow function: <code>const sum = array.reduce((acc, item) => acc + item, 0);</code></li>
-        <li>it can be used with an anonymous function: <code>const sum = array.reduce(function(acc, item) { return acc + item; }, 0);</code></li>
+        <li>it can be used as a arrow function: <br><code>const sum = array.reduce((acc, item) => acc + item, 0);</code></li>
+        <li>it can be used with an anonymous function: <br><code>const sum = array.reduce(function(acc, item) { return acc + item; }, 0);</code></li>
+    
+        <br>
+        <p>
+            <strong>Example:</strong> Using reduce to count occurrences of elements in an array:
+            <pre>const fruits = ['apple', 'banana', 'orange', 'apple', 'banana', 'apple'];
+const fruitCount = fruits.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+}, {});</pre>
+            <p>output: <code>{ apple: 3, banana: 2, orange: 1 }</code></p>
+            <p>In this example, we use reduce to create an object that counts how many times each fruit appears in the array. The accumulator (acc) starts as an empty object, and for each fruit, we increment the count for that fruit in the accumulator.</p>
+        </p>
+    
     </ul>
 
     <!-- #endregion REDUCE -->

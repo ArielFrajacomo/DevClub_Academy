@@ -4,8 +4,11 @@
 
     margin: 0;
     padding: 0;
+}
 
-    font-family: "Amazon Ember", Arial, sans-serif;
+html {
+    font-family: 'Winky Sans', Arial, sans-serif;
+    font-size: 18px;
 }
 
 :root {
@@ -14,8 +17,9 @@
     --background-color: #222222;
 
     --slider-track-color: #ddd;
-    --shadow-color: rgba(0,0,0,0.1);
-    --imput-shadow-color: rgba(0,0,0,0.25);
+    --shadow-color: rgba(0,0,0,0.8);
+    --imput-shadow-color: rgba(0,0,0,0.8);
+    --element-shadow: 5px 5px 3px var(--shadow-color);
 
     --price-text: Preço;
     --currency-symbol: R$;
@@ -29,7 +33,6 @@ body {
 }
 
 h1 {
-    font-family: "Amazon Ember", Arial, sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--text-color);
@@ -41,18 +44,23 @@ h1 {
     margin: 0.5em 0.5em;
 }
 
-main {
+main , .receipt-container{
     background: var(--background-color);
     border: 1px solid #666;
     border-radius: 3px;
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: 24px;
     padding: 20px;
 
     width: 80vw;
+    min-width: 455px;
     margin: 0 auto;
+}
+
+.receipt-container {
+    grid-template-columns: 1fr auto;
 }
 
 .filter-container {
@@ -70,8 +78,7 @@ main {
     border-radius: 5px;
     padding: 16px 18px;
     max-width: 280px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    font-family: "Amazon Ember", Arial, sans-serif;
+    box-shadow: var(--element-shadow);
 }
 
 .price-header {
@@ -96,27 +103,63 @@ input[type="radio"] {
     flex-direction: column;
 }
 
+/* Menu Item Card */
 .menu-card {
     background: var(--background-color);
     border: 1px solid var(--slider-track-color);
     border-radius: 5px;
     padding: 16px 18px;
     max-width: 280px;
-    height: 245px;
-    box-shadow: 0 1px 3px var(--shadow-color);
+    height: 300px;
+    box-shadow: var(--element-shadow);
 }
+.menu-card:hidden {
+    display: none;
+}
+
 .menu-card-img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 12px;
+    
+    box-shadow: var(--element-shadow);
 }
-
 .burger-list {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
 
     transition: all 0.4s ease-in-out;
+}
+button {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: var(--text-color);
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: var(--element-shadow);
+    align-items: center;
+}
+span {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0 10px;
+}
+
+#receipt {
+    background: var(--background-color);
+    border: 1px solid var(--slider-track-color);
+    border-radius: 5px;
+    padding: 16px 18px;
+    max-width: 280px;
+    height: auto;
+    box-shadow: var(--element-shadow);
+    margin-top: 24px;
+}
+#receipt:hidden {
+    display: none;
 }

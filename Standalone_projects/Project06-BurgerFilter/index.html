@@ -6,6 +6,9 @@
     <script src="price-range-slider.js" defer></script>
     <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -14,22 +17,44 @@
         <div class="filter-container">
             <div id="vegan" class="price-filter flex-column">
                 <div class="price-header">Filtrar por Vegano</div>
-                <label class="header-subtext"><input type="radio" name="vegan-options" value="all" checked> All</label>
-                <label class="header-subtext"><input type="radio" name="vegan-options" value="vegan"> Vegano</label>
-                <label class="header-subtext"><input type="radio" name="vegan-options" value="non-vegan"> Não Vegano</label>
+                <label class="header-subtext"><input type="radio" name="vegan-options" onchange="applyAllFilters()" value="all" checked> All</label>
+                <label class="header-subtext"><input type="radio" name="vegan-options" onchange="applyAllFilters()" value="vegan"> Vegano</label>
+                <label class="header-subtext"><input type="radio" name="vegan-options" onchange="applyAllFilters()" value="non-vegan"> Não Vegano</label>
             </div>
             <div id="myPriceSlider"></div> <!-- imported feature  -->
             <div id="discount-cupon" class="price-filter flex-column">
                 <div class="price-header">Cupom de Desconto</div>
-                <label class="header-subtext"><input type="radio" name="discount" value="00%" checked> Sem Desconto</label>
-                <label class="header-subtext"><input type="radio" name="discount" value="10%"> 10% Desconto</label>
-                <label class="header-subtext"><input type="radio" name="discount" value="30%"> 30% Desconto</label>
-                <label class="header-subtext"><input type="radio" name="discount" value="50%"> 50% Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" onchange="applyDiscount(this.value); generateReceipt();" value="1" checked> Sem Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" onchange="applyDiscount(this.value); generateReceipt();" value="0.9"> 10% Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" onchange="applyDiscount(this.value); generateReceipt();" value="0.7"> 30% Desconto</label>
+                <label class="header-subtext"><input type="radio" name="discount" onchange="applyDiscount(this.value); generateReceipt();" value="0.5"> 50% Desconto</label>
             </div>
         </div>
         <div id="burger-list" class="burger-list">
         </div>
     </main>
+    <div class="receipt-container">
+        <div>
+            <ul style="font-size: 0.7rem;"><h3>Funcionalidades: (pt-BR)</h3>
+                <li>Filtrar por opções veganas, faixa de preço e aplicar cupons de desconto.</li>
+                <li>Slider de preço com dois controles deslizantes para selecionar a faixa de preço mínima e máxima.</li>
+                <li>Você pode definir quantos itens deseja comprar e ver o preço total com os descontos aplicados.</li>
+                <li>Visualizar o recibo com os itens selecionados e os descontos aplicados.</li>
+                <li>Acesso ao menu através de um arquivo burgerlist.json, facilitando a atualização e gerenciamento do menu.</li>
+                <li>Design responsivo para diferentes tamanhos de tela.</li>
+            </ul>
+            <br>
+            <ul style="font-size: 0.7rem;"><h3>Features: (en-US)</h3>
+                <li>Filter by vegan options, price range, and apply discount coupons.</li>
+                <li>Price slider with two thumbs for selecting the minimum and maximum price range.</li>
+                <li>You can set how much items you want to buy and see the total price with discounts applied.</li>
+                <li>View the receipt with the selected items and applied discounts.</li>
+                <li>Menu access through a burgerlist.json file, making it easy to update and manage the menu.</li>
+                <li>Responsive design for different screen sizes.</li>
+            </ul>
+        </div>
+        <pre id="receipt" hidden></pre> 
+    </div>
     
 </body>
 </html>
