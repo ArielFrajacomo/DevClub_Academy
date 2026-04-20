@@ -5,5 +5,5 @@
     { "name": "Monstruoso", "qtd": 0, "price": 50, "vegan": false, "src": "./assets/monstruoso.png" },
     { "name": "Big Vegano", "qtd": 0, "price": 55, "vegan": true, "src": "./assets/xvegan.png" },
     { "name": "X-Vegan", "qtd": 0, "price": 45, "vegan": true, "src": "./assets/monstruoso-vegan.png" },
-    { "name": "A Moda", "qtd": 0, "price": 75, "vegan": true, "src": "" }
+    { "name": "A Moda", "qtd": 0, "price": 75, "vegan": false, "src": "" }
 ]

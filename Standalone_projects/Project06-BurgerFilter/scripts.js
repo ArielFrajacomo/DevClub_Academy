@@ -120,6 +120,7 @@ function applyDiscount (value){
 
         updateDisplayedPrices();
         applyAllFilters(); 
+        refreshFilterMinMaxValues();
     });
 }
 
@@ -151,21 +152,31 @@ function applyAllFilters() {
     });
 }
 
+function refreshFilterMinMaxValues() {
+    let maxPrice = Math.max(...burgerJSON.map(burger => burger.price));
+    maxPrice = ((maxPrice/10) | 0) *10 + 10; // set maxVal to the highest price in the menu rounded up to the nearest 10
+    
+    sliderConfig.maxVal = maxPrice;
+    sliderConfig.startMax = maxPrice;
+
+    let minPrice = Math.min(...burgerJSON.map(burger => burger.price));
+    minPrice = ((minPrice/10) | 0) *10 -10; // set minVal to the lowest price in the menu rounded down to the nearest 10
+    minPrice = minPrice < 0 ? 0 : minPrice; // ensure minVal is not negative
+
+    sliderConfig.minVal = minPrice;
+    sliderConfig.startMin = minPrice;
+
+    // Recreate the slider with the new min and max values
+    createPriceSlider(sliderConfig);
+}
+
 // On page load
 async function init() {
     try {
-        const response = await fetch("./data/burgerlist.json");
-        burgerJSON = await response.json();
-        
+        burgerJSON = await getOriginalBurgerJSON();
 
-        let maxPrice = Math.max(...burgerJSON.map(burger => burger.price));
-        maxPrice = ((maxPrice/10) | 0) *10 + 10; // set maxVal to the highest price in the menu rounded up to the nearest 10
-        
-        sliderConfig.maxVal = maxPrice;
-        sliderConfig.startMax = maxPrice;
+        refreshFilterMinMaxValues();
 
-
-        createPriceSlider(sliderConfig);
         pushMenuItems(burgerJSON);
     } catch (error) {
         console.error("Error loading burger data:", error);
