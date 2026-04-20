@@ -121,6 +121,7 @@ function applyDiscount (value){
         updateDisplayedPrices();
         applyAllFilters(); 
         refreshFilterMinMaxValues();
+        generateReceipt();
     });
 }
 
