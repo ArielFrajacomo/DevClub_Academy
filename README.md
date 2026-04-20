@@ -13,6 +13,14 @@
 - [GIT](#git)
 - [JavaScript](#javascript)
 
+## StandAlone Projects
+- [Project 01 - We Care Pet Frontpage](#Project01)
+- [Project 02 - Challenge 2](#Project02)
+- [Project 03 - 1st Responsible site](#Project03)
+- [Project 04 - Currency Exchanger](#Project04)
+- [Project 05 - Calculator](#Project05)
+- [Project 06 - Burger Filter](#Project06)
+
 <!-- Prerequisites Table of contents -->
 <a id="prerequisites"></a>
 
@@ -29,9 +37,8 @@ Each folder represents a finished DevClub course module. To run any course, star
 
 **Steps:**
 1. Clone the repository
-2. Navigate to the desired course folder (e.g., `HTML/`)
-3. Start a local server in that folder
-4. Open the local server address in your web browser
+2. Start a local server in that folder
+3. Open the local server address in your web browser
 
 Example using Python:
 ```bash
@@ -69,51 +76,32 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 > The use of `:is(ul, ol) li` is interesting, and it seems that it doesn't affect much the performance of the website.
 - Colors, Units of measure, Text, Margin and Padding, box-sizing, 
 > The dev in me wanted to see how Variables in CSS works, I love how `:root` lets you set global variables, it makes much easier and cleaner than working with RGB/hex codes.
+
+<a id="Project01"></a>
+
 ### 02-Standalone Project 01 - We Care Pet Frontpage
 - Using figma to replicate a front page in HTML with CSS (non-responsive)
 > Project path: `Standalone_projects\Project01-Pet\Index.html`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project01-Pet) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project01-Pet/Index.html)
+
+<a id="Project02"></a>
+
 ### 03-Standalone Project 02 - Challenge 2
 - Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well.  The `index.html` and `style.css` was made by hand, of course.
 >  Project path: `Standalone_projects\Project02-Challenge02\index.html`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project02-Challenge02) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project02-Challenge02/index.html)
 
-<!-- CSS2 Table of contents -->
-<a id="css-intermediate-level"></a>
+<a id="Project03"></a>
 
-## CSS Intermediate Level 
-- !important tag, Pseudo-classes and Pseudo-elements, Site responsiveness
+### Project 03 - 1st Responsible site
 > Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project03-1st_Responsible_site) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project03-1st_Responsible_site/index.html)
 - Calc()
 > CSS function to use math
 
-<!-- GIT Table of contents -->
-<a id="git"></a>
+<a id="Project04"></a>
 
-## GIT 
-> Hummm... it's strange to learn git when i'm already using it since the begging hahaha~~ **Let's go!**
-- What's Git, Create repository, GIT Ignore, Git Attributes
-- Push and Pull, Branching and Merging
-- Remote Repositories, README.md
-
-<!-- JS Table of contents -->
-<a id="javascript"></a>
-
-## JavaScript 
-### Variables
-- let, constant and var
-- Variables, Strings, Template literals, Numbers, Booleans
-- Binary Operations & Bitshift as an Extra
-> All basic stuff, I had to put a Bitshift Extra Lesson at the end to spicy things up and remember my origins `(Low code + Memory Management and Performance Lover)`, It seems to be a forgetten skill lately.
-- Objects, Null & Undefined, Array, If & Else, Functions
-> nothing really new here, only the short version of the arrow function  
-
-### DOM Elements
-- byID, byClassName, ByTagName, by name, tagSelector/all
-- textcontent, innerText, innerHTML, CSS Properties
-
-### Challenge - Project 04 : Currency Exanger
+### Project 04 - Currency Exchanger
 > Project path: `Standalone_Projects/Project04-CoinConverter`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
 
@@ -137,6 +125,8 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Callback Function
 - enum
 
+<a id="Project05"></a>
+
 ### Challenge - Project 05 : Calculator
 > Project path: `Standalone_Projects/Project05-Calculator`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project05-Calculator) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project05-Calculator/index.html)
@@ -155,6 +145,8 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Array Methods
 - Bonus: Prototyping, Spread Operator
 > I was surprised to see that there's no .sum() in js, created protoSUM() and protoAVG() with non-generic name to avoid conflicts with future code/libraries
+
+<a id="Project06"></a>
 
 ### Challenge - Project 06 : Burguer Filter
 Small project to create a interactive menu using the Map, Reduce, Filter and Array Methods
