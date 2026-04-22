@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/script.js" defer></script>
+    <title>DevClub - Node.js</title>
+</head>
+<body>
+    <h1>Node.js Course</h1>
+
+    <h2>Table of Contents</h2>
+
+    <h2 id="Featured">Featured program</h2>
+    <!-- #region Featured Program-->
+    <!-- #endregion Featured Program -->    
+
+    <h2 id="Lesson01">Lesson 01: Frontend and Backend Concepts</h2>
+    <!-- #region Lesson 01: Frontend and Backend Concepts-->
+    <ul>
+        <li><strong>Frontend:</strong> The part of a web application that users interact with directly running on the client-side.</li>
+        <li><strong>Backend:</strong> The server-side of a web application that handles data processing, business logic, and database interactions.</li>
+    </ul>
+    <!-- #endregion Lesson 01: Frontend and Backend Concepts -->
+
+    <h2 id="Lesson02">Lesson 02: Starting a Node.js Project</h2>
+    <!-- #region Lesson 02: Starting a Node.js Project-->
+    <h3>npm init</h3>
+    <p>To start a Node.js project, you typically follow these steps:</p>
+    <ol>
+        <li>Initialize a new Node.js project using <code>npm init</code>.
+            <br> &emsp;&emsp;-> or skip the questions and use <code>npm init -y</code></li>
+        <li>Install necessary dependencies using <code>npm install</code>.</li>
+        <li>Create your main application file (e.g., <code>index.js</code>) and start coding your server or application logic.</li>
+    </ol>
+
+    <h3>npm express</h3>
+    <p><code>npm i express</code> : Installs the Express.js framework, which is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+    
+    <h3>server.js</h3>
+    <p>In a Node.js project, <code>server.js</code> is commonly used as the main entry point for the application. 
+        It typically contains the code to set up and start the server, define routes, and handle incoming requests.</p>
+    <p>to import modules in Node.js, you can use either the CommonJS syntax (<code>require</code>) 
+       or the ES6 module syntax (<code>import</code>).</p>
+    <blockquote>
+        <p><strong>CommonJS:</strong> <code>const express = require('express');</code></p>
+        <p><strong>ES6 Modules:</strong> <code>import express from 'express';</code></p>
+        <br>
+        <p>Note: The ES6 module syntax is supported in Node.js starting from version 12 with the <code>.mjs</code> file extension 
+        <br>or by setting <code>"type": "module"</code> in the <code>package.json</code>.</p>
+
+    <h3>Starting the Server</h3>
+        <pre>// Using ES6 Modules
+import express from 'express';
+const app = express();
+const PORT = 3000;
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+    </blockquote>
+    <!-- #endregion Lesson 02: Starting a Node.js Project -->
+
+    <br>
+    <button onclick="history.back()">Go Back</button>
+    <br><br><br><br>
+</body>
+</html>
