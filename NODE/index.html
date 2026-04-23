@@ -51,7 +51,7 @@
         <br>or by setting <code>"type": "module"</code> in the <code>package.json</code>.</p>
 
     <h3>Starting the Server</h3>
-        <pre>// Using ES6 Modules
+        <pre>// Using ES6 Modules 
 import express from 'express';
 const app = express();
 const PORT = 3000;
@@ -63,6 +63,59 @@ app.listen(PORT, () => {
 });
     </blockquote>
     <!-- #endregion Lesson 02: Starting a Node.js Project -->
+    <h2 id="HTMLMethods">HTML Methods</h2>
+    <!-- #region HTML Methods-->
+    <p><strong>HTML methods</strong></p>
+    <ul>
+        <li><strong>GET:</strong> Requests data from a specified resource.</li>
+        <li><strong>POST:</strong> Submits data to be processed to a specified resource.</li>
+        <li><strong>PUT:</strong> Updates a current resource with new data.</li>
+        <li><strong>DELETE:</strong> Deletes a specified resource.</li>
+        <li><strong>PATCH:</strong> Partially updates a resource.</li>
+    </ul>
+    <p><strong>HTML Request Methods</strong></p>
+    <ul>
+        <li><strong>Query Params (GET)</strong>: Used to send data to the server as part of the URL, typically for filtering or searching.
+            <br> Example: <code>/users<strong>?</strong>name=John&age=30</code></li>
+        <li><strong>Route Params (GET, POST, PUT, DELETE, PATCH)</strong>: Used to capture values from the URL path, often for dynamic routing. 
+            <br> Example: <code>/users/<strong>:id</strong></code></li> 
+        <li><strong>Request Body (POST, PUT, PATCH)</strong>: Used to send data to the server in the body of the request, often for creating or updating resources.
+            <br> Example: <code>{ "name": "John", "age": 30 }</code></li>
+    </ul>
+    <p><strong>HTTP Status Codes</strong></p>
+    <ul>
+        <li><strong><code>200</code> OK:</strong> The request was successful.</li>
+        <li><strong><code>201</code> Created:</strong> The request was successful and a resource was created.</li>
+        <br>
+        <li><strong><code>400</code> Bad Request:</strong> The server could not understand the request due to invalid syntax.</li>
+        <li><strong><code>401</code> Unauthorized:</strong> The client must authenticate itself to get the requested response.</li>
+        <li><strong><code>403</code> Forbidden:</strong> The client does not have access rights to the content.</li>
+        <li><strong><code>404</code> Not Found:</strong> The server can not find the requested resource.</li>
+        <br>
+        <li><strong><code>500</code> Internal Server Error:</strong> The server has encountered a situation it doesn't know how to handle.</li>
+        <li><strong><code>502</code> Bad Gateway:</strong> The server, while acting as a gateway or proxy, received an invalid response from the upstream server.</li>
+    </ul>
+
+
+    <h2 id="ObjectNotation">Object Notation</h2>
+    <!-- json and toon -->
+    <p>json</p>
+    <p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 
+        It is commonly used for transmitting data in web applications between a server and a client.</p>
+    <p>Toon</p>
+    <p><strong>Toon (Token Object Notation)</strong> is a compact, human-readable encoding of the JSON data model that minimizes tokens and makes structure easy for models to follow. It's intended for LLM input as a drop-in, lossless representation of your existing JSON.</p>
+
+
+
+    <h2 id="NodeResponseMethods">Node.js Response Methods</h2>
+    <p><strong>Node.js Response Methods</strong></p>
+    <ul>
+        <li><code>res.send()</code>: Sends a response of various types (string, object, array, etc.) to the client.</li>
+        <li><code>res.json()</code>: Sends a JSON response to the client. It converts a JavaScript object or array into a JSON string and sets the appropriate content type.</li>
+        <li><code>res.render()</code>: Renders a view template and sends the resulting HTML to the client. This is commonly used with templating engines like EJS, Pug, or Handlebars.</li>
+    </ul>
+    <!-- #endregion HTML Methods -->
+
 
     <br>
     <button onclick="history.back()">Go Back</button>
