@@ -86,6 +86,7 @@ app.listen(PORT, () => {
     <ul>
         <li><strong><code>200</code> OK:</strong> The request was successful.</li>
         <li><strong><code>201</code> Created:</strong> The request was successful and a resource was created.</li>
+        <li><strong><code>202</code> Accepted:</strong> The request has been received but not yet acted upon.</li>
         <br>
         <li><strong><code>400</code> Bad Request:</strong> The server could not understand the request due to invalid syntax.</li>
         <li><strong><code>401</code> Unauthorized:</strong> The client must authenticate itself to get the requested response.</li>
@@ -95,26 +96,32 @@ app.listen(PORT, () => {
         <li><strong><code>500</code> Internal Server Error:</strong> The server has encountered a situation it doesn't know how to handle.</li>
         <li><strong><code>502</code> Bad Gateway:</strong> The server, while acting as a gateway or proxy, received an invalid response from the upstream server.</li>
     </ul>
-    
-    <h2 id="ObjectNotation">Object Notation</h2>
-    <!-- json and toon -->
-    <p>json</p>
-    <p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 
-        It is commonly used for transmitting data in web applications between a server and a client.</p>
-    <p>Toon</p>
-    <p><strong>Toon (Token Object Notation)</strong> is a compact, human-readable encoding of the JSON data model that minimizes tokens and makes structure easy for models to follow. It's intended for LLM input as a drop-in, lossless representation of your existing JSON.</p>
-
-
-
-    <h2 id="NodeResponseMethods">Node.js Response Methods</h2>
-    <p><strong>Node.js Response Methods</strong></p>
+    <!-- #endregion HTML Methods -->
+    <h2 id="ServerSide">Server Side</h2>
+    <!-- #region ServerSide -->
+    <h3>server.js Request Methods</h3>
+    <ul>
+        <li><code>app.get()</code>: Defines a route handler for GET requests to a specified path.</li>
+        <li><code>app.post()</code>: Defines a route handler for POST requests to a specified path.</li>
+        <li><code>app.put()</code>: Defines a route handler for PUT requests to a specified path.</li>
+        <li><code>app.delete()</code>: Defines a route handler for DELETE requests to a specified path.</li>
+        <li><code>app.patch()</code>: Defines a route handler for PATCH requests to a specified path.</li>
+    </ul>
+    <h3>server.js Response Methods</h3>
     <ul>
         <li><code>res.send()</code>: Sends a response of various types (string, object, array, etc.) to the client.</li>
         <li><code>res.json()</code>: Sends a JSON response to the client. It converts a JavaScript object or array into a JSON string and sets the appropriate content type.</li>
         <li><code>res.render()</code>: Renders a view template and sends the resulting HTML to the client. This is commonly used with templating engines like EJS, Pug, or Handlebars.</li>
     </ul>
-    <!-- #endregion HTML Methods -->
-
+    <h3></h3>
+    <!-- #endregion ServerSide -->
+    <h2 id="ObjectNotation">Object Notation</h2>
+    <!-- #region ObjectNotation -->
+    <p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 
+        It is commonly used for transmitting data in web applications between a server and a client.</p>
+    <p>Toon</p>
+    <p><strong>Toon (Token Object Notation)</strong> is a compact, human-readable encoding of the JSON data model that minimizes tokens and makes structure easy for models to follow. It's intended for LLM input as a drop-in, lossless representation of your existing JSON.</p>
+    <!-- #endregion ObjectNotation -->
 
     <br>
     <button onclick="history.back()">Go Back</button>
