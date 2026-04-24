@@ -29,6 +29,39 @@ function getRandomInt(min, max) {
 
     return ((Math.random() * (max - min + 1)) | 0) + min;
 }
+
+// copy to clipboard
+function copyToClipboard(textToCopy) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert(`"${textToCopy}" copied to clipboard!`);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    } else {
+        console.warn('Clipboard API not supported');
+    }
+}
+
+// add event listeners to all buttons with the class "copyToClipboard"
+// existing function name(), we can call (name)(); it will execute the function immediately (IIFE - Immediately Invoked Function Expression)
+// name() can be written as () => {}, so if you call (() => {})(); it will execute the function immediately as well
+// (() => {})(); doesn't have a name, so it can't be called again
+// PROS: it can be used to execute code immediately without polluting the global scope with a new function name
+// CONS: Mainly readability and debugging, 
+//       - code is being executed immediately; and might be hard to catch at glance.
+//       - and it can make stack traces less informative if an error occurs within the IIFE.
+
+(() => { // IIFE to avoid polluting the global scope, adds copy to clipboard functionality to elements with the class "copyThisToClipboard"
+    const copyButtons = document.querySelectorAll('.copyThisToClipboard');
+    if (!copyButtons) return; // Exit if no buttons found
+
+    copyButtons.forEach(element => {
+        const textToCopy = element.value || element.innerText || element.textContent;
+        element.addEventListener('click', () => copyToClipboard(textToCopy));
+    });
+})();
+
 //#endregion Generic functions
 
 // 1st exercise - Encoder/Decoder
@@ -365,6 +398,8 @@ function onLoadPopulate() {
 
 onLoadPopulate(); //defer make it so that this runs after the DOM is fully loaded
 
+
+// Featured Exercise
 function searchGuests(name) {
     const guestData = document.getElementById('MRF-guest');
     if (!guestData) return; // Exit if element not found

@@ -12,6 +12,7 @@
 - [CSS Basics](#css) / [CSS Intermediate](#css-intermediate-level)
 - [GIT](#git)
 - [JavaScript](#javascript)
+- [Node](#node)
 
 ## StandAlone Projects
 - [Project 01 - We Care Pet Frontpage](#Project01)
@@ -164,7 +165,43 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - The burgerlist.json is called with the fetch API. To simulate a real API call.
 - Fully responsive
 
+## Node
+
+This section covers the basics of Node.js, including:
+
+- Setting up a Node.js project with npm
+- Installing and using Express.js for server-side development
+- Creating and handling routes (GET, POST, PUT, DELETE, PATCH)
+- Understanding request and response objects
+- Using JSON for data exchange
+- Example server setup and starting the server
+
+**How to run the Node.js server:**
+1. Navigate to the `NODE` folder:
+	```bash
+	cd NODE
+	```
+2. Install dependencies (if not already installed):
+	```bash
+	npm install
+	```
+3. Start the server:
+	```bash
+	node server.js
+	```
+	Or, for auto-restart on changes:
+	```bash
+	node --watch server.js
+	```
+4. Open your browser and go to [http://localhost:3000](http://localhost:3000)
+
+**Features:**
+- RESTful API endpoints for managing a burger list
+  - Add, update, delete, and fetch burgers
+  - Demonstrates best practices for HTTP methods and status codes
+
+See the `NODE/server.js` file for detailed code and endpoint examples.
+
 
 
 (On Going...)
-

@@ -256,3 +256,10 @@ blockquote {
     }
 }
 
+
+
+/* Utils */
+.copyThisToClipboard {
+    border: 3px solid; 
+    cursor: pointer;
+}

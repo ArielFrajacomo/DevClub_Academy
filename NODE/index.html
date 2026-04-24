@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../JS/script.js" defer></script>
+    <script src="../JAVASCRIPT/scripts.js" defer></script>
     <title>DevClub - Node.js</title>
 </head>
 <body>
@@ -113,7 +113,29 @@ app.listen(PORT, () => {
         <li><code>res.json()</code>: Sends a JSON response to the client. It converts a JavaScript object or array into a JSON string and sets the appropriate content type.</li>
         <li><code>res.render()</code>: Renders a view template and sends the resulting HTML to the client. This is commonly used with templating engines like EJS, Pug, or Handlebars.</li>
     </ul>
-    <h3></h3>
+    <h3>Starting the Server</h3>
+    <pre>
+// const express = require('express'); // CommonJS syntax
+
+import express from 'express';
+const app = express();
+const PORT = 3000;
+
+// see if the server is running
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});</pre>
+    <h3><strong>On Terminal:</strong></h3>
+    <p>To start the server, you can use the following command in your terminal:</p>
+    <pre>node server.js</pre>
+    <p>Alternatively, you can use the following command to automatically restart the server whenever you make changes to the server.js file:</p>
+    <pre class="copyThisToClipboard">node --watch server.js</pre>
+
     <!-- #endregion ServerSide -->
     <h2 id="ObjectNotation">Object Notation</h2>
     <!-- #region ObjectNotation -->
