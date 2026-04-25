@@ -260,6 +260,18 @@ blockquote {
 
 /* Utils */
 .copyThisToClipboard {
-    border: 3px solid; 
+    border: 3px solid;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+.copyThisToClipboard::after {
+    content: '';
+    display: inline-block;
+    background: url("../assets/icon/clipboard.svg") no-repeat center/contain;
+    width: 1.5em;
+    height: 1.5em;
+    flex-shrink: 0;
 }
