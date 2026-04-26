@@ -7,6 +7,7 @@
 //#region Classes
 const NameImput = document.getElementById('txtName');
 const AgeInput = document.getElementById('txtAge');
+const display = document.getElementById('userList');
 
 class User {
     name = '';
@@ -77,18 +78,19 @@ const Backend = {
 
 //#region Functions
 function attDisplay(UserList) {
-    const htmlList = document.getElementById('userList');
-    if (!htmlList) {
+    if (!display) {
         return;
     }
 
-    htmlList.innerHTML = ''; // Clear existing list
+    display.innerHTML = ''; // Clear existing list
   
     UserList.forEach(user => {
         const listItem = document.createElement('li');
         listItem.textContent = `${user.name} (${user.age}yo)`;
-        htmlList.appendChild(listItem);
+        display.appendChild(listItem);
     });
+
+    alarm();
 }
 
 function btnAddUser() {
@@ -131,7 +133,18 @@ function btnDeleteUser() {
         .catch(error => console.error('Error fetching users:', error));
 }
 
-
+function alarm() {
+    // #alarm gets css class of .alarm when userList is empty
+    const alarm = document.getElementById('alarm');
+    
+    if (display && display.children.length === 0) {
+        alarm.classList.add('alarm');
+        alarm.hidden = false;
+    } else {
+        alarm.classList.remove('alarm');
+        alarm.hidden = true;
+    }
+}
 //#endregion Functions
 
 
@@ -143,4 +156,8 @@ async function loadUsers() {
 }
 
 document.addEventListener('DOMContentLoaded', loadUsers);
+alarm();
+
+
 //#endregion Initialization
+
