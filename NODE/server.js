@@ -25,9 +25,11 @@ Alternatively, you can use the following command to automatically restart the se
 //#region Importing Modules
 // import server from './server.js';
 import express from 'express'; // new way of importing modules in Node.js, using ES6 module syntax
+import cors from 'cors'; // Importing the CORS middleware
 // const express = require('express'); // old way of importing modules in Node.js, using CommonJS syntax
 
 const app = express();
+app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Middleware to parse JSON bodies
 const port = 3000;
 
@@ -235,7 +237,7 @@ class User {
       if (!userList.some(u => u.name === this.name)) // Check if a user with the same name already exists
         userList.push(this);
       else this.updateList(userList); // If user already exists, update
-      
+
       return true;
     }
     return false;
@@ -279,7 +281,6 @@ app.post('/users', (req, res) => {
   new User(name, age).addToList(userList)
     ? res.status(201).json({ message: 'User added successfully.' })
     : res.status(400).json({ message: 'Invalid user data.' });
-
 });
 
 //update an existing user

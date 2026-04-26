@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../JAVASCRIPT/scripts.js" defer></script>
 
@@ -22,17 +22,29 @@
 
     <div class="featured-program">
         <div class="display-area">
+                
+            <label for="txtName">Name
+                <input type="text" name="name" id="txtName" placeholder="Name">
+            </label>
+            <label for="txtAge">Age
+                <input type="number" name="age" id="txtAge" placeholder="Age">
+            </label>
+            
             <h3>List of Users</h3>
             <ul class="no-bullets" id="userList"></ul>
         </div>
         <div class="buttons-area">
-            <button id="getUsersBtn">Get Users</button>
-            <button id="addUserBtn">Add User</button>
-            <button id="updateUserBtn">Update User</button>
-            <button id="deleteUserBtn">Delete User</button>
+            <button id="addUserBtn" onclick="btnAddUser()">Add User</button>
+            <button id="updateUserBtn" onclick="btnUpdateUser()">Update User</button>
+            <button id="deleteUserBtn" onclick="btnDeleteUser()">Delete User</button>
         </div>
     </div>
-
+    <blockquote>
+        <p><strong>Attention:</strong> Make sure your server is running before performing any CRUD operations.
+        <br>use: <code>node NODE/server.js</code> to initialize the server.</p>
+        <p><strong>Note:</strong> if you get an error of Cross-Origin Request, make sure your server is configured to allow CORS (Cross-Origin Resource Sharing).
+        <br><br>you can install by using <code class="copyThisToClipboard">npm install cors</code></p>
+    </blockquote>
     <!-- #endregion Featured Program -->    
 
     <h2 id="Lesson01">Lesson 01: Frontend and Backend Concepts</h2>
@@ -151,9 +163,9 @@ app.listen(PORT, () => {
 });</pre>
     <h4><strong>On Terminal:</strong></h4>
     <p>To start the server, you can use the following command in your terminal:</p>
-    <pre>node server.js</pre>
+    <pre>node NODE/server.js</pre>
     <p>Alternatively, you can use the following command to automatically restart the server whenever you make changes to the server.js file:</p>
-    <pre class="copyThisToClipboard">node --watch server.js</pre>
+    <pre class="copyThisToClipboard">node --watch NODE/server.js</pre>
     <!-- #endregion ServerSide -->
     <h2 id="Params">Params</h2>
     <!-- #region Params -->

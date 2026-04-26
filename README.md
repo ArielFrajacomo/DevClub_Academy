@@ -166,9 +166,7 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - Fully responsive
 
 ## Node
-
 This section covers the basics of Node.js, including:
-
 - Setting up a Node.js project with npm
 - Installing and using Express.js for server-side development
 - Creating and handling routes (GET, POST, PUT, DELETE, PATCH)
@@ -196,11 +194,16 @@ This section covers the basics of Node.js, including:
 4. Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
 **Features:**
-- RESTful API endpoints for managing a burger list
-  - Add, update, delete, and fetch burgers
-  - Demonstrates best practices for HTTP methods and status codes
+- RESTful API Featured Exercise
+	- Add, update, delete, and fetch users
+	- Using good practices for HTTP methods and status codes
+	- BONUS: Used Object Oriented Program to organize the code
 
-See the `NODE/server.js` file for detailed code and endpoint examples.
+See the `NODE/server.js` file for detailed code and endpoint examples for both burgers and users.
+
+**User Management CRUD**
+- The project also includes a simple CRUD for users, with a frontend interface in `NODE/index.html` and logic in `NODE/scripts.js`.
+- You can add, update, delete, and list users through the web interface, which interacts with the Express backend.
 
 
 

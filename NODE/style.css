@@ -2,11 +2,20 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     gap: 20px;
+
+    background-color: #dfcd94;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .display-area {
     width: 100%;
     min-height: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .buttons-area {
