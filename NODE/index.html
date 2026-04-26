@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../JAVASCRIPT/scripts.js" defer></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./scripts.js" defer></script>
     <title>DevClub - Node.js</title>
 </head>
 <body>
@@ -14,6 +18,21 @@
 
     <h2 id="Featured">Featured program</h2>
     <!-- #region Featured Program-->
+    <p>Implemented a CRUD application for managing users using Node.js and Express.</p>
+
+    <div class="featured-program">
+        <div class="display-area">
+            <h3>List of Users</h3>
+            <ul class="no-bullets" id="userList"></ul>
+        </div>
+        <div class="buttons-area">
+            <button id="getUsersBtn">Get Users</button>
+            <button id="addUserBtn">Add User</button>
+            <button id="updateUserBtn">Update User</button>
+            <button id="deleteUserBtn">Delete User</button>
+        </div>
+    </div>
+
     <!-- #endregion Featured Program -->    
 
     <h2 id="Lesson01">Lesson 01: Frontend and Backend Concepts</h2>
@@ -130,13 +149,30 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });</pre>
-    <h3><strong>On Terminal:</strong></h3>
+    <h4><strong>On Terminal:</strong></h4>
     <p>To start the server, you can use the following command in your terminal:</p>
     <pre>node server.js</pre>
     <p>Alternatively, you can use the following command to automatically restart the server whenever you make changes to the server.js file:</p>
     <pre class="copyThisToClipboard">node --watch server.js</pre>
-
     <!-- #endregion ServerSide -->
+    <h2 id="Params">Params</h2>
+    <!-- #region Params -->
+    <h3>Front-end</h3>
+    <p><strong>Query Params:</strong> Used to send data to the server as part of the URL, typically for filtering or searching.
+        <blockquote>Example: <code>/users?<strong>name=John&age=30</strong></code></blockquote></p>
+    <p><strong>Route Params:</strong> Used to capture values from the URL path, often for dynamic routing.
+        <blockquote>Example: <code>/users/<strong>:id</strong></code></blockquote></p>
+    <p><strong>Request Body:</strong> Used to send data to the server in the body of the request, often for creating or updating resources.
+        <blockquote>Example: <code>{ "name": "John", "age": 30 }</code></blockquote></p>
+    <h3>Back-end</h3>
+    <p><strong>Query Params:</strong> Using <code>req.query.variable</code>, gets the value of the query parameter. Example: <code>/example?variable=value</code></p>
+    <p><strong>Route Params:</strong> Accessed using <code>req.params</code> in Express.js, which returns an object containing the route parameters defined in the URL path.</p>
+    <p><strong>Request Body:</strong> Accessed using <code>req.body</code> in Express.js, which contains the data sent in the body of the request. 
+        Note: To parse the request body, you need to use middleware like <code>express.json()</code> for JSON data or <code>express.urlencoded()</code> for URL-encoded data.</p>
+
+    
+        <!-- #endregion Params -->
+
     <h2 id="ObjectNotation">Object Notation</h2>
     <!-- #region ObjectNotation -->
     <p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 

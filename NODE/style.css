@@ -1,0 +1,22 @@
+.featured-program {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 20px;
+}
+
+.display-area {
+    width: 100%;
+    min-height: 10px;
+}
+
+.buttons-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons-area button {
+    background-color: #f1b900;
+    border: solid 1px #000;
+    color: #000;
+}
