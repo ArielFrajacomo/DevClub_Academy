@@ -3,198 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../JAVASCRIPT/scripts.js" defer></script>
-
-    <link rel="stylesheet" href="./style.css">
-    <script src="./scripts.js" defer></script>
-    <title>DevClub - Node.js</title>
+    <link rel="stylesheet" href="style-js.css">
+    <script src="scripts.js" defer></script> <!-- defer makes it load after the HTML is parsed -->
+    <title>DevClub - JavaScript Module</title>
 </head>
 <body>
-    <h1>Node.js Course</h1>
+    <h1>DevClub - JavaScript Module</h1>
+    <h2>Table of contents</h2>
+    <ul class="no-bullets">
+        <li><a href="./01-NODE.html">Node.js and Express</a></li>
+        <li><a href="./02-MONGO_PRISMA.html">MongoDB and Prisma</a></li>
 
-    <h2>Table of Contents</h2>
-
-    <h2 id="Featured">Featured program</h2>
-    <!-- #region Featured Program-->
-    <p>Implemented a CRUD application for managing users using Node.js and Express.</p>
-
-    <div class="featured-program">
-        <div class="display-area">
-                
-            <label for="txtName">Name
-                <input type="text" name="name" id="txtName" placeholder="Name">
-            </label>
-            <label for="txtAge">Age
-                <input type="number" name="age" id="txtAge" placeholder="Age">
-            </label>
-            
-            <h3>List of Users</h3>
-            <ul class="no-bullets" id="userList"></ul>
-        </div>
-        <div class="buttons-area">
-            <button id="addUserBtn" onclick="btnAddUser()">Add User</button>
-            <button id="updateUserBtn" onclick="btnUpdateUser()">Update User</button>
-            <button id="deleteUserBtn" onclick="btnDeleteUser()">Delete User</button>
-        </div>
-    </div>
-    <blockquote>
-        <p id="alarm"><strong>Attention:</strong> Make sure your server is running.
-        <br>use: <code>node NODE/server.js</code> to initialize the server.</p>
-        <p><strong>Note:</strong> if you get an error of Cross-Origin Request, make sure your server is configured to allow CORS (Cross-Origin Resource Sharing).
-        <br><br>you can install by using: <br><code class="copyThisToClipboard">npm install cors</code></p>
-    </blockquote>
-    <!-- #endregion Featured Program -->    
-
-    <h2 id="Lesson01">Lesson 01: Frontend and Backend Concepts</h2>
-    <!-- #region Lesson 01: Frontend and Backend Concepts-->
-    <ul>
-        <li><strong>Frontend:</strong> The part of a web application that users interact with directly running on the client-side.</li>
-        <li><strong>Backend:</strong> The server-side of a web application that handles data processing, business logic, and database interactions.</li>
     </ul>
-    <!-- #endregion Lesson 01: Frontend and Backend Concepts -->
-
-    <h2 id="Lesson02">Lesson 02: Starting a Node.js Project</h2>
-    <!-- #region Lesson 02: Starting a Node.js Project-->
-    <h3>npm init</h3>
-    <p>To start a Node.js project, you typically follow these steps:</p>
-    <ol>
-        <li>Initialize a new Node.js project using <code>npm init</code>.
-            <br> &emsp;&emsp;-> or skip the questions and use <code>npm init -y</code></li>
-        <li>Install necessary dependencies using <code>npm install</code>.</li>
-        <li>Create your main application file (e.g., <code>index.js</code>) and start coding your server or application logic.</li>
-    </ol>
-
-    <h3>npm express</h3>
-    <p><code>npm i express</code> : Installs the Express.js framework, which is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
     
-    <h3>server.js</h3>
-    <p>In a Node.js project, <code>server.js</code> is commonly used as the main entry point for the application. 
-        It typically contains the code to set up and start the server, define routes, and handle incoming requests.</p>
-    <p>to import modules in Node.js, you can use either the CommonJS syntax (<code>require</code>) 
-       or the ES6 module syntax (<code>import</code>).</p>
-    <blockquote>
-        <p><strong>CommonJS:</strong> <code>const express = require('express');</code></p>
-        <p><strong>ES6 Modules:</strong> <code>import express from 'express';</code></p>
-        <br>
-        <p>Note: The ES6 module syntax is supported in Node.js starting from version 12 with the <code>.mjs</code> file extension 
-        <br>or by setting <code>"type": "module"</code> in the <code>package.json</code>.</p>
-
-    <h3>Starting the Server</h3>
-        <pre>// Using ES6 Modules 
-import express from 'express';
-const app = express();
-const PORT = 3000;
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-    </blockquote>
-    <!-- #endregion Lesson 02: Starting a Node.js Project -->
-    <h2 id="HTMLMethods">HTML Methods</h2>
-    <!-- #region HTML Methods-->
-    <p><strong>HTML methods</strong></p>
-    <ul>
-        <li><strong>GET:</strong> Requests data from a specified resource.</li>
-        <li><strong>POST:</strong> Submits data to be processed to a specified resource.</li>
-        <li><strong>PUT:</strong> Updates a current resource with new data.</li>
-        <li><strong>DELETE:</strong> Deletes a specified resource.</li>
-        <li><strong>PATCH:</strong> Partially updates a resource.</li>
-    </ul>
-    <p><strong>HTML Request Methods</strong></p>
-    <ul>
-        <li><strong>Query Params (GET)</strong>: Used to send data to the server as part of the URL, typically for filtering or searching.
-            <br> Example: <code>/users<strong>?</strong>name=John&age=30</code></li>
-        <li><strong>Route Params (GET, POST, PUT, DELETE, PATCH)</strong>: Used to capture values from the URL path, often for dynamic routing. 
-            <br> Example: <code>/users/<strong>:id</strong></code></li> 
-        <li><strong>Request Body (POST, PUT, PATCH)</strong>: Used to send data to the server in the body of the request, often for creating or updating resources.
-            <br> Example: <code>{ "name": "John", "age": 30 }</code></li>
-    </ul>
-    <p><strong>HTTP Status Codes</strong></p>
-    <ul>
-        <li><strong><code>200</code> OK:</strong> The request was successful.</li>
-        <li><strong><code>201</code> Created:</strong> The request was successful and a resource was created.</li>
-        <li><strong><code>202</code> Accepted:</strong> The request has been received but not yet acted upon.</li>
-        <br>
-        <li><strong><code>400</code> Bad Request:</strong> The server could not understand the request due to invalid syntax.</li>
-        <li><strong><code>401</code> Unauthorized:</strong> The client must authenticate itself to get the requested response.</li>
-        <li><strong><code>403</code> Forbidden:</strong> The client does not have access rights to the content.</li>
-        <li><strong><code>404</code> Not Found:</strong> The server can not find the requested resource.</li>
-        <br>
-        <li><strong><code>500</code> Internal Server Error:</strong> The server has encountered a situation it doesn't know how to handle.</li>
-        <li><strong><code>502</code> Bad Gateway:</strong> The server, while acting as a gateway or proxy, received an invalid response from the upstream server.</li>
-    </ul>
-    <!-- #endregion HTML Methods -->
-    <h2 id="ServerSide">Server Side</h2>
-    <!-- #region ServerSide -->
-    <h3>server.js Request Methods</h3>
-    <ul>
-        <li><code>app.get()</code>: Defines a route handler for GET requests to a specified path.</li>
-        <li><code>app.post()</code>: Defines a route handler for POST requests to a specified path.</li>
-        <li><code>app.put()</code>: Defines a route handler for PUT requests to a specified path.</li>
-        <li><code>app.delete()</code>: Defines a route handler for DELETE requests to a specified path.</li>
-        <li><code>app.patch()</code>: Defines a route handler for PATCH requests to a specified path.</li>
-    </ul>
-    <h3>server.js Response Methods</h3>
-    <ul>
-        <li><code>res.send()</code>: Sends a response of various types (string, object, array, etc.) to the client.</li>
-        <li><code>res.json()</code>: Sends a JSON response to the client. It converts a JavaScript object or array into a JSON string and sets the appropriate content type.</li>
-        <li><code>res.render()</code>: Renders a view template and sends the resulting HTML to the client. This is commonly used with templating engines like EJS, Pug, or Handlebars.</li>
-    </ul>
-    <h3>Starting the Server</h3>
-    <pre>
-// const express = require('express'); // CommonJS syntax
-
-import express from 'express';
-const app = express();
-const PORT = 3000;
-
-// see if the server is running
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});</pre>
-    <h4><strong>On Terminal:</strong></h4>
-    <p>To start the server, you can use the following command in your terminal:</p>
-    <pre>node NODE/server.js</pre>
-    <p>Alternatively, you can use the following command to automatically restart the server whenever you make changes to the server.js file:</p>
-    <pre class="copyThisToClipboard">node --watch NODE/server.js</pre>
-    <!-- #endregion ServerSide -->
-    <h2 id="Params">Params</h2>
-    <!-- #region Params -->
-    <h3>Front-end</h3>
-    <p><strong>Query Params:</strong> Used to send data to the server as part of the URL, typically for filtering or searching.
-        <blockquote>Example: <code>/users?<strong>name=John&age=30</strong></code></blockquote></p>
-    <p><strong>Route Params:</strong> Used to capture values from the URL path, often for dynamic routing.
-        <blockquote>Example: <code>/users/<strong>:id</strong></code></blockquote></p>
-    <p><strong>Request Body:</strong> Used to send data to the server in the body of the request, often for creating or updating resources.
-        <blockquote>Example: <code>{ "name": "John", "age": 30 }</code></blockquote></p>
-    <h3>Back-end</h3>
-    <p><strong>Query Params:</strong> Using <code>req.query.variable</code>, gets the value of the query parameter. Example: <code>/example?variable=value</code></p>
-    <p><strong>Route Params:</strong> Accessed using <code>req.params</code> in Express.js, which returns an object containing the route parameters defined in the URL path.</p>
-    <p><strong>Request Body:</strong> Accessed using <code>req.body</code> in Express.js, which contains the data sent in the body of the request. 
-        Note: To parse the request body, you need to use middleware like <code>express.json()</code> for JSON data or <code>express.urlencoded()</code> for URL-encoded data.</p>
-
-    
-        <!-- #endregion Params -->
-
-    <h2 id="ObjectNotation">Object Notation</h2>
-    <!-- #region ObjectNotation -->
-    <p><strong>JSON (JavaScript Object Notation)</strong> is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 
-        It is commonly used for transmitting data in web applications between a server and a client.</p>
-    <p>Toon</p>
-    <p><strong>Toon (Token Object Notation)</strong> is a compact, human-readable encoding of the JSON data model that minimizes tokens and makes structure easy for models to follow. It's intended for LLM input as a drop-in, lossless representation of your existing JSON.</p>
-    <!-- #endregion ObjectNotation -->
-
+    <div class="certificate">
+    <!-- #region Certification -->
+        <h2 id="certificate">Certificate</h2>
+            <img src="" alt="Backend Course Certificate">
+        </div> 
+    <!-- #endregion Certification -->
+ 
     <br>
     <button onclick="history.back()">Go Back</button>
     <br><br><br><br>
+
 </body>
 </html>
