@@ -29,3 +29,12 @@
     border: solid 1px #000;
     color: #000;
 }
+
+.mongodb {
+    color: #00684a !important;
+    font-weight: 500 !important;
+}
+.prisma {
+    color: #5f6bd9 !important;
+    font-weight: 500 !important;
+}

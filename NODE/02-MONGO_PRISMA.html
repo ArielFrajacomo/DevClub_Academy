@@ -8,7 +8,7 @@
     <script src="../JAVASCRIPT/scripts.js" defer></script>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="./scripts.js" defer></script>
+    <script src="./02-scripts.js" defer></script>
     <title>DevClub - MongoDB and Prisma</title>
 </head>
 <body>
@@ -17,8 +17,8 @@
     <h2>Table of Contents</h2>
     <ul>
         <li><a href="#Featured">Featured program</a></li>
-        <li><a href="#Lesson01">Lesson 01: Introduction to MongoDB</a></li>
-        <li><a href="#Lesson02">Lesson 02: Setting up Prisma</a></li>
+        <li><a href="#Lesson01">Lesson 01: Setting up MongoDB and Prisma</a></li>
+        <li><a href="#Lesson02">Lesson 02: Defining Data Models</a></li>
         <li><a href="#Lesson03">Lesson 03: CRUD Operations with Prisma</a></li>
         <li><a href="#LessonBonus01">Lesson Bonus: JS OOP</a></li>
         <li><a href="#Lesson04">Lesson 04: Advanced Prisma Features</a></li>
@@ -28,14 +28,148 @@
     <!-- #region Featured program -->
     <!-- #endregion Featured program -->
      
-    <h2 id="Lesson01">Lesson 01: Setting up MongoDB</h2>
-    <!-- #region Lesson 01: Setting up MongoDB -->
-    
-    <!-- #endregion Lesson 01: Setting up MongoDB -->
+    <h2 id="Lesson01">Lesson 01: Setting up MongoDB and Prisma</h2>
+    <!-- #region Lesson 01: Setting up MongoDB and Prisma -->
+        <p>We will be using MongoDB Atlas, a cloud-based database service.</p>
+
+        <h2>Links</h2>
+        <ul class="no-bullets" style="width: 100%">
+            <li><a style="width: 100%;" href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
+                MongoDB website</a></li>
+            <li><a style="width: 100%;" href="https://www.prisma.io/" target="_blank" rel="noopener noreferrer">
+                Prisma website</a></li>
+            <li><a style="width: 100%;" href="https://www.prisma.io/docs/prisma-orm/quickstart/mongodb#6-push-your-schema-to-mongodb" target="_blank" rel="noopener noreferrer">
+                Prisma Docs - MongoDB Quickstart</a></li>
+        </ul>
+
+        <h2>Procedures</h2>
+        <h3><span class="mongodb">MongoDB</span> & <span class="prisma">Prisma</span> setup</h3>
+        <ol>
+            <li class="mongodb">Go to the MongoDB website and create/login to your account.</li>
+            <li class="mongodb">Create a new cluster in MongoDB Atlas.</li>
+            <li class="mongodb">Set your cluster configuration (e.g., cloud provider, region, cluster tier).</li>
+            <li class="mongodb">Wait for the cluster to be deployed.</li>
+            <li class="mongodb">Create the user and password for your database.</li>
+            <div style="color: gray;">&emsp;&ensp;//The database will be created with Prisma through schema.prisma</div>
+            <!-- Setting up Prisma +schema and push it to MongoDB. -->
+            <li class="prisma">Go to the Prisma documentation and follow the MongoDB Quickstart guide.</li>
+            <div style="color: darkred;">&emsp;&ensp;//Right now Prisma v7 doesn't support MongoDB, we will use Prisma v6.19</div>
+            <li class="prisma">install required dependencies
+                <ul>
+                    <li><code class="copyThisToClipboard">npm install prisma@6.19.0 --save-dev</code></li>
+                    <!-- npm install prisma@6.19 @types/node --save-dev , we remove the @types/node because we are not using TypeScript -->
+                    <li><code class="copyThisToClipboard">npm install @prisma/client@6.19.0</code></li>
+                </ul>
+            </li>
+            <li class="prisma">Creating prisma schema
+                <ul>
+                    <li><code class="copyThisToClipboard">npx prisma init --datasource-provider mongodb --output ../generated/prisma</code></li>
+                    <div style="color: gray; font-weight: 400;">&emsp;&ensp;//We can remove <code>prisma.configs.ts</code> because we are not using the v7</div>
+                </ul>
+            </li>
+            <li class="prisma">In the <code>schema.prisma</code> file:
+                <ul>
+                    <li>change the client->Provider from <code>prisma-client</code> to <code>prisma-client-js</code>.</li>
+                    <li>change the db->Provider from <code>postgresql</code> to <code>mongodb</code>.</li>
+                </ul>
+            </li>
+            <li class="prisma">In VS Code, install the Prisma extensions:
+                <ul>
+                    <li><code>Prisma</code> extension by Prisma</li>
+                    <li><code>Prisma insider</code> extension by Prisma</li>
+                </ul>
+            </li>
+            <li class="prisma">Use the command:
+                <ul>
+                    <li><code class="copyThisToClipboard">npx prisma generate</code></li>
+                </ul>
+                To generate the Prisma Client based on your schema. 
+            </li>
+            <li class="prisma">Set the default version of prisma to 6.19.0 by using the command <code>CTRL+SHIFT+P</code> and selecting <code>Pin the current workspace to Prisma 6</code></li>
+            <li>If the VS Code Still doesn't recognize the Prisma Client, use the command <code>CTRL+SHIFT+P</code> and selecting <code>Reload Window</code></li>
+            <li>In the <code>server.js</code> add the lines to import and initialize the Prisma Client:
+                <ul>
+                    <li><code>const { PrismaClient } = require('@prisma/client');</code></li>
+                    <li><code>const prisma = new PrismaClient();</code></li>
+                </ul>
+            </li>
+            <li class="mongodb">On MongoDB Atlas, create a new database and collection.</li>
+            <li class="mongodb">In your database, click in <b>Connect</b> and get the connection string.</li>
+            <li>Modify the <code>.env</code> file with your <span class="mongodb">MongoDB connection string</span>.
+            <br>Then before the querry string <code>'?='</code>, after the <code>'/'</code>, change to <code>/Users?</code></li>
+            <div style="color: gray;">&emsp;&ensp;//the <code>/Users?</code> set the default database to Users</div>
+        </ol>
+    <!-- #endregion Lesson 01: Setting up MongoDB and Prisma -->
      
-    <h2 id="Lesson02">Lesson 02: Setting up Prisma</h2>
-    <!-- #region Lesson 02: Setting up Prisma -->
-    <!-- #endregion Lesson 02: Setting up Prisma -->
+    <h2 id="Lesson02">Lesson 02: Defining Data Models</h2>
+    <!-- #region Lesson 02: Defining Data Models -->
+        <p>In this lesson, we will define our data models using the Prisma schema file. We will create a simple User model with fields for id, email, name, and age.</p>
+        <h3>Procedures</h3>
+        <ol>
+            <li>Open the <code>schema.prisma</code> file in the <code>prisma</code> folder.</li>
+            <li>Define a new model called <code>User</code> with the following fields:
+                <ul>
+                    <li><code>id</code>: A unique identifier for each user (String, @id, @default(auto()), @map("_id"), @db.ObjectId)</li>
+                    <li><code>email</code>: The user's email address (String, @unique)</li>
+                    <li><code>name</code>: The user's name (String, optional)</li>
+                    <li><code>age</code>: The user's age (Int, optional)</li>
+                </ul>
+            </li>
+            <li>After defining the model, run the command:
+                <ul>
+                    <li><code class="copyThisToClipboard">npx prisma db push</code></li>
+                </ul>
+                This command will push your Prisma schema changes to your MongoDB database, creating the necessary collections and indexes based on your model definitions.
+            </li>
+        </ol>
+        <h3>Model parameters</h3>
+        <ul>
+            <li><code>@id</code>: Marks the field as the primary key.</li>
+            <li><code>@default(auto())</code>: Automatically generates a unique value for the field (useful for IDs).</li>
+            <li><code>@map("_id")</code>: Maps the field to a different name in the database (in this case, MongoDB uses "_id" for primary keys).</li>
+            <li><code>@db.ObjectId</code>: Specifies that the field should be treated as a MongoDB ObjectId.</li>
+            <li><code>@unique</code>: Ensures that all values in this field are unique across the collection.</li>
+            <li><code>@optional</code>: Marks the field as optional, allowing it to be null.</li>
+            <li><code>@relation</code>: Defines a relationship between models.</li>
+        </ul>
+        <h3>Model typing</h3>
+        <p>In Prisma, you can define the types of your model fields using the following data types:</p>
+        <ul>
+            <li><code>String</code>: A sequence of characters.</li>
+            <li><code>Int</code>: A 32-bit integer.</li>
+            <li><code>Float</code>: A floating-point number.</li>
+            <li><code>Boolean</code>: A true/false value.</li>
+            <li><code>DateTime</code>: A date and time value.</li>
+            <li><code>Json</code>: A JSON object.</li>
+            <li><code>Bytes</code>: Binary data.</li>
+            <li><code>Decimal</code>: A decimal number (requires the Prisma Decimal.js library).</li>
+            <li><code>Enum</code>: A set of predefined values (you can define your own enums in the schema).</li>
+            <br>
+            <li>We can use another model as a type for a field, creating a relationship between models.
+                <ul>
+                    <li><code>@relation</code>: Defines a relationship between models. For example, if you have a <code>Post</code> model that has a relation to the <code>User</code> model, you can define it like this:
+                        <pre>model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+}</pre>
+                    </li>
+                    <!-- using model User[] -->
+                    <li>You can also define a one-to-many relationship by using an array of another model. For example, if a <code>User</code> can have many <code>Post</code>s, you can define it like this:
+                        <pre>model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  posts Post[]
+}</pre>
+                    </li>
+                    <li>Dont forget to push the changes with <code class="copyThisToClipboard">npx prisma db push</code></li>
+                </ul>
+            </li>
+            <li>we can check the database to see the changes reflected via prisma studio by using the <code class="copyThisToClipboard">npx prisma studio</code> command.</li>
+        </ul>
+
+    <!-- #endregion Lesson 02: Defining Data Models -->
      
     <h2 id="Lesson03">Lesson 03: CRUD Operations with Prisma</h2>
     <!-- #region Lesson 03: CRUD Operations with Prisma -->

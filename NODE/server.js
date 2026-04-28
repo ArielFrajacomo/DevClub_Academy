@@ -26,6 +26,7 @@ Alternatively, you can use the following command to automatically restart the se
 // import server from './server.js';
 import express from 'express'; // new way of importing modules in Node.js, using ES6 module syntax
 import cors from 'cors'; // Importing the CORS middleware
+import { PrismaClient } from './generated/prisma/client.js'; // Importing the Prisma Client
 // const express = require('express'); // old way of importing modules in Node.js, using CommonJS syntax
 
 const app = express();
@@ -33,6 +34,7 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Middleware to parse JSON bodies
 const port = 3000;
 
+const prisma = new PrismaClient(); // Initialize Prisma Client, which is used to interact with the database.
 
 app.get('/', (req, res) => {
   res.send('Server is running!');
