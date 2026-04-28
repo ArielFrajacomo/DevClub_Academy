@@ -18,6 +18,9 @@ Alternatively, you can use the following command to automatically restart the se
     cd NODE 
     node --watch server.js
 
+    or
+    cd --watch NODE/server.js
+
 */
 ///#endregion IMPORTANT
 
