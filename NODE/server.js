@@ -216,7 +216,8 @@ app.post('/submitItem', (req, res) => {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//#region Featured Exercise
+//#region CRUD
+//01 - Featured program using JSON for data storage 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //database simulation
@@ -269,9 +270,9 @@ class User {
   }
 }
 
-////////////////////////
-//       CRUD
-////////////////////////
+/////////////////////////////////
+//       CRUD using JSON
+/////////////////////////////////
 
 //get all users
 app.get('/users', (req, res) => {
@@ -310,6 +311,54 @@ app.delete('/users', (req, res) => {
       ? res.status(400).json({ message: 'Invalid user data.' })
       : res.status(404).json({ message: 'User not found.' });
 });
+
+
+///////////////////////////////////
+//#region MongoDB+Prisma
+//02-featured program
+///////////////////////////////////
+import * as Classes from './server-classes.js'; // Importing the User class and validateUserData function from 02-scripts.js
+const mongoUser = new Classes.User();
+
+
+
+//get all users from MongoDB
+app.get('/prisma/users', async (req, res) => {
+
+});
+
+//get single user by name from MongoDB
+app.get('/prisma/users/:name', async (req, res) => {
+  prisma.user.findUnique({
+    where: { name: req.params.name }
+  })
+});
+//add new user on MongoDB
+app.post('/prisma/users', async (req, res) => {
+  prisma.user.create({
+    data: {
+      email: req.body.email,
+      name: req.body.name,
+      age: req.body.age
+    }
+  })
+});
+
+//update an existing user on MongoDB
+app.put('/prisma/users', async (req, res) => {
+});
+
+
+
+//#endregion MongoDB+Prisma
+
+
+
+
+
+
+
+
 
 
 
