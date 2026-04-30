@@ -1,8 +1,9 @@
 
-import * as Classes from './server-classes.js'; // Importing the User class and validateUserData function from 02-scripts.js
-const mongoUser = new Classes.User();
-const backend = new Classes.Backend();
+import { User , Backend } from './server-classes.js'; // Importing the User class and validateUserData function from 02-scripts.js
+const mongoUser = new User();
+const backend = new Backend(Backend.SERVICE.PRISMA_USERS);
 const userList = []; // This will hold the list of users fetched from the backend
+
 
 
 //#region Functions
@@ -13,7 +14,7 @@ const inputAge = document.getElementById('txtAge');
 const inputEmail = document.getElementById('txtEmail');
 
 // Adding a method to the User class prototype to load data from input fields
-Classes.User.prototype.loadDataFromInputs = function() {
+User.prototype.loadDataFromInputs = function() {
     this.id = inputId.value.trim();
     this.name = inputName.value.trim();
     this.age = parseInt(inputAge.value.trim()) || 0;

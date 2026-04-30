@@ -58,14 +58,14 @@ export class User {
 // Calling Backend to perform CRUD operations
 export class Backend {
     // using a enum-like object to store service endpoints
-    // this makes the backend class more flexible 
-    SERVICE = {
+    // this makes the backend class generic and easily adaptable to different services or endpoints by just changing the SERVICE object 
+    static SERVICE = {
         PRISMA_USERS: 'http://localhost:3000/prisma/users',
-        USER: 'http://localhost:3000/users'
+        USER: 'http://localhost:3000/users',
     };
-    endpoint = this.SERVICE.PRISMA_USERS;
+    endpoint = Backend.SERVICE.PRISMA_USERS;
 
-    constructor(path = this.SERVICE.PRISMA_USERS) {
+    constructor(path = Backend.SERVICE.PRISMA_USERS) {
         if (path) this.endpoint = path;
     }
 
