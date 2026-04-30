@@ -21,7 +21,6 @@
         <li><a href="#Lesson02">Lesson 02: Defining Data Models</a></li>
         <li><a href="#Lesson03">Lesson 03: CRUD Operations with Prisma</a></li>
         <li><a href="#LessonBonus01">Lesson Bonus: JS OOP</a></li>
-        <li><a href="#Lesson04">Lesson 04: Advanced Prisma Features</a></li>
     </ul>
 
     <h2 id="Featured">Featured program</h2>
@@ -176,15 +175,44 @@
      
     <h2 id="Lesson03">Lesson 03: CRUD Operations with Prisma</h2>
     <!-- #region Lesson 03: CRUD Operations with Prisma -->
+        <p>CRUD (Create, Read, Update, Delete) operations using the Prisma Client.</p>
+        <h3>Procedures</h3>
+        <ol>
+            <li><code>Create</code>: To create a new user, we can use the <code>prisma.user.create()</code> method. For example:
+                <pre>const newUser = await prisma.user.create({
+    data: {
+        email: 'example@example.com',
+        name: 'John Doe',
+        age: 30
+    }
+});
+</pre>
+            </li>
+            <li><code>Read</code>: To read users, we can use the <code>prisma.user.findMany()</code> method. For example:
+                <pre>const users = await prisma.user.findMany();
+</pre>
+            </li>
+            <li><code>Update</code>: To update a user, we can use the <code>prisma.user.update()</code> method. For example:
+                <pre>const updatedUser = await prisma.user.update({
+    where: { id: 'userId' },
+    data: { name: 'Jane Doe' }
+});
+</pre>
+            </li>
+            <li><code>Delete</code>: To delete a user, we can use the <code>prisma.user.delete()</code> method. For example:
+                <pre>const deletedUser = await prisma.user.delete({
+    where: { id: 'userId' }
+});
+</pre>
+            </li>
+        </ol>
     <!-- #endregion Lesson 03: CRUD Operations with Prisma -->
      
     <h2 id="LessonBonus01">Lesson Bonus: JS OOP</h2>
     <!-- #region Lesson Bonus: JS OOP -->
+     
     <!-- #endregion Lesson Bonus: JS OOP -->
      
-    <h2 id="Lesson04">Lesson 04: Advanced Prisma Features</h2>
-    <!-- #region Lesson 04: Advanced Prisma Features -->
-    <!-- #endregion Lesson 04: Advanced Prisma Features -->
 
 </body>
 </html>

@@ -12,7 +12,7 @@
 - [CSS Basics](#css) / [CSS Intermediate](#css-intermediate-level)
 - [GIT](#git)
 - [JavaScript](#javascript)
-- [Node](#node)
+- [FULL_STACK](#FULL_STACK)
 
 ## StandAlone Projects
 - [Project 01 - We Care Pet Frontpage](#Project01)
@@ -165,6 +165,8 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - The burgerlist.json is called with the fetch API. To simulate a real API call.
 - Fully responsive
 
+<a id="FULL_STACK">
+
 ## Full-stack development
 > from this point it picks my interest because i'm a guy that never had worked with RESTful APIs before
 
@@ -217,7 +219,7 @@ See the `NODE/server.js` file for detailed code and endpoint examples for both b
 - imported the server classes into `server.js` and `02-scripts.js` (consumed by 02-MONGO_PRISMA) 
 - Implemented validation and data transformation methods inside User Class (e.g., `getFromJson`, `toJson`, `equalData`).
 - BONUS: Trained error handling and rollback logic.
-> See the `NODE/server.js` and `NODE/server-classes.js` files for detailed code and endpoint examples.
+> See the `FULL_STACK/server.js` and `FULL_STACK/server-classes.js` files for detailed code and endpoint examples.
 
 
 
