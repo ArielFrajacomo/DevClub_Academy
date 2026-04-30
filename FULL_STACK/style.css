@@ -18,16 +18,17 @@
     padding: 15px;
 }
 
-.buttons-area {
+.buttons-area , #search-area {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.buttons-area button {
+.buttons-area button, #search-area button {
     background-color: #f1b900;
     border: solid 1px #000;
     color: #000;
+    width: 100%;
 }
 
 .mongodb {

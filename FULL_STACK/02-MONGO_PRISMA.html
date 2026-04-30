@@ -25,6 +25,36 @@
 
     <h2 id="Featured">Featured program</h2>
     <!-- #region Featured program -->
+     <div class="featured-program">
+        <div class="display-area">
+                
+            <h3>List of Users</h3>
+            <ul class="no-bullets" id="userList"></ul>
+        </div>
+        <div id="search-area">
+            <label for="txtID">Search User by ID
+                <input type="text" name="id" id="txtID" placeholder="ID">
+            </label>
+            <button id="searchUserBtn" onclick="btnSearchUser()">Search</button>
+            <button id="searchUserAllBtn" onclick="btnSearchAllUsers()">Get All</button>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+            <strong>User Data</strong>
+            <input type="text" name="name" id="txtName" placeholder="Name">
+            <input type="number" name="age" id="txtAge" placeholder="Age">
+            <input type="text" name="email" id="txtEmail" placeholder="Email">
+        </div>
+        <div class="buttons-area">
+            <button id="addUserBtn" onclick="btnAddUser()">Add User</button>
+            <button id="updateUserBtn" onclick="btnUpdateUser()">Update User</button>
+            <button id="deleteUserBtn" onclick="btnDeleteUser()">Delete User</button>
+        </div>
+    </div>
+
+    <blockquote>
+        <p id="alarm"><strong>Attention:</strong> Make sure your server is running.
+        <br>follow the instructions in the lesson 01 to start the server.</p>
+    </blockquote>
     <!-- #endregion Featured program -->
      
     <h2 id="Lesson01">Lesson 01: Setting up MongoDB and Prisma</h2>

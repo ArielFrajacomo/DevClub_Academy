@@ -14,24 +14,9 @@ export class User {
         this.name = name;
         this.age = age;
     }
-    checkId = () => this.id && this.id.trim() !== '';
-    isValid = () => validateUserData(this);
-    toJson = () => ({ id: this.id, email: this.email, name: this.name, age: this.age });
-    getFromJson = (json) => {
-        this.id = json.id || '';
-        this.email = json.email || '';
-        this.name = json.name || '';
-        this.age = json.age || 0;
-    }
-    equalData(other) {
-        return this.id === other.id &&
-               this.email === other.email &&
-               this.name === other.name &&
-               this.age === other.age;
-    }
-}
 
-export function validateUserData(user) {
+    // Static method to validate user data
+    static validateUserData(user) {
     let errorMessages = [];
 
     if (!user.email || user.email.trim() === '') {
@@ -50,5 +35,94 @@ export function validateUserData(user) {
         return false;
     }
     return true;
+    }
+
+    // instance methods
+    checkId = () => this.id && this.id.trim() !== '';
+    isValid = () => User.validateUserData(this);
+    toJson = () => ({ id: this.id, email: this.email, name: this.name, age: this.age });
+    getFromJson = (json) => {
+        this.id = json.id || '';
+        this.email = json.email || '';
+        this.name = json.name || '';
+        this.age = json.age || 0;
+    }
+    equalData(other) {
+        return this.id === other.id &&
+               this.email === other.email &&
+               this.name === other.name &&
+               this.age === other.age;
+    }
 }
+
+// Calling Backend to perform CRUD operations
+export class Backend {
+    // using a enum-like object to store service endpoints
+    // this makes the backend class more flexible 
+    SERVICE = {
+        PRISMA_USERS: 'http://localhost:3000/prisma/users',
+        USER: 'http://localhost:3000/users'
+    };
+    endpoint = this.SERVICE.PRISMA_USERS;
+
+    constructor(path = this.SERVICE.PRISMA_USERS) {
+        if (path) this.endpoint = path;
+    }
+
+    async getUserById(id) {
+        const response = await fetch(this.endpoint, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id })
+        });
+        if (!response.ok) throw new Error('Failed to fetch user error: ' + response.status);
+        return await response.json();
+    }
+    async getUserByName(name) {
+        const response = await fetch(this.endpoint, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name })
+        });
+        if (!response.ok) throw new Error('Failed to fetch user error: ' + response.status);
+        return await response.json();
+    }
+    async getAllUsers() {
+        const response = await fetch(this.endpoint);
+        if (!response.ok) throw new Error('Failed to fetch users error: ' + response.status);
+        return await response.json();
+    }
+
+    async add(user) {
+        const response = await fetch(this.endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        });
+        if (!response.ok) throw new Error('Failed to add user error: ' + response.status);
+        return await response.json();
+    }
+
+    async update(user) {
+        const response = await fetch(this.endpoint, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        });
+        if (!response.ok) throw new Error('Failed to update user error: ' + response.status);
+        return await response.json();
+    }
+
+    async delete(id) {
+        const response = await fetch(this.endpoint, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id })
+        });
+        if (!response.ok) throw new Error('Failed to delete user error: ' + response.status);
+        return await response.json();
+    }
+}
+
+
 //#endregion Classes

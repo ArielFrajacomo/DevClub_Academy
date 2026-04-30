@@ -228,7 +228,8 @@ const userList = [
 ];
 
 //newUser Class
-class User {
+// Assigned the 01 to User class to avoid conflicts with the User class in server-classes.js, which is used for MongoDB operations.
+class User01 {
   constructor(name = "", age = 0) {
     this.name = name;
     this.age = age;
@@ -284,7 +285,7 @@ app.post('/users', (req, res) => {
   const { name, age } = req.body;
 
   //return
-  new User(name, age).addToList(userList)
+  new User01(name, age).addToList(userList)
     ? res.status(201).json({ message: 'User added successfully.' })
     : res.status(400).json({ message: 'Invalid user data.' });
 });
@@ -293,7 +294,7 @@ app.post('/users', (req, res) => {
 app.put('/users', (req, res) => {
   // Expecting name and age in req.body
   // A better way to do this is expecting the ID (name) in the URL, but for the sake of the exercise, i will do it this way.
-  const newUser = new User(req.body.name, req.body.age);
+  const newUser = new User01(req.body.name, req.body.age);
 
   newUser.updateList(userList)
     ? res.status(200).json(userList) // success
@@ -305,7 +306,7 @@ app.put('/users', (req, res) => {
 //delete a user by name
 app.delete('/users', (req, res) => {
   
-  new User(req.body.name).deleteFromList(userList)
+  new User01(req.body.name).deleteFromList(userList)
     ? res.status(200).json(userList) // success
     : userList.find(u => u.name === req.body.name) // if error, wich error
       ? res.status(400).json({ message: 'Invalid user data.' })
@@ -321,20 +322,25 @@ app.delete('/users', (req, res) => {
 // Importing the User class and validateUserData function from 02-scripts.js
 // BONUS: Learned how to import and use classes and functions from other files in Node.js
 //        The import was done here to be easier to follow the lessons
-import * as Classes from './server-classes.js'; 
-const mongoUser = new Classes.User();
+import { User } from './server-classes.js'; 
+const mongoUser = new User();
 
 //get users from MongoDB
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
 app.get('/prisma/users', async (req, res) => {
   let users = null; 
-  if (req.body.name && req.body.name.trim() !== '') {
-    // If a name is provided in the request body, find users with that name
+  if (req.body.id && req.body.id.trim() !== '') {
+    // If an ID is provided in the request body, find the user with that ID
+    users = await prisma.user.findUnique({
+      where: { id: req.body.id }
+    });
+  } else if (req.body.name && req.body.name.trim() !== '') {
+    // If a name is provided in the request body, find the user with that name
     users = await prisma.user.findUnique({
       where: { name: req.body.name }
     });
   } else {
-    // If no name is provided, return all users
+    // If no ID or name is provided, return all users
     users = await prisma.user.findMany();
   }
   res.status(200).json(users);
