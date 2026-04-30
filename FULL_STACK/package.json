@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node --watch NODE/server.js",
+    "server": "node --watch FULL_STACK/server.js",
     "server2": "node --watch server.js",
     "prismastudio": "npx prisma studio",
     "prismaatt": "npx prisma db push"

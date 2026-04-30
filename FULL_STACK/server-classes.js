@@ -88,7 +88,10 @@ export class Backend {
         return await response.json();
     }
     async getAllUsers() {
-        const response = await fetch(this.endpoint);
+        const response = await fetch(this.endpoint, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        });
         if (!response.ok) throw new Error('Failed to fetch users error: ' + response.status);
         return await response.json();
     }

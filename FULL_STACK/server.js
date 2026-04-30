@@ -329,12 +329,13 @@ const mongoUser = new User();
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
 app.get('/prisma/users', async (req, res) => {
   let users = null; 
-  if (req.body.id && req.body.id.trim() !== '') {
+
+  if (req.body?.id && req.body?.id?.trim() !== '') {
     // If an ID is provided in the request body, find the user with that ID
     users = await prisma.user.findUnique({
       where: { id: req.body.id }
     });
-  } else if (req.body.name && req.body.name.trim() !== '') {
+  } else if (req.body?.name && req.body?.name?.trim() !== '') {
     // If a name is provided in the request body, find the user with that name
     users = await prisma.user.findUnique({
       where: { name: req.body.name }
