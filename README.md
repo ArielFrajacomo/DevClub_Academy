@@ -208,36 +208,19 @@ See the `NODE/server.js` file for detailed code and endpoint examples for both b
 - You can add, update, delete, and list users through the web interface, which interacts with the Express backend.
 
 ### MONGO and PRISMA
-> Install instructions can be found at [FULL_STACK/02-MONGO_PRISMA](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/FULL_STACK/02-MONGO_PRISMA)
+> Install instructions can be found at `FULL_STACK/index.html -> MONGO_PRISMA`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/FULL_STACK) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/FULL_STACK/02-MONGO_PRISMA.html)
 
-Set up a RESTful API
+- Switched from in-memory arrays to a real database for persistent storage.
+- Defined data models in `schema.prisma` (e.g., User with id, email, name, age).
+- Created a `server-classes.js` to handle the classes that will be used in the Featured Program (ES module syntax)
+- imported the server classes into `server.js` and `02-scripts.js` (consumed by 02-MONGO_PRISMA) 
+- Implemented validation and data transformation methods inside User Class (e.g., `getFromJson`, `toJson`, `equalData`).
+- BONUS: Trained error handling and rollback logic.
+> See the `NODE/server.js` and `NODE/server-classes.js` files for detailed code and endpoint examples.
 
 
 
-- **Introduced Object-Oriented Programming:**
-	- Created a `User` class to encapsulate user data and validation logic.
-	- Used methods like `isValid`, `addToList`, `updateList`, and `deleteFromList` for clean code organization.
 
-- **Transitioned to MongoDB:**
-	- Learned MongoDB basics and set up a cloud database with MongoDB Atlas.
-	- Switched from in-memory arrays to a real database for persistent storage.
-
-- **Integrated Prisma ORM:**
-	- Defined data models in `schema.prisma` (e.g., User with id, email, name, age).
-	- Used Prisma Client for type-safe database access and CRUD operations.
-	- Practiced pushing schema changes to MongoDB and generating the Prisma client.
-
-- **Advanced Usage:**
-	- Implemented validation and data transformation methods (e.g., `getFromJson`, `toJson`, `equalData`).
-	- Used ES module syntax to share classes and functions between frontend and backend.
-	- Explored error handling and rollback strategies for database operations.
-
-**Key Learnings:**
-- How to structure a Node.js backend with Express and modular code.
-- The basics of MongoDB and how to connect it to a Node.js app.
-- How Prisma simplifies database access and enforces data consistency.
-- The importance of validation and error handling in full-stack apps.
-
-See the `NODE/server.js` and `NODE/server-classes.js` files for detailed code and endpoint examples.
 
 (On Going...)
