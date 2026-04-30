@@ -165,13 +165,15 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - The burgerlist.json is called with the fetch API. To simulate a real API call.
 - Fully responsive
 
-## Node
+## Full-stack development
+> from this point it picks my interest because i'm a guy that never had worked with RESTful APIs before
+
+### NODE
 This section covers the basics of Node.js, including:
-- Setting up a Node.js project with npm
-- Installing and using Express.js for server-side development
+- Setting up a Node.js project with npm and installing Express.js
 - Creating and handling routes (GET, POST, PUT, DELETE, PATCH)
 - Understanding request and response objects
-- Using JSON for data exchange
+- Using JSON for data exchange //Simmulating a database
 - Example server setup and starting the server
 
 **How to run the Node.js server:**
@@ -205,6 +207,37 @@ See the `NODE/server.js` file for detailed code and endpoint examples for both b
 - The project also includes a simple CRUD for users, with a frontend interface in `NODE/index.html` and logic in `NODE/scripts.js`.
 - You can add, update, delete, and list users through the web interface, which interacts with the Express backend.
 
+### MONGO and PRISMA
+> Install instructions can be found at [FULL_STACK/02-MONGO_PRISMA](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/FULL_STACK/02-MONGO_PRISMA)
 
+Set up a RESTful API
+
+
+
+- **Introduced Object-Oriented Programming:**
+	- Created a `User` class to encapsulate user data and validation logic.
+	- Used methods like `isValid`, `addToList`, `updateList`, and `deleteFromList` for clean code organization.
+
+- **Transitioned to MongoDB:**
+	- Learned MongoDB basics and set up a cloud database with MongoDB Atlas.
+	- Switched from in-memory arrays to a real database for persistent storage.
+
+- **Integrated Prisma ORM:**
+	- Defined data models in `schema.prisma` (e.g., User with id, email, name, age).
+	- Used Prisma Client for type-safe database access and CRUD operations.
+	- Practiced pushing schema changes to MongoDB and generating the Prisma client.
+
+- **Advanced Usage:**
+	- Implemented validation and data transformation methods (e.g., `getFromJson`, `toJson`, `equalData`).
+	- Used ES module syntax to share classes and functions between frontend and backend.
+	- Explored error handling and rollback strategies for database operations.
+
+**Key Learnings:**
+- How to structure a Node.js backend with Express and modular code.
+- The basics of MongoDB and how to connect it to a Node.js app.
+- How Prisma simplifies database access and enforces data consistency.
+- The importance of validation and error handling in full-stack apps.
+
+See the `NODE/server.js` and `NODE/server-classes.js` files for detailed code and endpoint examples.
 
 (On Going...)

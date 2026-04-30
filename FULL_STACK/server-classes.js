@@ -1,0 +1,54 @@
+//#region Classes
+/*
+model User { 
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  name  String?
+  age   Int?
+} 
+*/
+export class User {
+    constructor(id = '', email = '', name = '', age = 0) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.age = age;
+    }
+    checkId = () => this.id && this.id.trim() !== '';
+    isValid = () => validateUserData(this);
+    toJson = () => ({ id: this.id, email: this.email, name: this.name, age: this.age });
+    getFromJson = (json) => {
+        this.id = json.id || '';
+        this.email = json.email || '';
+        this.name = json.name || '';
+        this.age = json.age || 0;
+    }
+    equalData(other) {
+        return this.id === other.id &&
+               this.email === other.email &&
+               this.name === other.name &&
+               this.age === other.age;
+    }
+}
+
+export function validateUserData(user) {
+    let errorMessages = [];
+
+    if (!user.email || user.email.trim() === '') {
+        errorMessages.push('- Email is required.');
+    }
+    if (!user.name || user.name.trim() === '') {
+        errorMessages.push('- Name is required.');
+    }
+    if (!user.age || user.age <= 0) {
+        errorMessages.push('- Age must be a positive number.');
+    }
+
+    if (errorMessages.length > 0) {
+        errorMessages.unshift('Please correct the following errors:');
+        alert(errorMessages.join('\n'));
+        return false;
+    }
+    return true;
+}
+//#endregion Classes
