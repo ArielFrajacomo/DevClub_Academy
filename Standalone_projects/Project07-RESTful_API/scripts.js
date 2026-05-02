@@ -164,13 +164,21 @@ function createEditDeleteButtons(ID) {
     // Create Edit button
     const btnEdit = document.createElement('button');
     btnEdit.textContent = '…';
+    btnEdit.classList.add('edit-btn');
     btnEdit.onclick = () => eventSendToEditUser(ID);
 
     // Create Delete button
     const btnDelete = document.createElement('button');
     btnDelete.textContent = '✕';
+    btnDelete.classList.add('edit-btn');
     btnDelete.onclick = () => eventDeleteUser(ID);
-    return [btnEdit, btnDelete];
+
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('user-actions');
+    wrapper.appendChild(btnEdit);
+    wrapper.appendChild(btnDelete);
+    
+    return wrapper;
 }
 
 function reloadDisplay(ulist) {
@@ -178,20 +186,11 @@ function reloadDisplay(ulist) {
     display.innerHTML = '';
     ulist.forEach(user => {
         const userItem = document.createElement('li');
-        userItem.style.display = 'grid';
-        userItem.style.gridTemplateColumns = '18fr 1fr 1fr';
-        userItem.style.gap = '4px';
-        userItem.style.borderBottom = '1px solid #666';
-        userItem.style.borderRadius = '4px';
-        userItem.style.padding = '4px';
-        userItem.style.margin = '2px 0';
-        userItem.style.backgroundColor = '#eee';
         userItem.innerHTML = `<div">Name: ${user.name}, Age: ${user.age} <br> Email: ${user.email}</div>`;
         
-        const [btnEdit, btnDelete] = createEditDeleteButtons(user.id);
+        const actionButtons = createEditDeleteButtons(user.id);
         display.appendChild(userItem);
-        userItem.appendChild(btnEdit);
-        userItem.appendChild(btnDelete);
+        userItem.appendChild(actionButtons);
     });
 }
 
