@@ -21,6 +21,7 @@
 - [Project 04 - Currency Exchanger](#Project04)
 - [Project 05 - Calculator](#Project05)
 - [Project 06 - Burger Filter](#Project06)
+- [Project 07 - RESTful API](#Project07)
 
 <!-- Prerequisites Table of contents -->
 <a id="prerequisites"></a>
@@ -221,6 +222,14 @@ See the `NODE/server.js` file for detailed code and endpoint examples for both b
 - BONUS: Trained error handling and rollback logic.
 > See the `FULL_STACK/server.js` and `FULL_STACK/server-classes.js` files for detailed code and endpoint examples.
 
+<a id="Project07"></a>
+
+### Challenge - Project 07 - Node+Mongo User Management
+RESTful API to control a list of Users
+Project used Mongo+Prisma for the Database/Access
+I'm Running the NODE server at Render so the program runs together with Git Deploy
+> Project path: `Standalone_Projects/Project07-RESTful_API`  
+*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project07-RESTful_API) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project07-RESTful_API/index.html)  
 
 
 
