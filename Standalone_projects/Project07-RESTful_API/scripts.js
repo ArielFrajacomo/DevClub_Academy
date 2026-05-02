@@ -40,9 +40,6 @@ Backend.prototype.AttDisplay = function() {
 
     this.getAllUsers()
         .then(users => {
-
-            console.log('Fetched users:', users);
-
             userList.push(...users);
             reloadDisplay(userList);
             inputSearchName.value = '';
@@ -127,6 +124,10 @@ function eventUpdateUser() {
     }
     backend.update(mongoUser)
         .then(updatedUser => {
+            if (!updatedUser) {
+                return;
+            }
+        
             const index = userList.findIndex(u => u.id === mongoUser.id);
 
             if (index !== -1) {

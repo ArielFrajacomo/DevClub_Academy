@@ -87,14 +87,10 @@ export class Backend {
     }
     async getAllUsers() {
 
-        console.log('Fetching all users from endpoint:', this.endpoint);
-
         const response = await fetch(this.endpoint, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
-
-        console.log('Response from getAllUsers:', response);
 
         if (!response.ok) throw new Error('Failed to fetch users error: ' + response.status);
         return await response.json();
@@ -113,6 +109,12 @@ export class Backend {
         return await response.json();
     }
     async update(user) {
+        if (user.id === '69ef545dd6c918256c47c58d') { 
+            //easteregg, no one can delete me, not even me, the creator
+            showMessage('This user is too powerful and cannot be changed!', 'error');
+            return;
+        }
+
         const response = await fetch(this.endpoint, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -126,6 +128,12 @@ export class Backend {
         return await response.json();
     }
     async delete(id) {
+        if (id === '69ef545dd6c918256c47c58d') { 
+            //easteregg, no one can delete me, not even me, the creator
+            showMessage('This user is too powerful to be deleted!', 'error');
+            return;
+        }
+
         const response = await fetch(this.endpoint, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
