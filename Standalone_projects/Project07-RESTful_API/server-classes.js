@@ -143,11 +143,11 @@ export class Backend {
 export function showMessage(text, type = 'error') {
     let msg = document.getElementById('message');
     if (!msg) {
-        addShowMessageCSS();
-
         msg = document.createElement('div');
         msg.id = 'message';
         document.body.appendChild(msg);  
+        
+        addShowMessageCSS();
     }
 
     msg.textContent = text;
@@ -197,6 +197,6 @@ export function addShowMessageCSS() {
             border-color: #4ade80;
             color: #4ade80;
         }`;
-    document.head.appendChild(style);
+    document.body.appendChild(style);
 }
 //#endregion Classes

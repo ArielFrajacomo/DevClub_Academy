@@ -13,7 +13,24 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 
 const prisma = new PrismaClient(); // Creating an instance of PrismaClient to interact with the database
 const mongoUser = new User();
-const PORT = process.env.PORT || 3000;
+
+// =============================================
+// STATIC FILE SERVING (FRONTEND)
+// =============================================
+// This tells Express: "If the browser asks for index.html, styles.css, scripts.js
+// or any other file in this folder, just send it directly."
+// 
+// Why we need this:
+// - the server is now a real full-stack app (API + website)
+// - Without this line the browser gets "Cannot GET /" because Express
+//   only knows API routes like /users, not the actual webpage.
+// 
+// The __dirname part is needed because we use ES modules (import/export).
+// It finds the current folder automatically on both local and Render.
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(__dirname));
 
 //get users from MongoDB
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
@@ -111,6 +128,7 @@ function deleteUserByID(id) {
 }
 //#endregion MongoDB+Prisma
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
