@@ -329,16 +329,20 @@ const mongoUser = new User();
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
 app.get('/prisma/users', async (req, res) => {
   let users = null; 
-
-  if (req.body?.id && req.body?.id?.trim() !== '') {
-    // If an ID is provided in the request body, find the user with that ID
+  if (req.query?.id && req.query?.id?.trim() !== '') {
+    // If an ID is provided in the query parameters, find the user with that ID
     users = await prisma.user.findUnique({
-      where: { id: req.body.id }
+      where: { id: req.query.id }
     });
-  } else if (req.body?.name && req.body?.name?.trim() !== '') {
-    // If a name is provided in the request body, find the user with that name
-    users = await prisma.user.findUnique({
-      where: { name: req.body.name }
+  } else if (req.query?.name && req.query?.name?.trim() !== '') {
+    // If a name is provided in the query parameters, find the user with that name
+    users = await prisma.user.findMany({
+      where: { 
+        name: {
+          contains: req.query.name, // Use 'contains' for partial matching
+          mode: 'insensitive' // Case-insensitive search
+        }
+      }
     });
   } else {
     // If no ID or name is provided, return all users
@@ -365,7 +369,6 @@ app.post('/prisma/users', async (req, res) => {
       age: mongoUser.age
     }
   });
-
   try {
     if (mongoUser.equalData(newUser)) {
       res.status(201).json(newUser);

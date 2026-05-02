@@ -15,6 +15,23 @@ export class User {
         this.age = age;
     }
 
+    // instance methods
+    checkId = () => this.id && this.id.trim() !== '';
+    isValid = () => User.validateUserData(this);
+    toJson = () => ({ id: this.id, email: this.email, name: this.name, age: this.age });
+    getFromJson = (json) => {
+        this.id = json.id || '';
+        this.email = json.email || '';
+        this.name = json.name || '';
+        this.age = json.age || 0;
+    }
+    equalData(other, checkId = false) {
+        return (!checkId || this.id === other.id) &&
+               this.email === other.email &&
+               this.name === other.name &&
+               this.age === other.age;
+    }
+    
     // Static method to validate user data
     static validateUserData(user) {
     let errorMessages = [];
@@ -36,23 +53,6 @@ export class User {
     }
     return true;
     }
-
-    // instance methods
-    checkId = () => this.id && this.id.trim() !== '';
-    isValid = () => User.validateUserData(this);
-    toJson = () => ({ id: this.id, email: this.email, name: this.name, age: this.age });
-    getFromJson = (json) => {
-        this.id = json.id || '';
-        this.email = json.email || '';
-        this.name = json.name || '';
-        this.age = json.age || 0;
-    }
-    equalData(other) {
-        return this.id === other.id &&
-               this.email === other.email &&
-               this.name === other.name &&
-               this.age === other.age;
-    }
 }
 
 // Calling Backend to perform CRUD operations
@@ -70,19 +70,17 @@ export class Backend {
     }
 
     async getUserById(id) {
-        const response = await fetch(this.endpoint, {
+        const response = await fetch(`${this.endpoint}?id=${id}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id })
+            headers: { 'Content-Type': 'application/json' }
         });
         if (!response.ok) throw new Error('Failed to fetch user error: ' + response.status);
         return await response.json();
     }
     async getUserByName(name) {
-        const response = await fetch(this.endpoint, {
+        const response = await fetch(`${this.endpoint}?name=${name}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name })
+            headers: { 'Content-Type': 'application/json' }
         });
         if (!response.ok) throw new Error('Failed to fetch user error: ' + response.status);
         return await response.json();
@@ -101,11 +99,12 @@ export class Backend {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
+        }) .catch(error => {
+            console.error('Error adding user:', error);
+            alert('Failed to add user.');
         });
-        if (!response.ok) throw new Error('Failed to add user error: ' + response.status);
         return await response.json();
     }
-
     async update(user) {
         const response = await fetch(this.endpoint, {
             method: 'PUT',
@@ -115,7 +114,6 @@ export class Backend {
         if (!response.ok) throw new Error('Failed to update user error: ' + response.status);
         return await response.json();
     }
-
     async delete(id) {
         const response = await fetch(this.endpoint, {
             method: 'DELETE',

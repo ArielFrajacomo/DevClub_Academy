@@ -30,6 +30,12 @@
     color: #000;
     width: 100%;
 }
+button:disabled {
+    background-color: #ffe385;
+    border-color: #999;
+    color: #666;
+    cursor: not-allowed;
+}
 
 .mongodb {
     color: #00684a !important;

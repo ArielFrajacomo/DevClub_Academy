@@ -32,22 +32,22 @@
             <ul class="no-bullets" id="userList"></ul>
         </div>
         <div id="search-area">
-            <label for="searchName">Search User:
-                <input type="text" name="name" id="searchName" placeholder="Name">
+            <label for="inputSearchName">Search User:
+                <input type="text" name="name" id="inputSearchName" placeholder="Name">
             </label>
-            <button id="searchUserBtn" onclick="btnSearchUser()">Search</button>
-            <button id="searchUserAllBtn" onclick="btnSearchAllUsers()">Get All</button>
+            <button id="searchUserBtn">Search</button>
+            <button id="searchUserAllBtn">Get All</button>
         </div>
         <div style="display: flex; flex-direction: column; gap: 3px;">
-            <strong>User Data <span id="currentUserId"></span></strong>
-            <input type="text" name="name" id="txtName" placeholder="Name">
-            <input type="number" name="age" id="txtAge" placeholder="Age">
-            <input type="text" name="email" id="txtEmail" placeholder="Email">
+            <strong>User Data <span id="labelId"></span></strong>
+            <input type="text" name="name" id="inputName" placeholder="Name">
+            <input type="number" name="age" id="inputAge" placeholder="Age">
+            <input type="text" name="email" id="inputEmail" placeholder="Email">
         </div>
         <div class="buttons-area">
-            <button id="addUserBtn" onclick="btnAddUser()">Add User</button>
-            <button id="updateUserBtn" onclick="btnUpdateUser()">Update User</button>
-            <button id="deleteUserBtn" onclick="btnDeleteUser()">Delete User</button>
+            <button id="addUserBtn">Add User</button>
+            <button id="updateUserBtn">Update User</button>
+            <button id="clearUserBtn">Clear</button>
         </div>
     </div>
 
@@ -238,11 +238,6 @@
         </ol>
     <!-- #endregion Lesson 03: CRUD Operations with Prisma -->
      
-    <h2 id="LessonBonus01">Lesson Bonus: JS OOP</h2>
-    <!-- #region Lesson Bonus: JS OOP -->
      
-    <!-- #endregion Lesson Bonus: JS OOP -->
-     
-
 </body>
 </html>
