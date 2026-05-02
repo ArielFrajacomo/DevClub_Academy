@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./scripts.js" defer></script>
+    <title>DevClub - MongoDB and Prisma</title>
+</head>
+<body>
+    <h2 id="Featured">Featured program</h2>
+    <!-- #region Featured program -->
+     <div class="featured-program">
+        <div class="display-area">
+                
+            <h3>List of Users</h3>
+            <ul class="no-bullets" id="userList"></ul>
+        </div>
+        <div id="search-area">
+            <label for="inputSearchName">Search User:
+                <input type="text" name="name" id="inputSearchName" placeholder="Name">
+            </label>
+            <button id="searchUserBtn">Search</button>
+            <button id="searchUserAllBtn">Get All</button>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+            <strong>User Data <span id="labelId"></span></strong>
+            <input type="text" name="name" id="inputName" placeholder="Name">
+            <input type="number" name="age" id="inputAge" placeholder="Age">
+            <input type="text" name="email" id="inputEmail" placeholder="Email">
+        </div>
+        <div class="buttons-area">
+            <button id="addUserBtn">Add User</button>
+            <button id="updateUserBtn">Update User</button>
+            <button id="clearUserBtn">Clear</button>
+        </div>
+    </div>
+
+    <blockquote>
+        <p id="alarm"><strong>Attention:</strong> Make sure your server is running and connected to your MongoDB Atlas cluster before interacting with the frontend.
+        <br>follow the instructions in the lesson 01 to start the server.</p>
+    </blockquote>
+    <!-- #endregion Featured program -->
+</body>
+</html>
