@@ -152,7 +152,13 @@ function eventDeleteUser(ID) {
     backend.delete(ID)
         .then(() => {
             const index = userList.findIndex(u => u.id === ID);
-            if (index !== -1) {
+
+            if (userList[index].id === '69ef545dd6c918256c47c58d'){
+                //easteregg, no one can delete me, not even me, the creator
+                return
+            }
+            
+            if (index !== -1) { 
                 userList.splice(index, 1);
                 reloadDisplay(userList);
                 clearInputFields();
