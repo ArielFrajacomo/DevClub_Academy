@@ -1,13 +1,16 @@
 
 //#region Imports
-import { User , Backend } from './server-classes.js'; // Importing the User class and validateUserData function from 02-scripts.js
+import { User , Backend , showMessage } from './server-classes.js'; // Importing the User class and validateUserData function from 02-scripts.js
 
 
 //#endregion Imports
 
 //#region global variables
+
+ // Change this to Backend.SERVICE.LOCALHOST if you want to test with your local server instead of the Render deployment
+const backend = new Backend(Backend.SERVICE.RENDER);
+
 const mongoUser = new User();
-const backend = new Backend(Backend.SERVICE.PRISMA_USERS);
 const userList = []; // This will hold the list of users fetched from the backend
 
 const inputSearchName = document.getElementById('inputSearchName');
@@ -22,6 +25,9 @@ const btnUpdateUser = document.getElementById('updateUserBtn');
 //#endregion global variables and DOM elements
 
 //#region Prototypes
+// NOTE: Using prototypes here just to showcase the concept for the DevClub course.
+// In real production code we avoid mutating prototypes and prefer clean functions or classes.
+// This makes the code easier to maintain and avoids unexpected side effects.
 User.prototype.loadDataFromInputs = function() {
     this.id = labelId.innerHTML.replace(/[()]/g, '').trim();
     this.name = inputName.value.trim();
@@ -34,12 +40,16 @@ Backend.prototype.AttDisplay = function() {
 
     this.getAllUsers()
         .then(users => {
+
+            console.log('Fetched users:', users);
+
             userList.push(...users);
             reloadDisplay(userList);
+            inputSearchName.value = '';
         })
         .catch(error => {
             console.error('Error fetching users:', error);
-            alert('Failed to fetch users.');
+            showMessage('Failed to fetch users.');
         });
 }
 //#endregion Prototypes
@@ -64,7 +74,7 @@ function eventSendToEditUser(ID) {
 function eventSearchUser() {
     const name = inputSearchName.value.trim();
     if (name === '') {
-        alert('Please enter a name to search.');
+        showMessage('Please enter a name to search.');
         return;
     }
 
@@ -80,12 +90,12 @@ function eventSearchUser() {
 
                 reloadDisplay(userList);
             } else {
-                alert('User not found.');
+                showMessage('User not found.');
             }
         })
         .catch(error => {
             console.error('Error fetching user:', error);
-            alert('Failed to fetch user.');
+            showMessage('Failed to fetch user.');
         });
 }
 
@@ -106,7 +116,7 @@ function eventAddUser() {
         })
         .catch(error => {
             console.error('Error creating user:', error);
-            alert('Failed to create user.');
+            showMessage('Failed to create user.');
         });
 }
 
@@ -129,7 +139,7 @@ function eventUpdateUser() {
         })
         .catch(error => {
             console.error('Error updating user:', error);
-            alert('Failed to update user.');
+            showMessage('Failed to update user.');
         });
 }
 
@@ -151,7 +161,7 @@ function eventDeleteUser(ID) {
         })
         .catch(error => {
             console.error('Error deleting user:', error);
-            alert('Failed to delete user.');
+            showMessage('Failed to delete user.');
         }); 
 }
 //#endregion Events
@@ -186,9 +196,10 @@ function reloadDisplay(ulist) {
     display.innerHTML = '';
     ulist.forEach(user => {
         const userItem = document.createElement('li');
-        userItem.innerHTML = `<div">Name: ${user.name}, Age: ${user.age} <br> Email: ${user.email}</div>`;
+        userItem.innerHTML = `<div>Name: ${user.name}, Age: ${user.age} <br> Email: ${user.email}</div>`;
         
         const actionButtons = createEditDeleteButtons(user.id);
+        
         display.appendChild(userItem);
         userItem.appendChild(actionButtons);
     });
@@ -208,9 +219,7 @@ function controlsLogic() {
     const isEditing = labelId.innerHTML.trim() !== '';
     btnAddUser.disabled = isEditing;
     btnUpdateUser.disabled = !isEditing;
-
 }
-
 //#endregion Functions
 
 //#region Init
@@ -226,6 +235,8 @@ function init() {
     document.getElementById('addUserBtn').addEventListener('click', eventAddUser);
     document.getElementById('updateUserBtn').addEventListener('click', eventUpdateUser);
     document.getElementById('clearUserBtn').addEventListener('click', clearInputFields);
+
+    setTimeout(() => showMessage('Welcome to the User Management App!', 'success'), 1000);
 }
 
 init();

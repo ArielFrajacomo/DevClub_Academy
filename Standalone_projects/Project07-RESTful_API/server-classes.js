@@ -48,7 +48,7 @@ export class User {
 
     if (errorMessages.length > 0) {
         errorMessages.unshift('Please correct the following errors:');
-        alert(errorMessages.join('\n'));
+        showMessage(errorMessages.join('\n'));
         return false;
     }
     return true;
@@ -86,10 +86,16 @@ export class Backend {
         return await response.json();
     }
     async getAllUsers() {
+
+        console.log('Fetching all users from endpoint:', this.endpoint);
+
         const response = await fetch(this.endpoint, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
+
+        console.log('Response from getAllUsers:', response);
+
         if (!response.ok) throw new Error('Failed to fetch users error: ' + response.status);
         return await response.json();
     }
@@ -101,8 +107,9 @@ export class Backend {
             body: JSON.stringify(user)
         }) .catch(error => {
             console.error('Error adding user:', error);
-            alert('Failed to add user.');
+            showMessage('Failed to add user.');
         });
+        if (response.ok) showMessage('User added successfully!', 'success');
         return await response.json();
     }
     async update(user) {
@@ -111,7 +118,11 @@ export class Backend {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         });
-        if (!response.ok) throw new Error('Failed to update user error: ' + response.status);
+        if (!response.ok) {
+            showMessage('Failed to update user.');
+            throw new Error('Failed to update user error: ' + response.status);
+        }
+        showMessage('User updated successfully!', 'success');
         return await response.json();
     }
     async delete(id) {
@@ -120,10 +131,72 @@ export class Backend {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id })
         });
-        if (!response.ok) throw new Error('Failed to delete user error: ' + response.status);
+        if (!response.ok) {
+            showMessage('Failed to delete user.');
+            throw new Error('Failed to delete user error: ' + response.status);
+        }
+        showMessage('User deleted successfully!', 'success');
         return await response.json();
     }
 }
 
+export function showMessage(text, type = 'error') {
+    let msg = document.getElementById('message');
+    if (!msg) {
+        addShowMessageCSS();
 
+        msg = document.createElement('div');
+        msg.id = 'message';
+        document.body.appendChild(msg);  
+    }
+
+    msg.textContent = text;
+    msg.className = `message ${type}`;
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 4000);
+}
+
+export function addShowMessageCSS() {
+    if (document.getElementById('showMessageStyles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'showMessageStyles';
+    style.type = 'text/css';
+    style.textContent = `
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transform: translateX(0);
+            background: rgba(20, 20, 20, 0.95);
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            z-index: 1000;
+            min-width: 280px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .message.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .message.error {
+            border-color: #ff5555;
+            color: #ff5555;
+        }
+
+        .message.success {
+            border-color: #4ade80;
+            color: #4ade80;
+        }`;
+    document.head.appendChild(style);
+}
 //#endregion Classes

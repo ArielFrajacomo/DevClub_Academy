@@ -13,7 +13,7 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 
 const prisma = new PrismaClient(); // Creating an instance of PrismaClient to interact with the database
 const mongoUser = new User();
-const port = 3000; // Define the port number
+const PORT = process.env.PORT || 3000;
 
 //get users from MongoDB
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
@@ -111,7 +111,6 @@ function deleteUserByID(id) {
 }
 //#endregion MongoDB+Prisma
 
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
 });
