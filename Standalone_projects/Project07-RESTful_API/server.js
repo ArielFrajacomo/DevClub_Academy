@@ -7,6 +7,9 @@ import cors from 'cors';
 import { PrismaClient } from './generated/prisma/index.js'; // Importing the PrismaClient class from the custom Prisma output
 import { User } from './server-classes.js'; 
 
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
 const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON request bodies
@@ -27,8 +30,6 @@ const mongoUser = new User();
 // 
 // The __dirname part is needed because we use ES modules (import/export).
 // It finds the current folder automatically on both local and Render.
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(__dirname));
 
