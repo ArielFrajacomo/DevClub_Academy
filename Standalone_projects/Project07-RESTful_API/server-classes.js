@@ -60,11 +60,12 @@ export class Backend {
     // using a enum-like object to store service endpoints
     // this makes the backend class generic and easily adaptable to different services or endpoints by just changing the SERVICE object 
     static SERVICE = {
-        ON_RENDER: 'https://devclub-academy.onrender.com/',
+        RENDER: 'https://devclub-academy.onrender.com/users',
+        LOCALHOST: 'http://localhost:3000/users'
     };
-    endpoint = Backend.SERVICE.ON_RENDER; // default endpoint
+    endpoint = Backend.SERVICE.LOCALHOST; // default endpoint
 
-    constructor(path = Backend.SERVICE.ON_RENDER) {
+    constructor(path = Backend.SERVICE.LOCALHOST) {
         if (path) this.endpoint = path;
     }
 

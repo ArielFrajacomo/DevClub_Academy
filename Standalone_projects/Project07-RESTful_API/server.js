@@ -17,7 +17,7 @@ const port = 3000; // Define the port number
 
 //get users from MongoDB
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID
-app.get('/prisma/users', async (req, res) => {
+app.get('/users', async (req, res) => {
   let users = null; 
   if (req.query?.id && req.query?.id?.trim() !== '') {
     // If an ID is provided in the query parameters, find the user with that ID
@@ -42,7 +42,7 @@ app.get('/prisma/users', async (req, res) => {
 });
 
 //add new user on MongoDB
-app.post('/prisma/users', async (req, res) => {
+app.post('/users', async (req, res) => {
   mongoUser.getFromJson(req.body); // Update the mongoUser instance with data from the request body
 
   if (mongoUser.checkId()) {
@@ -72,7 +72,7 @@ app.post('/prisma/users', async (req, res) => {
 });
 
 //update an existing user on MongoDB
-app.put('/prisma/users', async (req, res) => {
+app.put('/users', async (req, res) => {
   mongoUser.getFromJson(req.body); // Update the mongoUser instance with data from the request body
 
   if (!mongoUser.checkId()) {
@@ -98,7 +98,7 @@ app.put('/prisma/users', async (req, res) => {
 });
 
 //delete a user by name on MongoDB
-app.delete('/prisma/users', async (req, res) => {
+app.delete('/users', async (req, res) => {
   deleteUserByID(req.body.id)
     .then(() => res.status(200).json({ message: 'User deleted successfully.' }))
     .catch(error => res.status(500).json({ message: 'Failed to delete user.', error: error.message }));
