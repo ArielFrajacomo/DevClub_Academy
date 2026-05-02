@@ -30,9 +30,7 @@ h2#Featured {
     letter-spacing: -2px;
     margin-bottom: 2rem;
     text-align: left;
-    background: var(--accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent);
     position: relative;
 }
 

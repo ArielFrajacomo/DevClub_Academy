@@ -134,8 +134,6 @@ function eventUpdateUser() {
                 userList[index] = updatedUser;
                 reloadDisplay(userList);
                 clearInputFields();
-
-                console.log('User updated successfully:', updatedUser);
             }
         })
         .catch(error => {
