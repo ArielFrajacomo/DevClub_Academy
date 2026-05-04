@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/style.css">
+        <title>DevClub - REACT</title>
+</head>
+<body>
+    <h1>Node Structure</h1>
+    <p>In this section, we will explore the structure of a Node.js project, including the organization of files and directories.</p>
+    <h2>Project Structure</h2>
+    <p>A typical Node.js project has the following structure:</p>
+    <pre>my-node-project/
+├── node_modules/       # Directory for installed dependencies
+├── src/                # Source code for the application
+│   ├── index.js        # Main entry point of the application
+├── routes/             # Directory for route handlers
+├── controllers/        # Directory for controller logic
+├── models/             # Directory for database models
+├── package.json        # Project metadata and dependencies
+├── package-lock.json   # Lockfile for dependencies
+└── README.md           # Project documentation
+</pre>
+    <p>In this structure:</p>
+    <ul>
+        <li><code>node_modules/</code>: This directory contains all the installed dependencies for the project. It is automatically generated when you run <code>npm install</code>.</li>
+        <li><code>src/</code>: This directory contains the source code for the application. The main entry point is typically <code>index.js</code>, which initializes the server and sets up routes.</li>
+        <li><code>routes/</code>: This directory contains route handlers that define the endpoints of the application.</li>
+        <li><code>controllers/</code>: This directory contains controller logic that handles the business logic for each route.</li>
+        <li><code>models/</code>: This directory contains database models that define the structure of data in the database.</li>
+        <li><code>package.json</code>: This file contains metadata about the project, including its name, version, and dependencies.</li>
+        <li><code>package-lock.json</code>: This file locks the versions of dependencies to ensure consistent installs across different environments.</li>
+        <li><code>README.md</code>: This file contains documentation for the project, including instructions on how to set up and run the application.</li>
+    </ul>
+    <p>This structure helps to keep the project organized and maintainable as it grows in complexity.</p>
+
+    <!-- <pre><code>npm install -g create-react-app</code></pre> -->
+</body>
+</html>
