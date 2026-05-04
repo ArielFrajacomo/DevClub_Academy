@@ -40,6 +40,30 @@
             <blockquote>or <code class="copyThisToClipboard">npm run dev</code></blockquote>
         </li>
     </ol>
+    <h2>Installing Tailwind CSS</h2>
+    <ol>
+        <li>Navigate to your React project directory if you haven't already:
+            <code class="copyThisToClipboard">cd my-react-app</code>
+        </li>
+        <li>Install Tailwind CSS and its dependencies using the following command:
+            <code class="copyThisToClipboard">yarn add -D tailwindcss @tailwindcss/vite</code>
+            <blockquote>or <code class="copyThisToClipboard">npm install -D tailwindcss @tailwindcss/vite</code></blockquote>
+        </li>
+        <li>In the <code>vite.config.js</code> file, add the Tailwind CSS plugin:
+            <pre>
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'              // <-- ADD THIS LINE
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    tailwindcss()                               // <-- ADD THIS LINE
+  ],
+})</pre>
+        </li>
+        </li>
+    </ol>
     <h2>VS Code</h2>
     <!-- extensions -->
     <ul> Recommended Extensions
