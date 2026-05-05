@@ -3,7 +3,7 @@
  
  The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
  This page will be reviewed after I finish all the lessons of the DevClub Course.
- > *OBS:* Whem there's a QuoteBox, it is my opinion and toughts i had while reviewing the contents of the Lesson
+ > *OBS:* When there's a QuoteBox, it is my opinion and thoughts i had while reviewing the contents of the Lesson
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -15,7 +15,7 @@
 - [FULL_STACK](#FULL_STACK)
 
 ## StandAlone Projects
-- [Project 01 - We Care Pet Frontpage](#Project01)
+- [Project 01 - We Care Pet Front page](#Project01)
 - [Project 02 - Challenge 2](#Project02)
 - [Project 03 - 1st Responsible site](#Project03)
 - [Project 04 - Currency Exchanger](#Project04)
@@ -81,7 +81,7 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 
 <a id="Project01"></a>
 
-### 02-Standalone Project 01 - We Care Pet Frontpage
+### 02-Standalone Project 01 - We Care Pet Front page
 - Using figma to replicate a front page in HTML with CSS (non-responsive)
 > Project path: `Standalone_projects\Project01-Pet\Index.html`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project01-Pet) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project01-Pet/Index.html)
@@ -115,10 +115,10 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 - Fully Responsive  
 ### Operators
 - math(), Random(),
-- Arithmetric, Atribuition, Comparizon and Logical Operations
+- Arithmetic, Attribution, Comparison and Logical Operations
 - typeof, delete, else-if, ternary operator, switch
 - Timeout and Interval, clearTimeout, clearInterval
-> I actually never runned a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
+> I actually never ran a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
 ### Loops
 - For, For-Of, For-In, for-each
 - While, do-while
@@ -135,7 +135,7 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
  
  **Features:**
  - Working Calculator
- - Some imput corrections
+ - Some input corrections
  - Responsive
  - CSS Animations
  - Keyboard Enabled
@@ -150,7 +150,7 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 
 <a id="Project06"></a>
 
-### Challenge - Project 06 : Burguer Filter
+### Challenge - Project 06 : Burger Filter
 Small project to create a interactive menu using the Map, Reduce, Filter and Array Methods
 > Project path: `Standalone_Projects/Project06-BurgerFilter`  
 *GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project06-BurgerFilter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project06-BurgerFilter/index.html)  
@@ -160,7 +160,7 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - Price slider with two thumbs for selecting the minimum and maximum price range.
 - You can set how much items you want to buy and see the total price with discounts applied.
 - View the receipt with the selected items and applied discounts.
-- Menu access through a burgerlist.json file, making it easy to update and manage the menu.
+- Menu access through a `burgerlist.json` file, making it easy to update and manage the menu.
 - Price filter has a dynamic range based on the menu prices. No configuration needed when the menu changes.
 - If the burgerlist.json doesn't have an image, a placeholder image will be used.
 - The burgerlist.json is called with the fetch API. To simulate a real API call.
@@ -176,7 +176,7 @@ This section covers the basics of Node.js, including:
 - Setting up a Node.js project with npm and installing Express.js
 - Creating and handling routes (GET, POST, PUT, DELETE, PATCH)
 - Understanding request and response objects
-- Using JSON for data exchange //Simmulating a database
+- Using JSON for data exchange //Simulating a database
 - Example server setup and starting the server
 
 **How to run the Node.js server:**

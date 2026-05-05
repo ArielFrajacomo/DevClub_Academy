@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../CSS/style.css">
-        <title>DevClub - REACT</title>
+    <script src="../JAVASCRIPT/scripts_util.js" defer></script>
+    
+    <title>DevClub - REACT</title>
 </head>
 <body>
     <h1>Installing React</h1>
@@ -64,6 +66,48 @@ export default defineConfig({
         </li>
         </li>
     </ol>
+    <h3>Utils</h3>
+    <ul>
+        <li><strong>clsx</strong>: A utility for constructing className strings conditionally.
+            <code class="copyThisToClipboard">npm install clsx tailwind-merge</code>
+            <blockquote> Add to <code>src/lib/utils.js</code>
+            <pre>import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}</pre>
+            </blockquote>
+            <p>how to use:
+            <pre>Without
+    <span style="color: red;">className={`px-4 py-2 ${isActive ? 'bg-black text-white' : 'bg-white'} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`} </span>
+
+With<div style="color: green;">    className={cn(
+    'px-4 py-2',
+    isActive ? 'bg-black text-white' : 'bg-white',
+    disabled && 'opacity-50 cursor-not-allowed'
+    )} </div></pre>
+            </p>
+        </li>
+        <li><strong>react-icons</strong>: A popular library for including icons in React projects.
+            <code class="copyThisToClipboard">npm install react-icons</code>
+        </li>
+        <li><strong>Using @ as an alias for the src directory</strong>
+            <blockquote>In your <code>vite.config.js</code>, add the following configuration to set up the alias:</blockquote>
+            <pre class="copyThisToClipboard">import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+});</pre>
+        </li>
+    </ul>
+
+
     <h2>VS Code</h2>
     <!-- extensions -->
     <ul> Recommended Extensions
