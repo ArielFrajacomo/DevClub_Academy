@@ -27,7 +27,7 @@ export default function Button({
   };
 
   const sizes = {
-    rounded: 'px-3 rounded-full text-base',
+    rounded: 'p-2 size-full rounded-full text-base',
     sm: 'px-3 py-1.5 hover:rounded-lg text-sm',
     md: 'px-5 py-2.5 hover:rounded-lg text-base',
     lg: 'px-12 py-2.5 hover:rounded-lg text-lg'

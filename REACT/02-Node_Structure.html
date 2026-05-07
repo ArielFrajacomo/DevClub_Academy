@@ -37,7 +37,25 @@
     <p>Like the old Bootstrap, Tailwind CSS is a utility-first CSS framework that allows you to build custom designs without writing custom CSS.</p>
     <p>We will be using Tailwind in its surface-level right now and gradually explore its features</p>
     <h2><code>useRef</code></h2>
-    
+    <h2>React Hooks</h2>
+    <p>React Hooks are functions that let you use state and other React features in functional components. Some commonly used hooks include <code>useState</code>, <code>useEffect</code>, and <code>useRef</code>.</p>
+    <ul>
+        <li><code>useState</code> - Allows you to add state to functional components.
+            <blockquote>Example: <code>const [count, setCount] = useState(0);</code>
+            <p>In this example, we are using the <code>useState</code> hook to create a state variable called <code>count</code> and a function called <code>setCount</code> to update that variable. The initial value of <code>count</code> is set to 0.</p>
+            </blockquote>
+        </li>
+        <li><code>useEffect</code> - Allows you to perform side effects in functional components.
+            <blockquote>Example: <code>useEffect(() => { console.log('Component mounted'); }, []);</code>
+            <p>In this example, we are using the <code>useEffect</code> hook to log a message when the component mounts. The empty dependency array <code>[]</code> ensures this effect runs only once.</p>
+            </blockquote>
+        </li>
+        <li><code>useRef</code> - Allows you to create a reference to a DOM element or a mutable value that persists across renders.
+            <blockquote>Example: <code>const inputRef = useRef(null);</code>
+            <p>In this example, we are using the <code>useRef</code> hook to create a reference to an input element. This reference can be used to access the DOM element directly.</p>
+            </blockquote>
+        </li>
+    </ul>
 
 </body>
 </html>

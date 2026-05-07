@@ -18,6 +18,7 @@ export default function Input({
     id = '',
     className = '',
     boxSize = 'md',
+    usesLabel = false,
     disabled = false,
     required = false,
     placeholder = '',
@@ -41,11 +42,13 @@ export default function Input({
 
     return (
         <div className={cn("flex flex-col m-0", boxSizes[boxSize])}>
-            <label htmlFor={id}>{placeholder}:
-                <span className={cn(
-                    "text-xs",
-                    required ? "" : "hidden"
-                )}>*</span> </label>
+            {usesLabel && (
+                <label htmlFor={id}>{placeholder}:
+                    <span className={cn(
+                        "text-xs",
+                        required ? "" : "hidden"
+                    )}>*</span> </label>
+            )}
             <input
                 id={id}
                 className={cn(
