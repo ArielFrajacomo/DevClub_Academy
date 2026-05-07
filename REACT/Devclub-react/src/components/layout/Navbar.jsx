@@ -2,29 +2,31 @@ import ThemeToggler from "../ui/ToggleTheme";
 import { useState } from "react";
 
 /*
-* @param {string} activeTab - the currently active tab
+* @param {string} activeTab - the currently active tab name
 * @param {function} setActiveTab - function to set the active tab
-* @param {array} tabs - array of tab objects with label and value
+* @param {object} tabs - object of tab components with keys as tab names
 */
 export default function Navbar({ activeTab, setActiveTab, tabs }) {
-  const [localActiveTab, setLocalActiveTab] = useState(activeTab);
+
+  console.log(tabs);
+  console.log(Object.keys(tabs));
 
   return (
     <div className="group absolute top-0 w-full h-16 background-color-alt text-primary flex items-center justify-between px-4">
       <h1 className="text-xl font-bold">DevClub - React</h1>
       <div className="gap-4 hidden group-hover:flex items-center justify-center">
-        {tabs.map(tab => (
+        { Object.keys(tabs).map(key => (
           <a
-            key={tab.value}
+            key={key}
             href="#"
-            className={`nav-link${activeTab === tab.value ? ' active text-yellow-400' : ''}`}
+            className={`nav-link${activeTab === key ? ' active text-yellow-400' : ''}`}
             onClick={e => {
               e.preventDefault();
-              setActiveTab(tab.value);
+              setActiveTab(key);
             }}
-            data-tab={tab.value}
+            data-tab={key}
           >
-            {tab.label}
+            {key}
           </a>
         ))}
       </div>
