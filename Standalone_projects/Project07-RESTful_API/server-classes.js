@@ -63,6 +63,7 @@ export class Backend {
         RENDER: 'https://devclub-academy.onrender.com/users',
         LOCALHOST: 'http://localhost:3000/users'
     };
+    endpoint = Backend.SERVICE.LOCALHOST; // default endpoint
 
     constructor(path = Backend.SERVICE.LOCALHOST) {
         this.endpoint = path;

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './styles.css'
 import Home from './pages/Home.jsx'
 import Navbar from './components/layout/Navbar.jsx'
-import UserSearch from './pages/UserSearch.jsx'
+import UserPage from './pages/UserPage.jsx'
 // import UserList from './pages/UserList.jsx'
 
 function App() {
@@ -14,8 +14,7 @@ function App() {
   // TODO - content of a carousel, it will be animated, it will replace tabs[activeTab]
   const tabs = {
     home: <Home />
-    , search: <UserSearch />
-    //, edit: <UserEdit />
+    , search: <UserPage />
     //, list: <UserList />
   };
 

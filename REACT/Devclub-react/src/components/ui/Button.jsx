@@ -14,6 +14,7 @@ export default function Button({
   size = 'md',
   isLoading = false,
   className = '',
+  type = 'button',
   ...props
 }) {
   const base = 'font-medium transition-all active:scale-[0.98] flex items-center justify-center gap-2 rounded-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-50';
@@ -37,6 +38,7 @@ export default function Button({
     <button
       className={cn(base, variants[variant], sizes[size], animation, className)}
       disabled={isLoading}
+      type={type}
       {...props}
     >
       {isLoading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}

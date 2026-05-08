@@ -24,6 +24,7 @@ export default function Input({
     placeholder = '',
     onChange,
     value,
+    type = 'text',
     ...props
 }) {
     const base = 'px-4 py-2 border rounded-lg border';
@@ -61,6 +62,7 @@ export default function Input({
                 placeholder={placeholder}
                 onChange={onChange}
                 value={value}
+                type={type}
                 {...props} 
             />
         </div>

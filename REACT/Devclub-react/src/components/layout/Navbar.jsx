@@ -13,7 +13,6 @@ export default function Navbar({ activeTab, setActiveTab }) {
   const tabList = {
     home: 'Home',
     search: 'Search',
-    // edit: 'Edit',
     // list: 'List'
   }
 
