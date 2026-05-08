@@ -1,51 +1,48 @@
 import Input from '../components/ui/Input.jsx';
 import Button from '../components/ui/Button.jsx';
-import { useRef } from 'react';
-import { Api , User } from '../../services/api.js';
+import { useState } from 'react';
+import { Api , User } from '../services/api.js';
 
 export default function UserPage () {
   //get data from label ID
-  const labelID = useRef(null);
-  const inputName = useRef(null);
-  const inputAge = useRef(null);
-  const inputEmail = useRef(null);
+  const [labelID, setLabelID] = useState('Searching...');
+  const [inputName, setInputName] = useState('');
+  const [inputAge, setInputAge] = useState('');
+  const [inputEmail, setInputEmail] = useState('');
 
   async function search() {
     const user = new User();
 
 
-    user.id = labelID.current.innerHTML.replace(/[()]/g, '').trim();
+    user.id = labelID.replace(/[()]/g, '').trim();
       // If it's still searching, set ID to empty
       user.id = user.id === 'Searching...' ? '' : user.id; 
-    user.name = inputName.current.value.trim();
-    user.age = parseInt(inputAge.current.value.trim()) || 0;
-    user.email = inputEmail.current.value.trim();
+    user.name = inputName.trim();
+    user.age = parseInt(inputAge.trim()) || 0;
+    user.email = inputEmail.trim();
 
-    console.log(user);
+    console.log('Searching for user with data:', user);
 
     if (user.name !== '') {
       Api.getUserByName(user.name)
         .then(response => {
-          if (response.ok) {
-            return response.json();
+          console.log('Full Axios response:', response); // helpful for debugging
+          const data = response.data;
+          
+          if (data && (Array.isArray(data) ? data.length > 0 : data.id)) {
+            user.getFromJson(Array.isArray(data) ? data[0] : data);
+            
+            setInputName(user.name);
+            setInputAge(user.age.toString());
+            setInputEmail(user.email);
+            setLabelID(`(${user.id})`);
           } else {
-            throw new Error('User not found', { cause: response });
+            alert('User not found.');
           }
         })
-        .then(data => {
-          console.log('User found:', data);
-          // Update the input fields with the user data
-          user.getFromJson(data);
-          console.log(user);
-
-          inputName.current.value = user.name;
-          inputAge.current.value = user.age;
-          inputEmail.current.value = user.email;
-          labelID.current.innerHTML = `(${user.id})`;
-        })
         .catch(error => {
-          console.error('Error fetching user:', error);
-          alert('User not found.');
+          console.error('Error:', error.response || error);
+          alert('User not found or API error.');
         });
     }
   }
@@ -54,26 +51,26 @@ export default function UserPage () {
     console.log('edit user');
   }
   function isEditing() {
-    return !(labelID.innerHTML === 'Searching...');
+    return !(labelID === 'Searching...');
   }
   function clearInputFields() {
-    labelID.innerHTML = 'Searching...';
-    inputName.current.value = '';
-    inputAge.current.value = '';
-    inputEmail.current.value = '';
+    setLabelID('Searching...');
+    setInputName('');
+    setInputAge('');
+    setInputEmail('');
   }
 
   return (
     // react needs a parent wrapping everything
     <div className="h-full w-5xl mx-auto flex flex-col items-center justify-center"> 
       <h1 className="text-center p-4" >Registered Users</h1>
-      <label ref={labelID}>Searching...</label>
+      <label>{labelID}</label>
       <div className='w-l'>
         <div className="flex gap-4 mb-4">
-          <Input ref={inputName} placeholder="Name" id="txtName" boxSize="full" type="text" />
-          <Input ref={inputAge} placeholder="Age" id="txtAge" boxSize="full" type="number" />
+          <Input value={inputName} onChange={(e) => setInputName(e.target.value)} placeholder="Name" id="txtName" boxSize="full" type="text" />
+          <Input value={inputAge} onChange={(e) => setInputAge(e.target.value)} placeholder="Age" id="txtAge" boxSize="full" type="number" />
         </div>
-          <Input ref={inputEmail} placeholder="Email" id="txtEmail" boxSize="full" type="email" />
+          <Input value={inputEmail} onChange={(e) => setInputEmail(e.target.value)} placeholder="Email" id="txtEmail" boxSize="full" type="email" />
       </div>
       <div className='flex justify-between p-4 gap-4'>
         <Button size='lg' type="submit" onClick={search} >Search</Button>
