@@ -1,7 +1,7 @@
 import Input from '../components/ui/Input.jsx';
 import Button from '../components/ui/Button.jsx';
 import { useState } from 'react';
-import { Api , User } from '../services/api.js';
+import { api , User } from '../services/api.js';
 
 export default function UserPage () {
   //get data from label ID
@@ -13,7 +13,6 @@ export default function UserPage () {
   async function search() {
     const user = new User();
 
-
     user.id = labelID.replace(/[()]/g, '').trim();
       // If it's still searching, set ID to empty
       user.id = user.id === 'Searching...' ? '' : user.id; 
@@ -24,7 +23,8 @@ export default function UserPage () {
     console.log('Searching for user with data:', user);
 
     if (user.name !== '') {
-      Api.getUserByName(user.name)
+
+      api.getUserByName(user.name)
         .then(response => {
           console.log('Full Axios response:', response); // helpful for debugging
           const data = response.data;

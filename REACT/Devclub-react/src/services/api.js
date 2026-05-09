@@ -1,35 +1,34 @@
 import axios from 'axios';
 
 
-const SERVICE = {
+export class Api {
+    static SERVICE = {
     RENDER: 'https://devclub-academy.onrender.com/users',
     LOCALHOST: 'http://localhost:3000/users'
-};
+    };
 
-export const Api = axios.create({
-    baseURL: SERVICE.RENDER
-});
-
-// adding helper methods to Api for better readability and maintainability
-Api.getUserById = function(id) {
-    return this.get(`?id=${id}`);
+    constructor(baseURL = Api.SERVICE.RENDER) {
+        this.client = axios.create({ baseURL });
+    }
+    getUserById(id) {
+        return this.client.get(`?id=${id}`);
+    }
+    getUserByName(name) {
+        return this.client.get(`?name=${name}`);
+    }
+    getAllUsers() {
+        return this.client.get();
+    }
+    addUser(userJson) {
+        return this.client.post('', userJson);
+    }
+    updateUser(userJson) {
+        return this.client.put('', userJson);
+    }
+    deleteUser(id) {
+        return this.client.delete('', { data: { id } });
+    }
 }
-Api.getUserByName = function(name) {
-    return this.get(`?name=${name}`);
-}
-Api.getAllUsers = function() {
-    return this.get();
-}
-Api.addUser = function(userJson) {
-    return this.post('', userJson);
-}
-Api.updateUser = function(userJson) {
-    return this.put('', userJson);
-}
-Api.deleteUser = function(id) {
-    return this.delete('', { data: { id } });
-}
-
 
 export class User {
     constructor(id = '', email = '', name = '', age = 0) {
@@ -82,3 +81,5 @@ export class User {
     return true;
     }
 }
+
+export const api = new Api();

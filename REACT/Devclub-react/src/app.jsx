@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navbar from './components/layout/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import UserPage from './pages/UserPage.jsx';
-// import UserList from '../pages/UserList.jsx';
+import UserList from './pages/UserList.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -11,8 +11,10 @@ function App() {
   const tabs = {
     home: <Home />,
     search: <UserPage />,
-    // list: <UserList />,
+    list: <UserList />,
   };
+
+  console.log('Active Tab:', activeTab); // Debugging log
 
   return (
     <div className='flex flex-col'>
