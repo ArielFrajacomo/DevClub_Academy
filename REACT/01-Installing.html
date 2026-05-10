@@ -119,14 +119,50 @@ export default defineConfig({
     <p>After installation, you need to create a <code>Router</code> component where you can import the necessary components from React Router DOM to set up routing in your React application.</p>
     <pre class="copyThisToClipboard">import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';</pre>
     <p>Then, you can define your routes using the <code>&lt;Routes&gt;</code> and <code>&lt;Route&gt;</code> components.</p>
-    <pre class="copyThisToClipboard">&lt;Router&gt;
-    &lt;Routes&gt;
-        &lt;Route path=&quot;/&quot; element=&#123;&lt;Home /&gt;&#125; /&gt;
-        &lt;Route path=&quot;/about&quot; element=&#123;&lt;About /&gt;&#125; /&gt;
-        &lt;Route path=&quot;/contact&quot; element=&#123;&lt;Contact /&gt;&#125; /&gt;
-    &lt;/Routes&gt;
-&lt;/Router&gt;</pre>
+    
+    <!-- const router = createBrowserRouter([
+    // Created in en-US and pt-BR versions for better accessibility (and SEO)
+    {
+        path: '/',
+        element: <Home />
+    },
+    {
+        path: '/search',
+        element: <UserPage />
+     },
+     {
+        path: '/list-of-users',
+        element: <UserList />
+    },
+]); -->
+    <pre class="copyThisToClipboard"> 
+import { createBrowserRouter } from 'react-router-dom';
 
+const router = createBrowserRouter([
+    // Created in en-US and pt-BR versions for better accessibility (and SEO)
+    {
+        path: '/',
+        element: &lt;Home /&gt;
+    },
+    {
+        path: '/page2',
+        element: &lt;Page2 /&gt;
+     }
+]);</pre>
+    
+        
+        
+        
+        </pre>
+    <p>Then, we need to wrap our application with the <code>RouterProvider</code> component and pass the <code>router</code> configuration to it.</p>
+    <pre class="copyThisToClipboard">import { RouterProvider } from 'react-router-dom';
+import router from './routes.jsx';
+
+createRoot(document.getElementById('root')).render(
+  &lt;StrictMode&gt;
+&lt;RouterProvider router=&#123;router&#125; /&gt;
+  &lt;StrictMode&gt;
+);</pre>
 
 
 
