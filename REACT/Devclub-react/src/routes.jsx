@@ -9,6 +9,11 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout />,                // Layout wraps everything
+        errorElement:                       // Simple error element for good practices and training only, i'll have a better one in the final project
+            <div className='bg-red-600 justify-center items-center flex h-full flex-col gap-4'>
+                <div className='text-9xl'>Page not found</div>
+                <div className='text-xs'> This is the most simple, and yet aggressive screen I ever seeing hahahaha lmao</div>
+            </div>,
         children: [                         // outlet for nested routes
             {
                 index: true,                // This means "/"
@@ -21,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: 'buscar',
                 element: <UserPage />
+            },
+            {
+                path: 'list',
+                element: <UserList />
             },
             {
                 path: 'list-of-users',
