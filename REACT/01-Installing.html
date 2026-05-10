@@ -55,12 +55,12 @@
             <pre>
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'vite'              // <-- ADD THIS LINE
+import { defineConfig } from 'vite'              // <-- LINE to ADD
 
 export default defineConfig({
   plugins: [
     react(), 
-    tailwindcss()                               // <-- ADD THIS LINE
+    tailwindcss()                               // <-- LINE to ADD
   ],
 })</pre>
         </li>
@@ -112,6 +112,26 @@ export default defineConfig({
     <p>To install Axios, run the following command in your project directory:</p>
     <code class="copyThisToClipboard">npm install axios</code>
 
+    <h2>React Router DOM</h2>
+    <p>React Router DOM is a library for handling routing in React applications.</p>
+    <p>To install React Router DOM, run the following command in your project directory:</p>
+    <code class="copyThisToClipboard">npm install react-router-dom</code>
+    <p>After installation, you need to create a <code>Router</code> component where you can import the necessary components from React Router DOM to set up routing in your React application.</p>
+    <pre class="copyThisToClipboard">import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';</pre>
+    <p>Then, you can define your routes using the <code>&lt;Routes&gt;</code> and <code>&lt;Route&gt;</code> components.</p>
+    <pre class="copyThisToClipboard">&lt;Router&gt;
+    &lt;Routes&gt;
+        &lt;Route path=&quot;/&quot; element=&#123;&lt;Home /&gt;&#125; /&gt;
+        &lt;Route path=&quot;/about&quot; element=&#123;&lt;About /&gt;&#125; /&gt;
+        &lt;Route path=&quot;/contact&quot; element=&#123;&lt;Contact /&gt;&#125; /&gt;
+    &lt;/Routes&gt;
+&lt;/Router&gt;</pre>
+
+
+
+
+
+
     <h2>VS Code</h2>
     <!-- extensions -->
     <ul> Recommended Extensions
@@ -146,6 +166,7 @@ export default defineConfig({
             <blockquote>Allows you to peek into CSS files and see the styles applied to your HTML elements.</blockquote>
         </li>
     </ul>
+
 
 
     <!-- <pre><code>npm install -g create-react-app</code></pre> -->

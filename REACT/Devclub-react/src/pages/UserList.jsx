@@ -13,9 +13,6 @@ export default function UserList () {
     function reloadUserList() {
         api.getAllUsers()
             .then(resp => {
-
-                console.log('Fetched users:', resp.data); // Debugging log
-
                 setUserDataset(resp.data);
             })
             .catch(error => {
