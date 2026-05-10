@@ -17,7 +17,7 @@ function App() {
   console.log('Active Tab:', activeTab); // Debugging log
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col min-h-screen '>
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div id='menu' className='h-screen w-full flex items-center justify-center'>
         {tabs[activeTab]}

@@ -25,7 +25,7 @@ export default function UserList () {
 
     // render the user list
     return (
-        <div className='h-full w-100 flex-column items-center justify-start gap-4'>
+        <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
             <h2>User List</h2>
             <ul>
                 {userDataset.map(user => (
