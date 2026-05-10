@@ -5,10 +5,11 @@ import { useState } from "react";
 * @param {string} activeTab - the currently active tab name
 * @param {function} setActiveTab - function to set the active tab
 */
-export default function Navbar({ activeTab, setActiveTab }) {
-  // i was researching about the new line of thought of react, and it seems that having the tab list being 
-  // generated from the tabs object is not a good idea, because it will cause unnecessary re-renders, so 
-  // it is better to create a separate object instead
+export default function Navbar() {
+  // TODO, discovered some libraries like react-router-dom have a built-in way to handle active links. 
+  // For now, i'll keep this implementation while i'm studying more about it.
+
+  const [activeTab, setActiveTab] = useState('home');
 
   const tabList = {
     home: 'Home',
