@@ -33,7 +33,7 @@ const mongoUser = new User();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(__dirname));
 
-const DEBUG = true; // Set to false in production
+const DEBUG = false; // Set to false in production
 
 //get users from MongoDB
 //if theres no ID in the request body, return all users, otherwise, return the user with the specified ID

@@ -1,16 +1,19 @@
 import Input from '../components/ui/Input.jsx';
 import Button from '../components/ui/Button.jsx';
 import { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { api , User } from '../services/api.js';
 
 export default function UserPage () {
   //get data from label ID
-  const [labelID, setLabelID] = useState('Searching...');
+  const [labelID, setLabelID] = useState('Searching...'); // TODO, make come from Url
   const [inputName, setInputName] = useState('');
   const [inputAge, setInputAge] = useState('');
   const [inputEmail, setInputEmail] = useState('');
+  const { userList, setUserList , reloadUserList } = useOutletContext();
 
   async function search() {
+
     const user = new User();
 
     user.id = labelID.replace(/[()]/g, '').trim();

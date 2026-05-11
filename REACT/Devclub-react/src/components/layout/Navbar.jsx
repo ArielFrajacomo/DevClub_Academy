@@ -1,5 +1,5 @@
 import ThemeToggler from "../ui/ToggleTheme";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 /*
 * @param {string} activeTab - the currently active tab name
@@ -9,31 +9,27 @@ export default function Navbar() {
   // TODO, discovered some libraries like react-router-dom have a built-in way to handle active links. 
   // For now, i'll keep this implementation while i'm studying more about it.
 
-  const [activeTab, setActiveTab] = useState('home');
+  const navBar = [
+    { key: 'home', name: 'Home', path: '/' },
+    { key: 'search', name: 'Search', path: '/search' },
+    { key: 'list', name: 'Users List', path: '/list' }
+  ];
 
-  const tabList = {
-    home: 'Home',
-    search: 'Search',
-    list: 'Users List'
-  }
 
   return (
     <div className="group absolute top-0 w-full h-16 background-color-alt text-primary flex items-center justify-between px-4">
       <h1 className="text-xl font-bold">DevClub - React</h1>
       <div className="gap-4 hidden group-hover:flex items-center justify-center">
-        { Object.keys(tabList).map(key => (
-          <a
-            key={key}
-            href="#"
-            className={`nav-link${activeTab === key ? ' active text-yellow-400' : ''}`}
-            onClick={e => {
-              e.preventDefault();
-              setActiveTab(key);
-            }}
-            data-tab={key}
+        { navBar.map(tab => (
+          <NavLink
+            key={tab.key}
+            to={tab.path}
+            end={tab.path === '/'}
+            className={({ isActive }) => `nav-link${isActive ? ' active text-yellow-400' : ''}`}
+            data-tab={tab.key}
           >
-            {tabList[key]}
-          </a>
+            {tab.name}
+          </NavLink>
         ))}
       </div>
       <ThemeToggler />

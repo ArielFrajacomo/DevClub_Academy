@@ -20,11 +20,11 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: 'search',
+                path: 'search/:id?',        // optional id param
                 element: <UserPage />
             },
             {
-                path: 'buscar',
+                path: 'buscar/:id?',        // optional id param
                 element: <UserPage />
             },
             {
