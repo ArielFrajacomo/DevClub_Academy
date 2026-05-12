@@ -4,5 +4,8 @@
         "burgerlist",
         "ulist",
         "userlist"
-    ]
+    ],
+    "chat.tools.terminal.autoApprove": {
+        "npm run dev": true
+    }
 }

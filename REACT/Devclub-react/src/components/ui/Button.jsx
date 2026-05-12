@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/Utils';
+import Toast from './Toast.jsx';
 
 /**
  * Button component
@@ -7,6 +8,9 @@ import { cn } from '@/lib/Utils';
  * @param {string} size - sm | md | lg | rounded
  * @param {boolean} isLoading
  * @param {React.ReactNode} children
+ * @param {string} onHover - CSS class for hover state
+ * @param {boolean} confirmAction - Whether the button requires confirmation
+ * @param {string} confirmMessage - Message to display for confirmation
  */
 export default function Button({
   children,
@@ -15,17 +19,28 @@ export default function Button({
   isLoading = false,
   className = '',
   type = 'button',
+  onHover = null,
+  confirmAction = false,
+  confirmMessage = '',
+  onClick,
   ...props
 }) {
+  const [toastVisible, setToastVisible] = useState(false);
   const base = 'font-medium transition-all active:scale-[0.98] flex items-center justify-center gap-2 rounded-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-50';
   const animation = 'transition-all duration-300 ease-in-out hover:scale-105';
   
   const variants = {
-    primary: 'bg-black text-white hover:bg-zinc-800',
-    secondary: 'bg-white border border-zinc-300 hover:bg-zinc-50',
-    ghost: 'hover:bg-zinc-100',
-    danger: 'bg-red-600 text-white hover:bg-red-700',
-    transparent: 'bg-transparent hover:bg-zinc-100'
+    // [default looks, hover state]
+    primary: 
+      {Default: 'bg-black text-white', Hover: 'hover:bg-slate-800'},
+    secondary: 
+      {Default: 'bg-white border border-zinc-300', Hover: 'hover:bg-slate-50'},
+    ghost: 
+      {Default: '', Hover: 'hover:bg-slate-100'},
+    danger: 
+      {Default: 'bg-red-600 text-white', Hover: 'hover:bg-red-700'},
+    transparent: 
+      {Default: 'bg-transparent', Hover: 'hover:bg-slate-100'}
   };
 
   const sizes = {
@@ -36,14 +51,23 @@ export default function Button({
   };
 
   return (
-    <button
-      className={cn(base, variants[variant], sizes[size], animation, className)}
-      disabled={isLoading}
-      type={type}
-      {...props}
-    >
-      {isLoading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
-      {children}
-    </button>
+    <>
+      <button
+        className={cn(
+          base, 
+          variants[variant].Default, onHover ?? variants[variant].Hover,
+          sizes[size], 
+          animation, 
+          className)}
+        onClick={confirmAction ? () => setToastVisible(true) : onClick}
+        disabled={isLoading}
+        type={type}
+        {...props}
+      >
+        {isLoading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+        {children}
+      </button>
+      {confirmAction && <Toast visible={toastVisible} type="confirmation" message={confirmMessage} onConfirm={() => { onClick?.(); setToastVisible(false); }} onCancel={() => setToastVisible(false)} />}
+    </>
   );
 }
