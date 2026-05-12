@@ -5,9 +5,10 @@ import { api } from '../../services/api.js';
 
 export default function Layout() {
   const [userList, setUserList] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
 
-      // initialize user list on page load
-      // it will call if the list is empty, waking up the free RENDER.com server
+    // initialize user list on page load
+    // it will call if the list is empty, waking up the free RENDER.com server
     useEffect(() => {
         if (userList.length === 0) reloadUserList();
     }, [userList.length]);

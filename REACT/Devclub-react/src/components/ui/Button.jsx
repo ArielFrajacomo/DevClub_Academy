@@ -1,9 +1,9 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/Utils';
 
 /**
  * Button component
- * @param {string} variant - primary | secondary | ghost | danger
+ * @param {string} variant - primary | secondary | ghost | danger | transparent
  * @param {string} size - sm | md | lg | rounded
  * @param {boolean} isLoading
  * @param {React.ReactNode} children
@@ -24,7 +24,8 @@ export default function Button({
     primary: 'bg-black text-white hover:bg-zinc-800',
     secondary: 'bg-white border border-zinc-300 hover:bg-zinc-50',
     ghost: 'hover:bg-zinc-100',
-    danger: 'bg-red-600 text-white hover:bg-red-700'
+    danger: 'bg-red-600 text-white hover:bg-red-700',
+    transparent: 'bg-transparent hover:bg-zinc-100'
   };
 
   const sizes = {
