@@ -2,10 +2,16 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api.js';
+import Background from './Background.jsx';
 
 export default function Layout() {
   const [userList, setUserList] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [language, setLanguage] = useState('pt_BR'); // default language
+  const backgroundColors = {
+    backgroundColor: '#000',
+    foregroundColor: '#010101',
+    accentColor: '#00f',
+  };
 
     // initialize user list on page load
     // it will call if the list is empty, waking up the free RENDER.com server
@@ -26,9 +32,10 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <Background {...backgroundColors} />
+      <Navbar language={language} setLanguage={setLanguage}/>
       <main className='h-screen w-full flex items-center justify-center'>
-        <Outlet context={{ userList, setUserList, reloadUserList }}/>
+        <Outlet context={{ userList, language, reloadUserList }}/>
       </main>
     </div>
   );

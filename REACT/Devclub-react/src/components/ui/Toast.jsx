@@ -2,20 +2,23 @@
 import { cn } from '../../lib/Utils';
 import Button from "./Button.jsx";
 import { useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
-
-/*
-* @param {string} type - The type of toast (e.g., 'success', 'error', 'info', 'warning', 'confirmation').
-* @param {string} message - The message to display in the toast.
-* @param {boolean} visible - Whether the toast is visible.
-* @param {function} onConfirm - (Optional) Function to call when the user confirms an action.
-* @param {function} onCancel - (Optional) Function to call when the user cancels an action.
-* @param {string} position - (Optional) Position of the toast on the screen.
-* @param {number} autoCloseDuration - (Optional) Time in milliseconds before auto-closing (default: 3000). Only applies to non-info/confirmation types.
-*/
+/**
+ * Toast component displays a temporary message on the screen.
+ * @param {'success'|'warning'|'error'|'info'|'confirmation'} [type='info'] - The type of toast.
+ * @param {string} message - The message to display in the toast.
+ * @param {boolean} visible - Whether the toast is visible.
+ * @param {function} onConfirm - (Optional) Function to call when the user confirms an action.
+ * @param {function} onCancel - (Optional) Function to call when the user cancels an action.
+ * @param {'topRight'|'topLeft'|'bottomRight'|'bottomLeft'|'center'} [position='topRight'] - (Optional) Position of the toast on the screen.
+ * @param {number} [autoCloseDuration=3000] - (Optional) Time in milliseconds before auto-closing. Only applies to non-info/confirmation types.
+ */
 export default function Toast({ type = 'info', message = '', visible = true, onConfirm = null, onCancel = null, position = 'topRight', autoCloseDuration = 3000 }) {
     if (!visible) return null;
 
+    const { language } = useOutletContext(); // Get language from context
+    
     // Auto-close for non-info/confirmation toasts
     useEffect(() => {
         if (visible && type !== 'info' && type !== 'confirmation') {
@@ -42,7 +45,16 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
         center: 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
     }
 
-
+    const dict = {
+        en_US: {
+            confirmButton: 'Confirm',
+            cancelButton: 'Cancel'
+        },
+        pt_BR: {
+            confirmButton: 'Confirmar',
+            cancelButton: 'Cancelar'
+        }
+    }
 
     return (
         <>
@@ -54,15 +66,15 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
             
             {/* Toast content - sharp and clear on top */}
             <div className={cn(
-                `fixed z-50 max-w-sm border-2`,
+                'fixed z-50 max-w-sm border-2',
                 type === 'confirmation' ? ToastPosition['center'] : ToastPosition[position],
                 'p-4 rounded-lg flex flex-col gap-2 items-center justify-center',
                 toastType[type]
             )}>
                 <h3>{message}</h3>
                 {(type === 'confirmation' || type === 'info') && <div className="flex gap-2 items-center justify-center">
-                    <Button onClick={() => onConfirm?.()}>Confirm</Button>
-                    {type === 'confirmation' && <Button onClick={() => onCancel?.()}>Cancel</Button>}
+                    <Button onClick={() => onConfirm?.()}>{dict[language].confirmButton}</Button>
+                    {type === 'confirmation' && <Button onClick={() => onCancel?.()}>{dict[language].cancelButton}</Button>}
                 </div>}
             </div>
         </>

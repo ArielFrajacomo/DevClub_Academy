@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { api } from '../services/api.js';
 import UserCard from '../components/ui/UserCard.jsx';
 
 export default function UserList () {
-    const { userList, setUserList , reloadUserList } = useOutletContext();
-
+    const { userList, reloadUserList } = useOutletContext();
+    
     // render the user list
     return (
         <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
