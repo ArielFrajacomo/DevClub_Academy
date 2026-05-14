@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cn } from '../../lib/Utils';
 
-export default function NavToggles ({ language, setLanguage }) {
+export default function NavToggles ({ language, setLanguage, className }) {
     const [theme, setTheme] = useState('light');
     
     const toggleTheme = () => {
@@ -19,7 +19,7 @@ export default function NavToggles ({ language, setLanguage }) {
         'dark:text-gray-300 dark:focus:bg-white/5 dark:focus:text-white');  //dark mode
 
     return (
-        <div className="flex justify-end">
+        <div className={cn(className, "gap-2")}>
             <button onClick={toggleTheme} className={`p-2 rounded-full size-10 ${classDefaults}`}>
                 {theme === 'light' ? '🌙' : '☀'}
             </button>

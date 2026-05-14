@@ -14,15 +14,21 @@ export default function Navbar({ language, setLanguage }) {
   ];
 
   const classDefaults = cn(
-    'absolute top-0 h-12',
+    'absolute top-0 h-12 flex items-center',
     'text-gray-700 hover:text-gray-900 focus:text-gray-900',              //light mode
     'dark:text-gray-300 dark:hover:text-white dark:focus:text-white'      //dark mode
   );
 
   return (
-    <div className= {cn("group absolute w-full rounded-2xl m-1.5 bg-blue-700/5 backdrop-blur-sm", classDefaults)}>
-      <h1 className= {cn(`absolute left-2 flex items-center text-xl font-bold`, classDefaults)}>DevClub - React</h1>
-      <div className="col-span-3 gap-5 hidden group-hover:flex sm:group-hover:flex-cols items-center justify-center">
+    <div className= {cn(classDefaults, "group w-full rounded-l-2xl m-1.5 bg-blue-700/5 backdrop-blur-sm")}>
+      <h1 className= {cn(classDefaults, "left-2 text-xl font-bold")}>DevClub - React</h1>
+      {/* position center */}
+      <div className={cn(classDefaults, 
+                      "left-1/2 -translate-x-1/2 gap-5 transition-opacity duration-500 ease-in-out",
+                      "top-14 flex w-full justify-center rounded-lg bg-blue-700/10 backdrop-blur-sm p-2",
+                      "sm:top-0 sm:opacity-0 sm:pointer-events-none",
+                      "sm:group-hover:opacity-100 sm:group-hover:pointer-events-auto sm:group-hover:translate-y-0"
+                      )}>
         { navBar.map(tab => (
           <NavLink
             key={tab.key}
@@ -35,7 +41,7 @@ export default function Navbar({ language, setLanguage }) {
           </NavLink>
         ))}
       </div>
-      <NavToggles className="col-span-1" language={language} setLanguage={setLanguage} />
+      <NavToggles className={cn("right-6", classDefaults)} language={language} setLanguage={setLanguage} />
     </div>
   );
 }
