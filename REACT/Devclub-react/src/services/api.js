@@ -8,8 +8,29 @@ export class Api {
     };
 
     constructor(baseURL = Api.SERVICE.RENDER) {
-        this.client = axios.create({ baseURL });
+        this.client = axios.create({ 
+            baseURL,
+            timeout: 55000, // long timeout to handle server wake-up time
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        this.client.interceptors.response.use(
+            (response) => { // SUCCESS handler
+                console.log("Success!", response.status);
+                return response;
+            },
+            
+            (error) => {   // ERROR handler
+                console.error('[API Error]', {
+                    status: error.response?.status,
+                    data: error.response?.data,
+                    url: error.config?.url
+                });
+                return Promise.reject(error);
+            }
+        );
     }
+
     getUserById(id) {
         return this.client.get(`?id=${id}`);
     }
@@ -75,7 +96,7 @@ export class User {
 
     if (errorMessages.length > 0) {
         errorMessages.unshift('Please correct the following errors:');
-        alert(errorMessages.join('\n'));
+        console.log('Validation errors:', errorMessages.join('\n'));
         return false;
     }
     return true;
