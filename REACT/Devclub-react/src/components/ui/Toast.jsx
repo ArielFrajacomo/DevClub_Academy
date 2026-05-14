@@ -2,6 +2,7 @@
 import { cn } from '../../lib/Utils';
 import Button from "./Button.jsx";
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useOutletContext } from 'react-router-dom';
 
 /**
@@ -56,7 +57,7 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
         }
     }
 
-    return (
+    const toastMarkup = (
         <>
             {/* Blurred backdrop - only behind the toast */}
             {(type === 'confirmation') && <div 
@@ -79,4 +80,6 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
             </div>
         </>
     );
+
+    return createPortal(toastMarkup, document.body);
 }

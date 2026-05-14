@@ -3,9 +3,15 @@
     "cSpell.words": [
         "burgerlist",
         "ulist",
-        "userlist"
+        "userlist",
+        "usuarios"
     ],
     "chat.tools.terminal.autoApprove": {
         "npm run dev": true
-    }
+    },
+    "cSpell.ignoreWords": [
+        "Gustavson",
+        "lerp",
+        "perlin"
+    ]
 }

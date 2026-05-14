@@ -28,10 +28,12 @@ export default function UserCard ({ id = '', name = '', age = 0, email = '', typ
 
     const dict = {
         en_US: {
+            ageLabel: 'Age',
             searchURL: 'search',
             deleteConfirmation: `Are you sure you want to delete user: ${name}?`
         },
         pt_BR: {
+            ageLabel: 'Idade',
             searchURL: 'buscar',
             deleteConfirmation: `Tem certeza que deseja deletar o usuário: ${name}?`
         }
@@ -44,14 +46,14 @@ export default function UserCard ({ id = '', name = '', age = 0, email = '', typ
 
     return (
         <div className={cn(
-                'border border-zinc-300 rounded-lg justify-between group', 
-                'hover:ring-2 hover:ring-cyan-600 hover:shadow-lg hover:shadow-blue-300/50 transition-all duration-400 ease-in-out',
+                'border border-zinc-300 rounded-lg justify-between group transition-all duration-400 ease-in-out', 
+                'hover:ring-2 hover:ring-cyan-600 hover:shadow-lg hover:shadow-blue-300/50 hover:backdrop-blur-xs ',
                 cardType[type] || cardType['long'] 
             )}>
             <div className='group flex flex-col align-middle p-2 gap-1 w-100'>
                 <div className='flex wrap-break-word justify-between'>
                     <h3 className='group-hover:text-cyan-300 transition-colors duration-500'>{name}</h3>
-                    <p className='text-gray-400 text-xs sm:text-base group-hover:text-white transition-colors duration-500'>Age: {age}</p>
+                    <p className='text-gray-400 text-xs sm:text-base group-hover:text-white transition-colors duration-500'>{dict[language].ageLabel}: {age}</p>
                 </div>
                 <p className='text-gray-400 text-xs sm:text-sm group-hover:text-white transition-colors duration-500'>{email}</p>
             </div>

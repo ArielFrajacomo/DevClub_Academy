@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-// Perlin noise implementation adapted from https://codepen.io/jaredstanley/pen/RwywQzG
 /*
  * A speed-improved perlin and simplex noise algorithms for 2D.
  *
  * Based on example code by Stefan Gustavson (stegu@itn.liu.se).
- * Optimisations by Peter Eastman (peastman@drizzle.stanford.edu).
+ * Optimizations by Peter Eastman (peastman@drizzle.stanford.edu).
  * Better rank ordering method by Stefan Gustavson in 2012.
- * Converted to Javascript by Joseph Gentle.
+ * Converted to JavaScript by Joseph Gentle.
  *
  * Version 2012-03-09
  *
@@ -15,6 +14,11 @@ import { useEffect, useRef } from 'react';
  * Stefan Gustavson. You may use it as you see fit, but
  * attribution is appreciated.
  *
+ * This implementation was forked from Stefan Gustavson's original code, which can be found at:
+ * https://codepen.io/jaredstanley/pen/RwywQzG
+ * 
+ * and was modified to be used as a React component for rendering a dynamic background. 
+ * The noise generation logic remains intact, while the rendering and animation are handled within the React component lifecycle.
  */
 function createNoise() {
   function Grad(x, y, z) {
