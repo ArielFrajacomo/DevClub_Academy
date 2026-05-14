@@ -54,7 +54,7 @@ export default function Button({
          Hover: 'hover:bg-red-700'
       },
     transparent: 
-      {Default: 'bg-transparent', 
+      {Default: 'bg-transparent rounded-lg', 
          Hover: 'hover:bg-slate-100'
       }
   };

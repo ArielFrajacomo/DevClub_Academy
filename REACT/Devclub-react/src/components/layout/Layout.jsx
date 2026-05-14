@@ -34,7 +34,7 @@ export default function Layout() {
     <div className="flex flex-col min-h-screen">
       <Background {...backgroundColors} />
       <Navbar language={language} setLanguage={setLanguage}/>
-      <main className='h-screen w-full flex items-center justify-center'>
+      <main className='min-h-screen w-full flex items-center justify-center pt-40 sm:pt-20 px-4'>
         <Outlet context={{ userList, language, reloadUserList }}/>
       </main>
     </div>

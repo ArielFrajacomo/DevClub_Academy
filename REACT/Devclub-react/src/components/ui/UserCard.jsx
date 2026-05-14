@@ -61,10 +61,10 @@ export default function UserCard ({ id = '', name = '', age = 0, email = '', typ
                     'shrink-0',
                     buttonType[type] || buttonType['long']
                 )} >
-                <Button variant='transparent' size='sm' onHover='hover:bg-amber-900' onClick={() => gotoUserPage(id)}>
+                <Button variant='transparent' size='sm' onHover='hover:bg-amber-900/40' onClick={() => gotoUserPage(id)}>
                     <img src={pencilIcon} alt="" className='size-3.5 sm:size-5'/>
                 </Button>
-                <Button variant='transparent' size='sm' onHover='hover:bg-red-950' 
+                <Button variant='transparent' size='sm' onHover='hover:bg-red-950/40' 
                     //api.deleteUser(id)
                     onClick={() => alert('button pressed')} confirmAction={true} confirmMessage={dict[language].deleteConfirmation} >
                     <img src={trashIcon} alt="" className='size-3.5 sm:size-5'/>
