@@ -1,27 +1,42 @@
 import Input from '../components/ui/Input.jsx';
 import Button from '../components/ui/Button.jsx';
 import { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useParams, useOutletContext } from 'react-router-dom';
 import { api , User } from '../services/api.js';
 
 export default function UserPage () {
   //get data from label ID
-  const [labelID, setLabelID] = useState('Searching...'); // TODO, make come from Url
+  const { userList, setUserList , reloadUserList } = useOutletContext();
   const [inputName, setInputName] = useState('');
   const [inputAge, setInputAge] = useState('');
   const [inputEmail, setInputEmail] = useState('');
-  const { userList, setUserList , reloadUserList } = useOutletContext();
+  const { id } = useParams();
 
-  async function search() {
-
+  async function search(debug = false) {
     const user = new User();
-
-    user.id = labelID.replace(/[()]/g, '').trim();
-      // If it's still searching, set ID to empty
-      user.id = user.id === 'Searching...' ? '' : user.id; 
+    user.id = id;
     user.name = inputName.trim();
     user.age = parseInt(inputAge.trim()) || 0;
     user.email = inputEmail.trim();
+
+    if (user.checkId()) {
+      api.getUserById(user.id)
+        .then (response => {
+
+          debug && console.log('Full Axios response:', response); 
+
+          const data = response.data;
+          if (data && data.id) {
+            user.getFromJson(data);
+            
+            setInputName(user.name);
+            setInputAge(user.age.toString());
+            setInputEmail(user.email);
+          } else {
+            
+          }
+        });
+    }
 
     console.log('Searching for user with data:', user);
 
@@ -54,7 +69,7 @@ export default function UserPage () {
     console.log('edit user');
   }
   function isEditing() {
-    return !(labelID === 'Searching...');
+    return id !== undefined;
   }
   function clearInputFields() {
     setLabelID('Searching...');
@@ -67,7 +82,6 @@ export default function UserPage () {
     // react needs a parent wrapping everything
     <div className="h-full w-5xl mx-auto flex flex-col items-center justify-center"> 
       <h1 className="text-center p-4" >Registered Users</h1>
-      <label>{labelID}</label>
       <div className='w-l'>
         <div className="flex gap-4 mb-4">
           <Input value={inputName} onChange={(e) => setInputName(e.target.value)} placeholder="Name" id="txtName" boxSize="full" type="text" />
