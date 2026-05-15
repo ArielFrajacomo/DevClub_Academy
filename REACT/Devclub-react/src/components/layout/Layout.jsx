@@ -3,7 +3,7 @@ import Navbar from './Navbar.jsx';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api.js';
 import Background from './Background.jsx';
-import ToastAlert from '../ui/ToastAlert.jsx';
+import ToastAlert, { toast } from '../ui/ToastAlert.jsx';
 
 export default function Layout() {
   const [userList, setUserList] = useState([]);
@@ -13,23 +13,50 @@ export default function Layout() {
     foregroundColor: '#010101',
     accentColor: '#00f',
   };
-
-    // initialize user list on page load
-    // it will call if the list is empty, waking up the free RENDER.com server
-    useEffect(() => {
-        if (userList.length === 0) reloadUserList();
-    }, [userList.length]);
-
-    // helper functions
-    function reloadUserList() {
-        api.getAllUsers()
-            .then(resp => {
-                setUserList(resp.data);
-            })
-            .catch(error => {
-                console.error('Error fetching users:', error);
-            });
+  const dict = {
+    en_US: {
+      loadingUsers_firstTime: 'Waking up the server...',
+      usersLoaded: 'User list loaded.',
+      usersLoadError: 'Failed to load user list.',
+    },
+    pt_BR: {
+      loadingUsers_firstTime: 'Acordando o servidor...',
+      usersLoaded: 'Lista de usuários carregada.',
+      usersLoadError: 'Falha ao carregar a lista de usuários.',
     }
+  };
+
+  // initialize user list on page load
+  // it will call if the list is empty, waking up the free RENDER.com server
+  useEffect(() => {
+      if (userList.length !== 0) return;
+
+      async function initializeUserList() {
+        toast.system(dict[language].loadingUsers_firstTime);
+
+        try {
+          await reloadUserList();
+          toast.success(dict[language].usersLoaded);
+        } catch (error) {
+          toast.error(dict[language].usersLoadError);
+        }
+      }
+
+      initializeUserList();
+  }, [userList.length]);
+
+  // helper functions
+  function reloadUserList() {
+      return api.getAllUsers()
+          .then(resp => {
+              setUserList(resp.data);
+          return resp.data;
+          })
+          .catch(error => {
+              console.error('Error fetching users:', error);
+          throw error;
+          });
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
