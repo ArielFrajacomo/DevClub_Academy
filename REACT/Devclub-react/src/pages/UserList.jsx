@@ -2,6 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import UserCard from '../components/ui/UserCard.jsx';
 import { cn } from '../lib/Utils.js';
 import Button from '../components/ui/Button.jsx';
+import { toast } from '../components/ui/ToastAlert.jsx';
 
 export default function UserList () {
     const { userList, reloadUserList, language } = useOutletContext();
@@ -18,7 +19,12 @@ export default function UserList () {
             noUsers: ['Nenhum usuário encontrado.', 'Servidor pode estar acordando, tente recarregar após 30 segundos.']
         }
     };
-    
+
+    function handleReloadButton() {
+        reloadUserList();
+        toast.system(language === 'en_US' ? 'Reloading user list...' : 'Recarregando lista de usuários...');
+    }
+
     // render the user list
     return (
         <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
@@ -33,7 +39,7 @@ export default function UserList () {
                   <li className='text-red-500' key="no-users">{dict[language].noUsers[0]}<br />{dict[language].noUsers[1]}</li>  
                 )}
             </ul>
-            <Button onClick={reloadUserList} variant="ghost">
+            <Button onClick={handleReloadButton} variant="ghost">
                 {dict[language].reloadButton}
             </Button>
         </div>

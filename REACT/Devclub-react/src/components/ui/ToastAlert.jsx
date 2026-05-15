@@ -1,33 +1,41 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Toast from './Toast';
 
-export default function ToastAlert({
-    type = 'success',
-    message = '',
-    position = 'topRight',
-    autoCloseDuration = 4000,
-    visible = false,
-}) {
-    const [visible, setVisible] = useState(visible);
+// External trigger — holds a reference to the mounted component's setter
+let _setToast = null;
+
+export const toast = {
+    success: (message, options = {}) => toastDefault(message, 'success', options),
+    error: (message, options = {}) => toastDefault(message, 'error', options),
+    warning: (message, options = {}) => toastDefault(message, 'warning', options),
+    system: (message, options = {}) => toastDefault(message, 'system', options),
+}
+
+export function toastDefault(message, type = 'system', options = {}) {
+    _setToast?.({
+        message,
+        type,
+        position: 'topRight',
+        autoCloseDuration: 4000,
+        ...options,
+    });
+}
+
+export default function ToastAlert() {
+    const [toastData, setToastData] = useState(null);
 
     useEffect(() => {
-        if (!visible) return;
+        _setToast = setToastData;
+        return () => { _setToast = null; };
+    }, []);
 
-        const timer = setTimeout(() => {
-            setVisible(false);
-        }, autoCloseDuration);
+    if (!toastData) return null;
 
-        return () => clearTimeout(timer);
-    }, [visible, autoCloseDuration]);
-
-    return ( 
+    return (
         <Toast
-        type={type}
-        message={message}
-        visible={visible}
-        position={position}
-        autoCloseDuration={autoCloseDuration}
-        onCancel={onClose}
+            {...toastData}
+            visible={true}
+            onCancel={() => setToastData(null)}
         />
     );
 }

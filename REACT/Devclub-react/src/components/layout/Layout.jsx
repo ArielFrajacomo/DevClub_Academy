@@ -3,6 +3,7 @@ import Navbar from './Navbar.jsx';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api.js';
 import Background from './Background.jsx';
+import ToastAlert from '../ui/ToastAlert.jsx';
 
 export default function Layout() {
   const [userList, setUserList] = useState([]);
@@ -34,6 +35,7 @@ export default function Layout() {
     <div className="flex flex-col min-h-screen">
       <Background {...backgroundColors} />
       <Navbar language={language} setLanguage={setLanguage}/>
+      <ToastAlert />
       <main className='min-h-screen w-full flex items-center justify-center pt-40 sm:pt-20 px-4'>
         <Outlet context={{ userList, language, reloadUserList }}/>
       </main>
