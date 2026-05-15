@@ -20,7 +20,8 @@ export default function ToastAlert({
         return () => clearTimeout(timer);
     }, [visible, autoCloseDuration]);
 
-    return (
+    
+    return ( 
         <Toast
         type={type}
         message={message}
