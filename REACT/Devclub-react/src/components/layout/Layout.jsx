@@ -8,6 +8,34 @@ import ToastAlert, { toast } from '../ui/ToastAlert.jsx';
 const DEFAULT_LANGUAGE = 'pt_BR';
 const SUPPORTED_LANGUAGES = ['pt_BR', 'en_US'];
 
+function mapBrowserLanguageToAppLanguage(languageCode) {
+  if (!languageCode) return null;
+
+  const normalized = String(languageCode).toLowerCase();
+  if (normalized.startsWith('pt')) return 'pt_BR';
+  if (normalized.startsWith('en')) return 'en_US';
+
+  return null;
+}
+
+function getBrowserLanguage() {
+  if (typeof navigator === 'undefined') return null;
+
+  const browserLanguages = [
+    navigator.language,
+    ...(Array.isArray(navigator.languages) ? navigator.languages : []),
+  ];
+
+  for (const browserLanguage of browserLanguages) {
+    const mappedLanguage = mapBrowserLanguageToAppLanguage(browserLanguage);
+    if (mappedLanguage && SUPPORTED_LANGUAGES.includes(mappedLanguage)) {
+      return mappedLanguage;
+    }
+  }
+
+  return null;
+}
+
 function getSavedLanguage() {
   if (typeof window !== 'undefined') {
     const stored = window.localStorage.getItem('language');
@@ -16,7 +44,7 @@ function getSavedLanguage() {
     }
   }
 
-  return DEFAULT_LANGUAGE;
+  return getBrowserLanguage() ?? DEFAULT_LANGUAGE;
 }
 
 export default function Layout() {
