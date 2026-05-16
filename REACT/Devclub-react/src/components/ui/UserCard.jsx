@@ -14,7 +14,7 @@ import { useOutletContext, useNavigate } from 'react-router-dom';
  * @param {'long'|'card'} [type='long'] - Card layout type.
 */
 export default function UserCard ({ id = '', name = '', age = 0, email = '', type = 'long' }) {
-    const { language } = useOutletContext(); 
+    const { language , reloadUserList } = useOutletContext(); 
     const navigate = useNavigate();
     
     const cardType = {
@@ -42,6 +42,7 @@ export default function UserCard ({ id = '', name = '', age = 0, email = '', typ
     // Navigate to user page with user id as parameter
     function gotoUserPage(id) {
         navigate(`/${dict[language].searchURL}/${id}`);
+        reloadUserList();
     }
 
     return (
@@ -52,7 +53,7 @@ export default function UserCard ({ id = '', name = '', age = 0, email = '', typ
             )}>
             <div className='group flex flex-col align-middle p-2 gap-1 w-100'>
                 <div className='flex wrap-break-word justify-between'>
-                    <h3 className='group-hover:text-cyan-300 transition-colors duration-500'>{name}</h3>
+                    <h3 className='group-hover:text-cyan-300 transition-colors duration-500 text-gray-900 dark:text-white'>{name}</h3>
                     <p className='text-gray-400 text-xs sm:text-base group-hover:text-white transition-colors duration-500'>{dict[language].ageLabel}: {age}</p>
                 </div>
                 <p className='text-gray-400 text-xs sm:text-sm group-hover:text-white transition-colors duration-500'>{email}</p>

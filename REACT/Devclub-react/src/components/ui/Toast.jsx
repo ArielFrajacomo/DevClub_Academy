@@ -31,7 +31,7 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
     const toastType = {
         success: 'border-green-500 bg-emerald-950/30 shadow-emerald-500 shadow-lg text-white',
         error: 'border-red-500 bg-red-950/30 shadow-red-500 shadow-lg text-white',
-        warning: 'border-yellow-500 bg-yellow-950/30 shadow-yellow-500/40 shadow-lg text-black',
+        warning: 'border-yellow-500 bg-yellow-950/30 shadow-yellow-500/40 shadow-lg text-yellow-500',
         system: 'dark:border-gray-500 dark:bg-gray-950/30 dark:shadow-gray-500 shadow-lg dark:text-white text-gray-900 border-gray-300 bg-gray-100 shadow-gray-300',
         info: 'border-blue-500 bg-blue-950/30 shadow-blue-500 shadow-lg text-white',
         confirmation: 'border-gray-500 bg-gray-950/70 shadow-gray-500 shadow-lg text-white'
@@ -65,12 +65,12 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
             
             {/* Toast content - sharp and clear on top */}
             <div className={cn(
-                'fixed z-50 max-w-sm border-2',
+                'fixed z-50 max-w-sm border-2 font-light',
                 type === 'confirmation' ? ToastPosition['center'] : ToastPosition[position],
                 'p-4 rounded-lg flex flex-col gap-2 items-center justify-center',
                 toastType[type]
             )}>
-                <h3>{message}</h3>
+                <div className='text-lg'>{message}</div>
                 {(type === 'confirmation' || type === 'info') && <div className="flex gap-2 items-center justify-center">
                     <Button onClick={() => onConfirm?.()}>{dict[language].confirmButton}</Button>
                     {type === 'confirmation' && <Button onClick={() => onCancel?.()}>{dict[language].cancelButton}</Button>}

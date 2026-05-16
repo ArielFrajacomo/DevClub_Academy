@@ -30,8 +30,8 @@ export default function Input({
     const base = 'px-4 py-2 border rounded-lg border';
 
     const variants = {
-        default: 'border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50',
-        error: 'border-red-500 focus:border-red-500 focus:ring focus:ring-red-200 focus:ring-opacity-50'
+        default: 'border-gray-300 text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50',
+        error: 'border-red-500 text-red-900 dark:text-red-300 focus:border-red-500 focus:ring focus:ring-red-200 focus:ring-opacity-50'
     };
 
     const boxSizes = {

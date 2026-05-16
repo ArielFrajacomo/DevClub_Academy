@@ -28,7 +28,7 @@ export default function UserList () {
     // render the user list
     return (
         <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
-            <h2 className='text-3xl font-bold'>{dict[language].title}</h2>
+            <h2 className='text-3xl font-bold text-gray-900 dark:text-gray-50'>{dict[language].title}</h2>
             <ul className='p-10 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {userList.map(user => (
                     <li key={user.id}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cn } from '../../lib/Utils';
 
-export default function NavToggles ({ language, setLanguage, className }) {
+export default function NavToggles ({ language, setLanguage, className, data }) {
     const [theme, setTheme] = useState('light');
     
     const toggleTheme = () => {
@@ -10,7 +10,14 @@ export default function NavToggles ({ language, setLanguage, className }) {
         document.documentElement.setAttribute('data-theme', newTheme);
     };
     const toggleLanguage = () => {
-        setLanguage(language === 'en_US' ? 'pt_BR' : 'en_US');
+        const nextLanguage = language === 'en_US' ? 'pt_BR' : 'en_US';
+
+        const matchedTab = data.find(tab => window.location.pathname === tab.path[language]);
+        if (matchedTab) {
+            window.history.replaceState(null, '', matchedTab.path[nextLanguage]);
+        }
+        
+        setLanguage(nextLanguage);
     };
 
     const classDefaults = cn(

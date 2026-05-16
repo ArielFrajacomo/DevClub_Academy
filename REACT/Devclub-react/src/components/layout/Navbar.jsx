@@ -1,13 +1,14 @@
 import NavToggles from "../ui/NavToggles";
 import { NavLink } from "react-router-dom";
 import { cn } from '../../lib/Utils';
+import { useEffect } from "react";
 /*
 * @param {string} activeTab - the currently active tab name
 * @param {function} setActiveTab - function to set the active tab
 */
 export default function Navbar({ language, setLanguage }) {
 
-  const navBar = [
+  const navBarPages = [
     { key: 'home',
       path: {en_US: '/', pt_BR: '/'},
       name: {en_US: 'Home', pt_BR: 'Início'}
@@ -39,7 +40,7 @@ export default function Navbar({ language, setLanguage }) {
                         "sm:top-0 sm:opacity-0 sm:pointer-events-none",
                         "sm:group-hover:opacity-100 sm:group-hover:pointer-events-auto sm:group-hover:translate-y-0"
                         )}>
-          { navBar.map(tab => (
+          { navBarPages.map(tab => (
             <NavLink
               key={tab.key}
               to={tab.path[language]}
@@ -57,7 +58,7 @@ export default function Navbar({ language, setLanguage }) {
             </NavLink>
           ))}
         </div>
-        <NavToggles className={cn("right-6", classDefaults)} language={language} setLanguage={setLanguage} />
+        <NavToggles className={cn("right-6", classDefaults)} language={language} setLanguage={setLanguage} data={navBarPages}/>
       </div>
     </>
   );
