@@ -37,8 +37,8 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
         confirmation: 'border-gray-500 bg-gray-950/70 shadow-gray-500 shadow-lg text-white'
     }
     const ToastPosition = {
-        topRight: 'top-16 right-4',
-        topLeft: 'top-16 left-4',
+        topRight: 'top-32 right-4 md:top-16',
+        topLeft: 'top-32 left-4 md:top-16',
         bottomRight: 'bottom-4 right-4',
         bottomLeft: 'bottom-4 left-4',
         center: 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
@@ -65,7 +65,7 @@ export default function Toast({ type = 'info', message = '', visible = true, onC
             
             {/* Toast content - sharp and clear on top */}
             <div className={cn(
-                'fixed z-50 max-w-sm border-2 font-light',
+                'fixed z-50 max-w-sm border-2 font-light backdrop-blur-md',
                 type === 'confirmation' ? ToastPosition['center'] : ToastPosition[position],
                 'p-4 rounded-lg flex flex-col gap-2 items-center justify-center',
                 toastType[type]
