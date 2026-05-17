@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils';
 export default function Input({ 
     id = '',
     className = '',
+    classContainer = '',
     boxSize = 'md',
     usesLabel = false,
     disabled = false,
@@ -30,8 +31,10 @@ export default function Input({
     const base = 'px-4 py-2 border rounded-lg border';
 
     const variants = {
-        default: 'border-gray-300 text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50',
-        error: 'border-red-500 text-red-900 dark:text-red-300 focus:border-red-500 focus:ring focus:ring-red-200 focus:ring-opacity-50'
+        default: cn('focus:border-blue-500 focus:ring focus:ring-opacity-50',
+                    'border-gray-900 text-black backdrop-blur-xs focus:ring-cyan-300/50',
+                    'dark:border-gray-300 dark:text-gray-100 dark:backdrop-blur-none dark:focus:ring-blue-200'),
+        error: cn('border-red-500 text-red-900 dark:text-red-300 focus:border-red-500 focus:ring focus:ring-red-200 focus:ring-opacity-50')
     };
 
     const boxSizes = {
@@ -42,29 +45,31 @@ export default function Input({
     };
 
     return (
-        <div className={cn("flex flex-col m-0", boxSizes[boxSize])}>
-            {usesLabel && (
-                <label htmlFor={id}>{placeholder}:
-                    <span className={cn(
-                        "text-xs",
-                        required ? "" : "hidden"
-                    )}>*</span> </label>
-            )}
-            <input
-                id={id}
-                className={cn(
-                    base,
-                    variants.default,
-                    disabled && 'opacity-50 cursor-not-allowed',
-                    className
+        <div className={classContainer}>
+            <div className={cn("flex flex-col m-0", boxSizes[boxSize])}>
+                {usesLabel && (
+                    <label htmlFor={id}>{placeholder}:
+                        <span className={cn(
+                            "text-xs",
+                            required ? "" : "hidden"
+                        )}>*</span> </label>
                 )}
-                disabled={disabled}
-                placeholder={placeholder}
-                onChange={onChange}
-                value={value}
-                type={type}
-                {...props} 
-            />
+                <input
+                    id={id}
+                    className={cn(
+                        base,
+                        variants.default,
+                        disabled && 'opacity-50 cursor-not-allowed',
+                        className
+                    )}
+                    disabled={disabled}
+                    placeholder={placeholder}
+                    onChange={onChange}
+                    value={value}
+                    type={type}
+                    {...props} 
+                />
+            </div>
         </div>
     );
 }

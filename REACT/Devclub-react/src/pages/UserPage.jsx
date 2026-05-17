@@ -197,20 +197,19 @@ export default function UserPage () {
 
   return (
     // react needs a parent wrapping everything
-    <div className="h-full w-5xl mx-auto flex flex-col items-center justify-center"> 
-      <h1 className="text-center p-4 mb-8 text-3xl font-bold text-gray-900 dark:text-gray-50" >
+    <div className="w-full mx-auto flex flex-col items-center pt-32 sm:pt-16"> 
+      <h1 className="text-center p-4 mb-8 text-3xl font-bold text-gray-900 text-shadow-lg text-shadow-black/20 dark:text-gray-50" >
         {hasValidId ? dict[language].titleEditUser
                     : isNewUser ? dict[language].titleNewUser 
                                 : dict[language].titleDefault}
       </h1>
-      <div className='w-l'>
-        <div className="flex gap-4 mb-4">
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 w-9/10 max-w-md'>
+        
           <Input value={inputName} onChange={(e) => setInputName(e.target.value)} 
                   placeholder={dict[language].nameLabel} id="txtName" boxSize="full" type="text" />
           <Input value={inputAge} onChange={handleAgeChange}
                 placeholder={dict[language].ageLabel} id="txtAge" boxSize="full" type="text" inputMode="numeric" />
-        </div>
-          <Input value={inputEmail} onChange={(e) => setInputEmail(e.target.value)} 
+          <Input classContainer='sm:col-span-2' value={inputEmail} onChange={(e) => setInputEmail(e.target.value)} 
                  placeholder={dict[language].emailLabel} id="txtEmail" boxSize="full" type="email" />
       </div>
       <div className='flex justify-between p-4 gap-4'>

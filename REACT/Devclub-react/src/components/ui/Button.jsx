@@ -38,16 +38,19 @@ export default function Button({
   const variants = {
     // [default looks, hover state]
     primary: 
-      {Default: 'rounded-md bg-gray-300 text-black dark:bg-gray-800 dark:text-white font-semibold shadow-sm shadow-black/50', 
-         Hover: 'hover:bg-slate-800'
+      {Default: cn('rounded-md font-semibold shadow-sm shadow-black/50',
+                   'text-black bg-gray-300 dark:text-white', 
+                   'dark:text-black dark:bg-gray-800 dark:text-white'),
+         Hover: cn('hover:bg-gray-400',
+                   'dark:hover:bg-gray-700')
       },
     secondary: 
       {Default: 'bg-white border border-zinc-300', 
          Hover: 'hover:bg-slate-50'
     },
     ghost: 
-      {Default: 'rounded-full border-gray-300 dark:border border-gray-500', 
-         Hover: 'hover:bg-blue-600/20'
+      {Default: 'rounded-full border-gray-300 border border-gray-500 font-semibold', 
+         Hover: 'hover:bg-blue-600/30 transition-all duration-400 ease-in-out'
       },
     danger: 
       {Default: 'bg-red-600 text-white', 

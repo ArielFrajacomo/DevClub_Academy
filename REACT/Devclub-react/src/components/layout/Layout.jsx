@@ -7,6 +7,7 @@ import ToastAlert, { toast } from '../ui/ToastAlert.jsx';
 
 const DEFAULT_LANGUAGE = 'pt_BR';
 const SUPPORTED_LANGUAGES = ['pt_BR', 'en_US'];
+const SUPPORTED_THEMES = ['light', 'dark'];
 
 function mapBrowserLanguageToAppLanguage(languageCode) {
   if (!languageCode) return null;
@@ -47,14 +48,41 @@ function getSavedLanguage() {
   return getBrowserLanguage() ?? DEFAULT_LANGUAGE;
 }
 
+function getSavedTheme() {
+  if (typeof window === 'undefined') return 'light';
+
+  const stored = window.localStorage.getItem('theme');
+  if (stored && SUPPORTED_THEMES.includes(stored)) {
+    return stored;
+  }
+
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return prefersDark ? 'dark' : 'light';
+}
+
 export default function Layout() {
   const [userList, setUserList] = useState([]);
   const [language, setLanguage] = useState(() => getSavedLanguage()); // default language
+  const [theme, setTheme] = useState(() => getSavedTheme());
   const backgroundColors = {
-    backgroundColor: '#000',
-    foregroundColor: '#010101',
+    backgroundColor: '#fff',
+    foregroundColor: '#ddd',
     accentColor: '#00f',
+    backgroundColorDark: '#000',
+    foregroundColorDark: '#010101',
+    accentColorDark: '#00f'
   };
+  const activeBackgroundColors = theme === 'dark'
+    ? {
+        backgroundColor: backgroundColors.backgroundColorDark,
+        foregroundColor: backgroundColors.foregroundColorDark,
+        accentColor: backgroundColors.accentColorDark,
+      }
+    : {
+        backgroundColor: backgroundColors.backgroundColor,
+        foregroundColor: backgroundColors.foregroundColor,
+        accentColor: backgroundColors.accentColor,
+      };
   const dict = {
     en_US: {
       loadingUsers_firstTime: 'Waking up the server...',
@@ -103,6 +131,19 @@ export default function Layout() {
     }
   }, [language]);
 
+  useEffect(() => {
+    if (!SUPPORTED_THEMES.includes(theme)) return;
+
+    const htmlElement = document.documentElement;
+    if (theme === 'dark') {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
+
   // helper functions
   function reloadUserList() {
       return api.getAllUsers()
@@ -118,10 +159,10 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Background {...backgroundColors} />
-      <Navbar language={language} setLanguage={setLanguage}/>
+      <Background {...activeBackgroundColors} />
+      <Navbar language={language} setLanguage={setLanguage} theme={theme} setTheme={setTheme}/>
       <ToastAlert />
-      <main className='min-h-screen w-full flex items-center justify-center pt-40 sm:pt-20 px-4'>
+      <main className='min-h-screen w-full flex items-center justify-center px-4'>
         <Outlet context={{ userList, setUserList, language, reloadUserList }}/>
       </main>
     </div>

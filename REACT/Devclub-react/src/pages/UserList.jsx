@@ -11,25 +11,27 @@ export default function UserList () {
         en_US: {
             title: 'User List',
             reloadButton: 'Reload User List',
-            noUsers: ['No users found.', 'Server might be waking up, try reloading after 30 seconds.']
+            reloadButtonMessage: 'Reloading user list...',
+            noUsers: ['No users found.', 'Server might be waking up, it takes up to 60 seconds.']
         },
         pt_BR: {
             title: 'Lista de Usuários',
             reloadButton: 'Recarregar Lista de Usuários',
-            noUsers: ['Nenhum usuário encontrado.', 'Servidor pode estar acordando, tente recarregar após 30 segundos.']
+            reloadButtonMessage: 'Recarregando lista de usuários...',
+            noUsers: ['Nenhum usuário encontrado.', 'Aguarde o servidor acordar, pode demorar até uns 60 segundos.']
         }
     };
 
     function handleReloadButton() {
         reloadUserList();
-        toast.system(language === 'en_US' ? 'Reloading user list...' : 'Recarregando lista de usuários...');
+        toast.system(dict[language].reloadButtonMessage);
     }
 
     // render the user list
     return (
-        <div className='h-full w-full flex flex-col items-center justify-center gap-4'>
-            <h2 className='text-3xl font-bold text-gray-900 dark:text-gray-50'>{dict[language].title}</h2>
-            <ul className='p-10 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='h-full w-full flex flex-col items-center justify-center gap-4 pt-40 sm:pt-20'>
+            <h2 className='text-3xl font-bold text-gray-900 text-shadow-lg text-shadow-black/20 dark:text-gray-50'>{dict[language].title}</h2>
+            <ul className='p-10 sm:p-2 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {userList.map(user => (
                     <li key={user.id}>
                         <UserCard id={user.id} name={user.name} age={user.age} email={user.email} type="long" />

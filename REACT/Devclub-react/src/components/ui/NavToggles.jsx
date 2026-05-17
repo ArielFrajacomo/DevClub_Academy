@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { cn } from '../../lib/Utils';
 
-export default function NavToggles ({ language, setLanguage, className, data }) {
-    const [theme, setTheme] = useState('light');
+export default function NavToggles ({ language, setLanguage, theme, setTheme, className, data }) {
     
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
+        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
     };
     const toggleLanguage = () => {
         const nextLanguage = language === 'en_US' ? 'pt_BR' : 'en_US';
@@ -16,7 +12,7 @@ export default function NavToggles ({ language, setLanguage, className, data }) 
         if (matchedTab) {
             window.history.replaceState(null, '', matchedTab.path[nextLanguage]);
         }
-        
+
         setLanguage(nextLanguage);
     };
 
@@ -28,7 +24,7 @@ export default function NavToggles ({ language, setLanguage, className, data }) 
     return (
         <div className={cn(className, "gap-2")}>
             <button onClick={toggleTheme} className={`p-2 rounded-full size-10 ${classDefaults}`}>
-                {theme === 'light' ? '🌙' : '☀'}
+                {theme === 'light' ? '☀' : '🌙'}
             </button>
             <button onClick={toggleLanguage} className={`p-2 rounded size-10 ${classDefaults}`}>
                 {language === 'en_US' ? 'EN' : 'PT'}

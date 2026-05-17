@@ -179,6 +179,7 @@ export default function Background({
     const speed = 0.5;
     const scale = 0.0022;
     const step = 11;
+    const accentVisibility = 0.99;
 
     const noise = createNoise();
     noise.seed(z);
@@ -212,7 +213,7 @@ export default function Background({
           context.arc(0, 0, radius, 0, Math.PI * 2, true);
 
           value = Math.min(Math.abs(value), 1);
-          const mixed = mixRgb(accentRgb, foregroundRgb, value);
+          const mixed = mixRgb(accentRgb, foregroundRgb, value * accentVisibility);
           context.fillStyle = `rgb(${mixed.r}, ${mixed.g}, ${mixed.b})`;
           context.fill();
           context.restore();
