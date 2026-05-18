@@ -63,8 +63,8 @@ export default function Button({
 
     const sizes = {
         rounded: 'p-2 size-full rounded-full text-base',
-        sm: 'px-3 py-1.5 text-sm',
-        md: 'px-5 py-2.5 text-base',
+        sm: 'px-2 sm:px-3 py-1.5 text-sm',
+        md: 'px-2 sm:px-5 py-2.5 text-base',
         lg: 'px-12 py-2.5 text-lg',
         free: '',
     }

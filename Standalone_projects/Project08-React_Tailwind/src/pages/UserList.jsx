@@ -39,7 +39,7 @@ export default function UserList() {
             <h2 className="text-3xl font-bold text-gray-900 text-shadow-lg text-shadow-black/20 dark:text-gray-50">
                 {dict[language].title}
             </h2>
-            <ul className="p-10 sm:p-2 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ul className="p-1 sm:p-10 w-full grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-4">
                 {userList.map((user) => (
                     <li key={user.id}>
                         <UserCard
