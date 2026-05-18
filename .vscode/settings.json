@@ -1,17 +1,34 @@
 {
-    "prisma.pinToPrisma6": true,
-    "cSpell.words": [
-        "burgerlist",
-        "ulist",
-        "userlist",
-        "usuarios"
-    ],
-    "chat.tools.terminal.autoApprove": {
-        "npm run dev": true
-    },
-    "cSpell.ignoreWords": [
-        "Gustavson",
-        "lerp",
-        "perlin"
-    ]
+  "prisma.pinToPrisma6": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["burgerlist", "ulist", "userlist", "usuarios"],
+  "chat.tools.terminal.autoApprove": {
+    "npm run dev": true
+  },
+  "cSpell.ignoreWords": ["Gustavson", "lerp", "perlin"]
 }

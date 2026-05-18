@@ -1,20 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../JAVASCRIPT/scripts_util.js" defer></script>
-    
-    <title>DevClub - REACT</title>
-</head>
-<body>
-    <h1>Node Structure</h1>
-    <p>In this section, we will explore the structure of a Node.js project, including the organization of files and directories.</p>
-    <h2>Project Structure</h2>
-    <p>A typical Node.js project has the following structure:</p>
-    <pre>my-node-project/
+        <link rel="stylesheet" href="../CSS/style.css" />
+        <script src="../JAVASCRIPT/scripts_util.js" defer></script>
+
+        <title>DevClub - REACT</title>
+    </head>
+    <body>
+        <h1>Node Structure</h1>
+        <p>
+            In this section, we will explore the structure of a Node.js project,
+            including the organization of files and directories.
+        </p>
+        <h2>Project Structure</h2>
+        <p>A typical Node.js project has the following structure:</p>
+        <pre>
+my-node-project/
 ├── node_modules/       # Directory for installed dependencies
 ├── src/                # Source code for the application
 │   ├── assets/         # Directory for static assets
@@ -32,30 +36,92 @@
 ├── package.json        # Project metadata and dependencies
 ├── package-lock.json   # Lockfile for dependencies
 └── README.md           # Project documentation
-</pre>
-    <h2>Tailwind CSS</h2>
-    <p>Like the old Bootstrap, Tailwind CSS is a utility-first CSS framework that allows you to build custom designs without writing custom CSS.</p>
-    <p>We will be using Tailwind in its surface-level right now and gradually explore its features</p>
-    <h2><code>useRef</code></h2>
-    <h2>React Hooks</h2>
-    <p>React Hooks are functions that let you use state and other React features in functional components. Some commonly used hooks include <code>useState</code>, <code>useEffect</code>, and <code>useRef</code>.</p>
-    <ul>
-        <li><code>useState</code> - Allows you to add state to functional components.
-            <blockquote>Example: <code>const [count, setCount] = useState(0);</code>
-            <p>In this example, we are using the <code>useState</code> hook to create a state variable called <code>count</code> and a function called <code>setCount</code> to update that variable. The initial value of <code>count</code> is set to 0.</p>
-            </blockquote>
-        </li>
-        <li><code>useEffect</code> - Allows you to perform side effects in functional components.
-            <blockquote>Example: <code>useEffect(() => { console.log('Component mounted'); }, []);</code>
-            <p>In this example, we are using the <code>useEffect</code> hook to log a message when the component mounts. The empty dependency array <code>[]</code> ensures this effect runs only once.</p>
-            </blockquote>
-        </li>
-        <li><code>useRef</code> - Allows you to create a reference to a DOM element or a mutable value that persists across renders.
-            <blockquote>Example: <code>const inputRef = useRef(null);</code>
-            <p>In this example, we are using the <code>useRef</code> hook to create a reference to an input element. This reference can be used to access the DOM element directly.</p>
-            </blockquote>
-        </li>
-    </ul>
-
-</body>
+</pre
+        >
+        <h2>Tailwind CSS</h2>
+        <p>
+            Like the old Bootstrap, Tailwind CSS is a utility-first CSS
+            framework that allows you to build custom designs without writing
+            custom CSS.
+        </p>
+        <p>
+            We will be using Tailwind in its surface-level right now and
+            gradually explore its features
+        </p>
+        <h2><code>useRef</code></h2>
+        <h2>React Hooks</h2>
+        <p>
+            React Hooks are functions that let you use state and other React
+            features in functional components. Some commonly used hooks include
+            <code>useState</code>, <code>useEffect</code>, and
+            <code>useRef</code>.
+        </p>
+        <ul>
+            <li>
+                <code>useState</code> - Allows you to add state to functional
+                components.
+                <blockquote>
+                    Example: <code>const [count, setCount] = useState(0);</code>
+                    <p>
+                        In this example, we are using the
+                        <code>useState</code> hook to create a state variable
+                        called <code>count</code> and a function called
+                        <code>setCount</code> to update that variable. The
+                        initial value of <code>count</code> is set to 0.
+                    </p>
+                </blockquote>
+            </li>
+            <li>
+                <code>useEffect</code> - Allows you to perform side effects in
+                functional components.
+                <blockquote>
+                    Example:
+                    <code
+                        >useEffect(() => { console.log('Component mounted'); },
+                        []);</code
+                    >
+                    <p>
+                        In this example, we are using the
+                        <code>useEffect</code> hook to log a message when the
+                        component mounts. The empty dependency array
+                        <code>[]</code> ensures this effect runs only once.
+                    </p>
+                </blockquote>
+            </li>
+            <li>
+                <code>useRef</code> - Allows you to create a reference to a DOM
+                element or a mutable value that persists across renders.
+                <blockquote>
+                    Example: <code>const inputRef = useRef(null);</code>
+                    <p>
+                        In this example, we are using the
+                        <code>useRef</code> hook to create a reference to an
+                        input element. This reference can be used to access the
+                        DOM element directly.
+                    </p>
+                </blockquote>
+            </li>
+        </ul>
+        <h2>Render Queue</h2>
+        <p>
+            In React, the render queue is a mechanism that manages the rendering
+            of components. When a component's state or props change, React
+            schedules a re-render of that component and its children. The render
+            queue ensures that these updates are processed efficiently,
+            minimizing unnecessary renders and optimizing performance.
+        </p>
+        <p>
+            React batches multiple state updates together to reduce the number
+            of renders. When a component is scheduled for re-rendering, React
+            adds it to the render queue. React then processes the queue in a way
+            that minimizes the number of renders, ensuring that components are
+            only re-rendered when necessary.
+        </p>
+        <p>
+            Understanding the render queue is important for optimizing the
+            performance of your React applications, as it helps you avoid
+            unnecessary renders and ensures that your components update
+            efficiently.
+        </p>
+    </body>
 </html>

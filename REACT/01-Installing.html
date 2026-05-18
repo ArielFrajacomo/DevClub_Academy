@@ -149,11 +149,6 @@ const router = createBrowserRouter([
         element: &lt;Page2 /&gt;
      }
 ]);</pre>
-    
-        
-        
-        
-        </pre>
     <p>Then, we need to wrap our application with the <code>RouterProvider</code> component and pass the <code>router</code> configuration to it.</p>
     <pre class="copyThisToClipboard">import { RouterProvider } from 'react-router-dom';
 import router from './routes.jsx';
@@ -161,13 +156,8 @@ import router from './routes.jsx';
 createRoot(document.getElementById('root')).render(
   &lt;StrictMode&gt;
 &lt;RouterProvider router=&#123;router&#125; /&gt;
-  &lt;StrictMode&gt;
+  &lt;/StrictMode&gt;
 );</pre>
-
-
-
-
-
     <h2>VS Code</h2>
     <!-- extensions -->
     <ul> Recommended Extensions

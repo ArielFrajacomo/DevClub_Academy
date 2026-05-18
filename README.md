@@ -1,20 +1,24 @@
 # DevClub_Learning
- DevClub Platform Exercises. [Deploy Link](https://arielfrajacomo.github.io/DevClub_Academy/)
- 
- The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
+
+DevClub Platform Exercises. [Deploy Link](https://arielfrajacomo.github.io/DevClub_Academy/)
+
+The lessons are translated from `Portuguese` to `English` on the go, if there's any grammatical error just tell me.  
  This page will be reviewed after I finish all the lessons of the DevClub Course.
- > *OBS:* When there's a QuoteBox, it is my opinion and thoughts i had while reviewing the contents of the Lesson
+
+> _OBS:_ When there's a QuoteBox, it is my opinion and thoughts i had while reviewing the contents of the Lesson
 
 ## Table of Contents
+
 - [Prerequisites](#prerequisites)
 - [How to Run](#how-to-run)
 - [HTML](#html)
 - [CSS Basics](#css) / [CSS Intermediate](#css-intermediate-level)
 - [GIT](#git)
 - [JavaScript](#javascript)
-- [FULL_STACK](#FULL_STACK)
+- [NODE](#node)
 
 ## StandAlone Projects
+
 - [Project 01 - We Care Pet Front page](#Project01)
 - [Project 02 - Challenge 2](#Project02)
 - [Project 03 - 1st Responsible site](#Project03)
@@ -22,27 +26,34 @@
 - [Project 05 - Calculator](#Project05)
 - [Project 06 - Burger Filter](#Project06)
 - [Project 07 - RESTful API](#Project07)
+- [Project 08 - React & Tailwind](#Project08)
 
 <!-- Prerequisites Table of contents -->
+
 <a id="prerequisites"></a>
 
 ## Prerequisites
+
 - A modern web browser
 - Python 3 installed to run a simple local server with `python -m http.server`
 - Alternatively, another local server tool such as VS Code Live Server
 
 <!-- Howto Table of contents -->
+
 <a id="how-to-run"></a>
 
 ## How to Run
+
 Each folder represents a finished DevClub course module. To run any course, start a local server inside the respective course folder and open the served `index.html` page in your browser.
 
 **Steps:**
+
 1. Clone the repository
 2. Start a local server in that folder
 3. Open the local server address in your web browser
 
 Example using Python:
+
 ```bash
 python -m http.server 8000
 ```
@@ -50,76 +61,97 @@ python -m http.server 8000
 Then open `http://localhost:8000` in your browser.
 
 <!-- HTML Table of contents -->
+
 <a id="html"></a>
 
 ## HTML
+
 ### 01-HTML_Basics
+
 - Basics of HTML, reviewing if there's something new in the HTML markup
-> Seems that there's nothing new here, really.
+    > Seems that there's nothing new here, really.
+
 ### 02-HTML_Challenge01
+
 - Devclub's 1st challenge, A simple page with some data about myself
-> probably will be changed in the future to make a Self Presentation page.
+    > probably will be changed in the future to make a Self Presentation page.
+
 ### 03-HTML_Basics_part2
+
 - Table, Self-Hosted videos, Iframe, Input
-> The input had something new, the `<label for="id">` is easier to read, and now it have new accessibility features and a convenient autocomplete tool.
-- Forms, inputs and buttons  
-> It is very nice that the inputs already have validations.
-- HTML Semantics  
-> `<article>` and `<aside>` didn't exist before.  
+    > The input had something new, the `<label for="id">` is easier to read, and now it have new accessibility features and a convenient autocomplete tool.
+- Forms, inputs and buttons
+    > It is very nice that the inputs already have validations.
+- HTML Semantics
+    > `<article>` and `<aside>` didn't exist before.
 
 <!-- CSS Table of contents -->
+
 <a id="css"></a>
 
 ## CSS
+
 This lesson will cover the basics of CSS and how to use it to style web pages.  
-*Linked the style.css to HTML Lessons*  
+_Linked the style.css to HTML Lessons_
+
 ### 01-CSS_Intro
+
 - Using CSS: TAGS(`<p>`)->`p`, Class(`<element class="btn">`)->`.btn`, ID(`<element id="itemID">`)->`#itemID`
-> The use of `:is(ul, ol) li` is interesting, and it seems that it doesn't affect much the performance of the website.
-- Colors, Units of measure, Text, Margin and Padding, box-sizing, 
-> The dev in me wanted to see how Variables in CSS works, I love how `:root` lets you set global variables, it makes much easier and cleaner than working with RGB/hex codes.
+    > The use of `:is(ul, ol) li` is interesting, and it seems that it doesn't affect much the performance of the website.
+- Colors, Units of measure, Text, Margin and Padding, box-sizing,
+    > The dev in me wanted to see how Variables in CSS works, I love how `:root` lets you set global variables, it makes much easier and cleaner than working with RGB/hex codes.
 
 <a id="Project01"></a>
 
 ### 02-Standalone Project 01 - We Care Pet Front page
+
 - Using figma to replicate a front page in HTML with CSS (non-responsive)
-> Project path: `Standalone_projects\Project01-Pet\Index.html`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project01-Pet) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project01-Pet/Index.html)
+    > Project path: `Standalone_projects\Project01-Pet\Index.html`  
+    > _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project01-Pet) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project01-Pet/Index.html)
 
 <a id="Project02"></a>
 
 ### 03-Standalone Project 02 - Challenge 2
-- Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well.  The `index.html` and `style.css` was made by hand, of course.
->  Project path: `Standalone_projects\Project02-Challenge02\index.html`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project02-Challenge02) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project02-Challenge02/index.html)
+
+- Final Challenge of the CSS_Intro course, and as a bonus, i tried to edit the Logo.svg with AI to animate it, it worked surprisingly well. The `index.html` and `style.css` was made by hand, of course.
+    > Project path: `Standalone_projects\Project02-Challenge02\index.html`  
+    > _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project02-Challenge02) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project02-Challenge02/index.html)
 
 <a id="Project03"></a>
 
 ### Project 03 - 1st Responsible site
+
 > Challenge `Standalone_projects/Project03-1st_Responsible_site/index.html`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project03-1st_Responsible_site) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project03-1st_Responsible_site/index.html)
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project03-1st_Responsible_site) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project03-1st_Responsible_site/index.html)
+
 - Calc()
-> CSS function to use math
+    > CSS function to use math
 
 <a id="Project04"></a>
 
 ### Project 04 - Currency Exchanger
+
 > Project path: `Standalone_Projects/Project04-CoinConverter`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project04-CoinConverter) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project04-CoinConverter/index.html)
 
 **Features:**
+
 - Animated Intro with CSS Transformations
 - Animated logo (made with AI, Triggers by me), Animations directly in the SVF File, Triggered by JS
 - Dataset using a `currency.json` archive to make easy add/remove items or to use a API
 - Working Market Exchange interface
-- Fully Responsive  
+- Fully Responsive
+
 ### Operators
+
 - math(), Random(),
 - Arithmetic, Attribution, Comparison and Logical Operations
 - typeof, delete, else-if, ternary operator, switch
 - Timeout and Interval, clearTimeout, clearInterval
-> I actually never ran a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
+    > I actually never ran a set interval function and i never needed to stop a timeout so get to know that clearInterval existed is very interesting
+
 ### Loops
+
 - For, For-Of, For-In, for-each
 - While, do-while
 - Return, Break, continue
@@ -130,32 +162,38 @@ This lesson will cover the basics of CSS and how to use it to style web pages.
 <a id="Project05"></a>
 
 ### Challenge - Project 05 : Calculator
+
 > Project path: `Standalone_Projects/Project05-Calculator`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project05-Calculator) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project05-Calculator/index.html)
- 
- **Features:**
- - Working Calculator
- - Some input corrections
- - Responsive
- - CSS Animations
- - Keyboard Enabled
- - Ctrl C / Ctrl V
- - Custom functions (no use of eval())
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project05-Calculator) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project05-Calculator/index.html)
+
+**Features:**
+
+- Working Calculator
+- Some input corrections
+- Responsive
+- CSS Animations
+- Keyboard Enabled
+- Ctrl C / Ctrl V
+- Custom functions (no use of eval())
 
 ### Map, Reduce, Filter, Array Methods
+
 - map(), reduce(), filter()
 - Array Methods
 - Bonus: Prototyping, Spread Operator
-> I was surprised to see that there's no .sum() in js, created protoSUM() and protoAVG() with non-generic name to avoid conflicts with future code/libraries
+    > I was surprised to see that there's no .sum() in js, created protoSUM() and protoAVG() with non-generic name to avoid conflicts with future code/libraries
 
 <a id="Project06"></a>
 
 ### Challenge - Project 06 : Burger Filter
+
 Small project to create a interactive menu using the Map, Reduce, Filter and Array Methods
+
 > Project path: `Standalone_Projects/Project06-BurgerFilter`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project06-BurgerFilter) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project06-BurgerFilter/index.html)  
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project06-BurgerFilter) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project06-BurgerFilter/index.html)
 
 **Features:**
+
 - Filter by vegan options, price range, and apply discount coupons.
 - Price slider with two thumbs for selecting the minimum and maximum price range.
 - You can set how much items you want to buy and see the total price with discounts applied.
@@ -166,13 +204,16 @@ Small project to create a interactive menu using the Map, Reduce, Filter and Arr
 - The burgerlist.json is called with the fetch API. To simulate a real API call.
 - Fully responsive
 
-<a id="FULL_STACK">
+<a id="node">
 
 ## Full-stack development
+
 > from this point it picks my interest because i'm a guy that never had worked with RESTful APIs before
 
 ### NODE
+
 This section covers the basics of Node.js, including:
+
 - Setting up a Node.js project with npm and installing Express.js
 - Creating and handling routes (GET, POST, PUT, DELETE, PATCH)
 - Understanding request and response objects
@@ -180,59 +221,98 @@ This section covers the basics of Node.js, including:
 - Example server setup and starting the server
 
 **How to run the Node.js server:**
+
 1. Navigate to the `NODE` folder:
-	```bash
-	cd NODE
-	```
+    ```bash
+    cd NODE
+    ```
 2. Install dependencies (if not already installed):
-	```bash
-	npm install
-	```
+    ```bash
+    npm install
+    ```
 3. Start the server:
-	```bash
-	node server.js
-	```
-	Or, for auto-restart on changes:
-	```bash
-	node --watch server.js
-	```
+    ```bash
+    node server.js
+    ```
+    Or, for auto-restart on changes:
+    ```bash
+    node --watch server.js
+    ```
 4. Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
 **Features:**
+
 - RESTful API Featured Exercise
-	- Add, update, delete, and fetch users
-	- Using good practices for HTTP methods and status codes
-	- BONUS: Used Object Oriented Program to organize the code
+    - Add, update, delete, and fetch users
+    - Using good practices for HTTP methods and status codes
+    - BONUS: Used Object Oriented Program to organize the code
 
 See the `NODE/server.js` file for detailed code and endpoint examples for both burgers and users.
 
 **User Management CRUD**
+
 - The project also includes a simple CRUD for users, with a frontend interface in `NODE/index.html` and logic in `NODE/scripts.js`.
 - You can add, update, delete, and list users through the web interface, which interacts with the Express backend.
 
 ### MONGO and PRISMA
-> Install instructions can be found at `FULL_STACK/index.html -> MONGO_PRISMA`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/FULL_STACK) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/FULL_STACK/02-MONGO_PRISMA.html)
+
+> Install instructions can be found at `NODE/index.html -> MONGO_PRISMA`  
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/NODE) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/NODE/02-MONGO_PRISMA.html)
 
 - Switched from in-memory arrays to a real database for persistent storage.
 - Defined data models in `schema.prisma` (e.g., User with id, email, name, age).
 - Created a `server-classes.js` to handle the classes that will be used in the Featured Program (ES module syntax)
-- imported the server classes into `server.js` and `02-scripts.js` (consumed by 02-MONGO_PRISMA) 
+- imported the server classes into `server.js` and `02-scripts.js` (consumed by 02-MONGO_PRISMA)
 - Implemented validation and data transformation methods inside User Class (e.g., `getFromJson`, `toJson`, `equalData`).
 - BONUS: Trained error handling and rollback logic.
-> See the `FULL_STACK/server.js` and `FULL_STACK/server-classes.js` files for detailed code and endpoint examples.
+    > See the `NODE/server.js` and `NODE/server-classes.js` files for detailed code and endpoint examples.
 
 <a id="Project07"></a>
 
 ### Challenge - Project 07 - Node+Mongo User Management
+
 RESTful API to control a list of Users
 Project used Mongo+Prisma for the Database/Access
 I'm Running the NODE server at Render so the program runs together with Git Deploy
+
 > Project path: `Standalone_Projects/Project07-RESTful_API`  
-*GitHub Shortcut:* [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project07-RESTful_API) or *Deploy* [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project07-RESTful_API/index.html)  
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project07-RESTful_API) or _Deploy_ [Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project07-RESTful_API/index.html)
 
-## REACT
+<a id="Project08"></a>
 
+## Project 08 - React & Tailwind
 
+> Well, i had de idea to learn tailwind together with react in this one, it took fairly more time to finish the project, but i have something i'm proud to have in my portfolio because i had to learn a lot of new things to make this work.
+
+This project is a direct evolution of the `Challenge - Project 07 - Node+Mongo User Management` from the previous chapter, with improved UI/UX and how i handled the limitations of the RENDER.com free services.
+
+> Project path: `Standalone_projects/Project08-React_Tailwind`  
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project08-React_Tailwind) or _Deploy_ [TODO_Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project08-React_Tailwind/)
+
+<!-- TODO ↑ -->
+
+### Featured Program
+
+This program is a direct evolution of the `Challenge - Project 07 - Node+Mongo User Management` from the previous chapter, with improved UI/UX and how i handled the limitations of the RENDER.com free services.
+
+### New Knowledge Acquired
+
+- Setting up REACT
+- React Render features
+    - (useSTATE, useEffect, ...)
+    - Components and Routes
+    - Render logic
+    - ... and more
+- Tailwind
+    > Surprisingly i works more or less like bootstrap, i wasn't expecting that.
+    - Simple, less code written, lightweight, but the ClassName goes _Wild_
+    - Transition effects made easy
+    - Glass effects
+    - Inherent Light and Dark Themes
+- Bonus
+    - Site has pt_BR and us_EN localizations
+        - All UI changes to the selected language
+        - URL have both english and portuguese paths for SEO practices
+    - Animated background by adapting [Stefan Gustavson](https://codepen.io/jaredstanley/pen/RwywQzG)'s original code made in JS and changed to work in React
 
 (On Going...)

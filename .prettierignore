@@ -1,0 +1,10 @@
+dist
+build
+generated
+node_modules
+.git
+.vscode
+.env
+.env.local
+*.lock
+coverage
