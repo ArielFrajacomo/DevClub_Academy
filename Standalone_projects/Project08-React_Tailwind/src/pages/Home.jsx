@@ -36,7 +36,13 @@ export default function Home() {
 
     return (
         <div>
-            <h1 className="text-center p-4">Welcome to DevClub - React</h1>
+            <h1 className="text-center p-4 mb-8 text-3xl font-bold text-gray-900 text-shadow-lg text-shadow-black/20 dark:text-gray-50">
+                Welcome to DevClub - React
+                <span className="font-semibold text-xl text-sky-700/80 dark:text-sky-400/80 block">
+                    + Tailwind
+                </span>
+            </h1>
+
             <div className="mx-auto flex h-[clamp(12rem,32vw,18rem)] w-full max-w-3xl p-5 gap-4 justify-center items-stretch">
                 <Button
                     onClick={buttonToSearchPage}

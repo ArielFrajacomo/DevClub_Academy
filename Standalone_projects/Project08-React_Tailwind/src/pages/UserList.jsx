@@ -52,7 +52,10 @@ export default function UserList() {
                     </li>
                 ))}
                 {userList.length === 0 && (
-                    <li className="text-red-500" key="no-users">
+                    <li
+                        className="text-red-500 col-span-full text-center text-lg font-semibold"
+                        key="no-users"
+                    >
                         {dict[language].noUsers[0]}
                         <br />
                         {dict[language].noUsers[1]}

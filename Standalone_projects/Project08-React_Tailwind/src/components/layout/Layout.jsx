@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { api } from '../../services/api.js'
 import Background from './Background.jsx'
 import ToastAlert, { toast } from '../ui/ToastAlert.jsx'
+import Info from './Info.jsx'
 
 const DEFAULT_LANGUAGE = 'pt_BR'
 const SUPPORTED_LANGUAGES = ['pt_BR', 'en_US']
@@ -181,6 +182,7 @@ export default function Layout() {
                     }}
                 />
             </main>
+            <Info language={language} />
         </div>
     )
 }
