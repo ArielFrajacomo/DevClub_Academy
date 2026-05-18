@@ -287,9 +287,7 @@ I'm Running the NODE server at Render so the program runs together with Git Depl
 This project is a direct evolution of the `Challenge - Project 07 - Node+Mongo User Management` from the previous chapter, with improved UI/UX and how i handled the limitations of the RENDER.com free services.
 
 > Project path: `Standalone_projects/Project08-React_Tailwind`  
-> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project08-React_Tailwind) or _Deploy_ [TODO_Here](https://arielfrajacomo.github.io/DevClub_Academy/Standalone_projects/Project08-React_Tailwind/)
-
-<!-- TODO ↑ -->
+> _GitHub Shortcut:_ [Here](https://github.com/ArielFrajacomo/DevClub_Academy/tree/main/Standalone_projects/Project08-React_Tailwind) or _Deploy_ [Here](https://dev-club-academy-ej4g.vercel.app/list-of-users)
 
 ### Featured Program
 
