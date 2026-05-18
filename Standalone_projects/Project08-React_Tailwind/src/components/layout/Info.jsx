@@ -100,17 +100,18 @@ export default function Info({ language = 'pt_BR' }) {
                                 english and portuguese paths for SEO practices.
                             </p>
                             <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                Animated background by adapting{' '}
+                                Animated background by{' '}
                                 <a
                                     href="https://codepen.io/jaredstanley/pen/RwywQzG"
                                     className="text-blue-500 hover:underline"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Stefan Gustavson
+                                    Joseph Gentle
                                 </a>
-                                's original code made in JS and changed to work
-                                in React.
+                                , he adapted Stefan Gustavson's original code to
+                                JS, and I changed it to work as a React
+                                component.
                             </p>
                         </div>
                     )}
@@ -169,17 +170,18 @@ export default function Info({ language = 'pt_BR' }) {
                                 práticas de SEO.
                             </p>
                             <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                Fundo animado adaptado do{' '}
+                                Fundo animado por{' '}
                                 <a
                                     href="https://codepen.io/jaredstanley/pen/RwywQzG"
                                     className="text-blue-500 hover:underline"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Stefan Gustavson
-                                </a>
-                                , código original em JS que foi ajustado para
-                                funcionar em React.
+                                    Joseph Gentle
+                                </a>{' '}
+                                adaptando o código original de Stefan Gustavson
+                                para JS, e eu o modifiquei para funcionar como
+                                um componente React.
                             </p>
                         </div>
                     )}
