@@ -6,7 +6,7 @@ import { useState } from 'react'
  *
  */
 export default function Info({ language = 'pt_BR' }) {
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <>

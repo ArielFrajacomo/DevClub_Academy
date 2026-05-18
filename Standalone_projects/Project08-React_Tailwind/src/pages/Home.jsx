@@ -9,6 +9,10 @@ export default function Home() {
     const { language } = useOutletContext()
 
     const dict = {
+        Welcome: {
+            en_US: 'Welcome to',
+            pt_BR: 'Bem-vindo ao',
+        },
         Search: {
             Label: { pt_BR: 'Pesquisar um usuário', en_US: 'Search User' },
             link: { pt_BR: '/buscar', en_US: '/search' },
@@ -37,7 +41,7 @@ export default function Home() {
     return (
         <div>
             <h1 className="text-center p-4 mb-8 text-3xl font-bold text-gray-900 text-shadow-lg text-shadow-black/20 dark:text-gray-50">
-                Welcome to DevClub - React
+                {dict.Welcome[language] + ' '}DevClub - React
                 <span className="font-semibold text-xl text-sky-700/80 dark:text-sky-400/80 block">
                     + Tailwind
                 </span>
