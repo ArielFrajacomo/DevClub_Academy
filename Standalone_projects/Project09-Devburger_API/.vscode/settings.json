@@ -1,0 +1,39 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+	"cSpell.words": [
+        "biomejs",
+        "darwin",
+        "depd",
+        "devburger",
+        "dunder",
+        "encodeurl",
+        "etag",
+        "finalhandler",
+        "gopd",
+        "hasown",
+        "libc",
+        "linux",
+        "parseurl",
+        "setprototypeof",
+        "toidentifier",
+        "typer",
+        "unpipe",
+        "weakmap",
+        "wrappy"
+    ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="../CSS/style.css" />
+        <script src="../JAVASCRIPT/scripts_util.js" defer></script>
+
+        <title>DevClub - DevBurger</title>
+    </head>
+    <body>
+        <h1>DevClub - DevBurger</h1>
+        <h2>Initializing Project...</h2>
+        <ul class="no-bullets">
+            <li>
+                <h3>pnpm:</h3>
+                <code class="copyThisToClipboard">npm install -g pnpm</code>
+                <code class="copyThisToClipboard">pnpm add express</code>
+            </li>
+            <li>
+                <h3>Running the server:</h3>
+                <code class="copyThisToClipboard">pnpm dev</code>
+                <ul>
+                    <li>
+                        creating server.js file
+                        <pre>
+import app from './app.js'
+
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+    console.log(`Server is running on : http://localhost:${PORT}/`)
+})
+                        </pre>
+                    </li>
+                    <li>
+                        make sure <code>"type": "module"</code> is set in your
+                        <strong>package.json</strong>
+                    </li>
+                    <li>
+                        add <code>"dev": "node --watch src/server.js"</code> to
+                        your <strong>scripts</strong> in
+                        <strong>package.json</strong>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Installing Biome.js</h3>
+                <blockquote>
+                    Similar to ESLint, Biome.js is a tool for linting and
+                    formatting your code.
+                    <br />
+                    It is a modern alternative to ESLint and Prettier, offering
+                    a unified solution for both linting and formatting.
+                </blockquote>
+                <code class="copyThisToClipboard"
+                    >pnpm add -D @biomejs/biome</code
+                >
+                <code class="copyThisToClipboard">pnpm exec biome init</code>
+                <p>
+                    OBS: Remember to configure Biome.js, and update Open User
+                    Settings (json) to automatically format on save.
+                </p>
+            </li>
+            <li>
+                <h3></h3>
+            </li>
+        </ul>
+    </body>
+</html>
